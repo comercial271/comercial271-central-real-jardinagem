@@ -228,7 +228,7 @@ const novaBio = `🌿 Lobo Jardinagem
 📍 Bertioga · Riviera de São Lourenço — SP
 🏡 Casas de veraneio · Condomínios premium
 📸 Relatório fotográfico mensal incluído
-🔗 [link da central]`
+🔗 comercial271.github.io/comercial271-central-lobo-jardinagem`
 
 // ─── Destaques ────────────────────────────────────────────────────────────────
 
