@@ -1,12 +1,12 @@
-import { TrendingUp, Target, DollarSign, Clock, Award, Building2 } from 'lucide-react'
+import { TrendingUp, Target, DollarSign, Clock, Award, MapPin } from 'lucide-react'
 
 const metrics = [
-  { value: 'LTDA Ativa',  label: 'Empresa formalizada',  sub: 'Simples Nacional — CNPJ 53.108.649/0001-97', icon: Building2 },
-  { value: 'Fundisul',    label: 'Cliente corporativo',  sub: 'Contrato ativo — referência B2B real',        icon: Award },
-  { value: 'R$ 30.000',  label: 'Meta 12 meses',        sub: 'Crescimento: +900% no faturamento',           icon: TrendingUp },
-  { value: '2 Sessões',  label: 'Concluídas',           sub: 'Individual 13/05 + Coletiva 14/05/2026',      icon: Clock },
-  { value: '13+ anos',   label: 'No mercado',            sub: 'Experiência técnica consolidada',             icon: Clock },
-  { value: 'Rio do Sul/SC', label: 'Posicionamento',    sub: 'Industrial + condomínios alto padrão',         icon: Target },
+  { value: 'Villagio',     label: 'Case âncora',       sub: 'Paisagismo — lucro R$13k realizado',           icon: Award },
+  { value: 'R$ 50.000',   label: 'Meta 12 meses',     sub: 'Crescimento: +400% no faturamento',            icon: TrendingUp },
+  { value: 'R$ 7–15k',    label: 'Faturamento atual', sub: 'Base sólida com clientes recorrentes',         icon: DollarSign },
+  { value: '1 Sessão',    label: 'Concluída',         sub: 'Coletiva 14/05/2026 — Selva Premium',          icon: Clock },
+  { value: '1–3 anos',    label: 'No mercado',        sub: 'Crescimento acelerado desde o início',         icon: Clock },
+  { value: 'Bertioga/SP', label: 'Posicionamento',    sub: 'Riviera de São Lourenço — alto padrão',        icon: MapPin },
 ]
 
 export default function Hero() {
@@ -18,19 +18,19 @@ export default function Hero() {
             SELVA PREMIUM — MEMBRO ATIVO
           </span>
           <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
-            Central AKI Jardins
+            Central Lobo Jardinagem
           </h1>
-          <p className="text-white/70 text-lg mb-2">André Krieger — Rio do Sul / SC</p>
+          <p className="text-white/70 text-lg mb-2">Aleandro Lobo — Bertioga / SP</p>
           <p className="text-gold-500 text-xl italic font-medium mb-6">
-            "Empresa registrada, Fundisul na carteira, 13 anos de mercado.<br />Agora é posicionamento digital e prospecção ativa."
+            "Villagio fechado, lucro de R$13k.<br />Agora é GMB, precificação técnica e Riviera como território."
           </p>
           <p className="text-white/60 text-sm leading-relaxed max-w-lg">
             Aqui está tudo que foi construído na sua mentoria — diagnóstico, plano de ação,
-            documentos, estratégias e o arsenal que mostra quem você já é. Use como referência diária.
+            documentos, estratégias e o arsenal para você dominar o mercado premium de Bertioga. Use como referência diária.
           </p>
           <div className="mt-8 flex items-center gap-2">
             <Award size={16} className="text-gold-500" />
-            <span className="text-white/50 text-xs">Mentoria: Jean Francis | Sessão 1: 13/05/2026 | Sessão 2: 14/05/2026 | Check-in: 11/06/2026</span>
+            <span className="text-white/50 text-xs">Mentoria: Jean Francis | Sessão Coletiva: 14/05/2026 | Check-in: 12/06/2026</span>
           </div>
         </div>
 

@@ -3,19 +3,19 @@ import { Menu, X, Leaf, LogOut, Shield } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 
 const navItems = [
-  { id: 'inicio', label: 'Início' },
-  { id: 'tarefas', label: 'Tarefas' },
+  { id: 'inicio',      label: 'Início' },
+  { id: 'tarefas',     label: 'Tarefas' },
   { id: 'diagnostico', label: 'Diagnóstico' },
-  { id: 'plano', label: 'Plano de Ação' },
-  { id: 'arsenal', label: 'Arsenal' },
-  { id: 'links', label: 'Links Rápidos' },
-  { id: 'manuais', label: 'Guias' },
-  { id: 'alvos', label: 'Alvos' },
-  { id: 'abordagem', label: 'Abordagem' },
-  { id: 'instagram', label: 'Instagram' },
-  { id: 'icp', label: 'ICP / Leads' },
-  { id: 'prova-social', label: 'Prova Social' },
-  { id: 'jornada', label: 'Jornada' },
+  { id: 'plano',       label: 'Plano de Ação' },
+  { id: 'arsenal',     label: 'Arsenal' },
+  { id: 'links',       label: 'Links Rápidos' },
+  { id: 'manuais',     label: 'Guias' },
+  { id: 'alvos',       label: 'Alvos' },
+  { id: 'abordagem',   label: 'Abordagem' },
+  { id: 'instagram',   label: 'Instagram' },
+  { id: 'icp',         label: 'ICP / Leads' },
+  { id: 'prova-social',label: 'Prova Social' },
+  { id: 'jornada',     label: 'Jornada' },
 ]
 
 export default function Navbar({ onAdminClick }: { onAdminClick?: () => void }) {
@@ -49,7 +49,7 @@ export default function Navbar({ onAdminClick }: { onAdminClick?: () => void }) 
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         <div className="flex items-center gap-2">
           <Leaf className="text-gold-500" size={20} />
-          <span className="text-white font-bold text-sm tracking-wide">AKI JARDINS</span>
+          <span className="text-white font-bold text-sm tracking-wide">LOBO JARDINAGEM</span>
           <span className="hidden sm:inline-block ml-2 text-xs bg-gold-500 text-forest-900 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Selva Premium</span>
         </div>
         <div className="hidden lg:flex items-center gap-1">

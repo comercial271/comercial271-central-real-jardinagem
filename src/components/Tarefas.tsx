@@ -21,7 +21,7 @@ interface TarefaState {
 
 // ─── Storage helpers ──────────────────────────────────────────────────────────
 
-const STORAGE_KEY = 'andre_tarefas_v1'
+const STORAGE_KEY = 'aleandro_tarefas_v1'
 
 type AllState = Record<string, TarefaState>
 type SetAllState = (v: AllState | ((p: AllState) => AllState)) => void
@@ -30,57 +30,57 @@ type SetAllState = (v: AllState | ((p: AllState) => AllState)) => void
 
 const tarefas = [
   {
-    id: 'nf-fundisul',
+    id: 'gmb-fases-1-3',
     prazo: '29/05 — URGENTE',
     urgencia: 'red',
-    titulo: 'Emitir NF + comprar insumos para Fundisul',
-    descricao: 'Formalizar a operação com a Fundisul: emitir a nota fiscal do serviço, comprar os insumos necessários para a próxima visita e garantir a continuidade do contrato ativo.',
-    nota: 'Fundisul é sua âncora de credibilidade. Ter tudo documentado e com NF emitida é o que te permite usar essa referência para fechar os próximos contratos.',
-    link: null,
+    titulo: 'GMB — Fases 1, 2 e 3: Acesso, informações e fotos iniciais',
+    descricao: 'Implementar as três primeiras fases do guia completo de GMB: garantir acesso de proprietário ao perfil, preencher 100% das informações (nome, endereço, horário, site, WA, categoria primária e secundárias) e subir as primeiras 10 fotos de alta qualidade com geolocalização ativada.',
+    nota: 'O GMB é a maior oportunidade de Bertioga agora: busca "jardinagem Bertioga" e "manutenção jardim Riviera" está sem concorrência. Quem otimiza primeiro domina por meses.',
+    link: { label: 'Abrir guia completo de GMB', href: '#manuais' },
+  },
+  {
+    id: 'depoimento-villagio',
+    prazo: '29/05 — URGENTE',
+    urgencia: 'red',
+    titulo: 'Solicitar depoimento formal do proprietário do Villagio',
+    descricao: 'Na próxima manutenção no Villagio, pedir ao proprietário (ou gestor responsável) um depoimento escrito ou em vídeo sobre o serviço. Fotografar antes/depois da manutenção do mês com permissão para usar nas redes sociais e propostas.',
+    nota: '"Cuidamos do Villagio na Riviera" com depoimento real vale mais do que qualquer copy escrita. É o argumento de abertura para todos os outros contratos da Riviera.',
+    link: { label: 'Gerar proposta para novo alvo', href: 'https://geradordepropostaselva.lovable.app' },
+  },
+  {
+    id: 'instagram-reel1',
+    prazo: '05/06 — SEM. 2',
+    urgencia: 'orange',
+    titulo: 'Gravar e postar Roteiro 1 — @lobo_jardinagem',
+    descricao: 'Gravar o primeiro Reel do @lobo_jardinagem usando o Roteiro 1 (Apresentação Lobo Jardinagem) disponível na aba Instagram. Na mesma visita ao Villagio, gravar também o Roteiro 2 (Live Case). Dois vídeos — perfil lançado.',
+    nota: 'Proprietários de veraneio pesquisam no Instagram. Um perfil com 2 Reels bem feitos já posiciona a Lobo Jardinagem acima de 100% dos concorrentes de Bertioga. Grave — não perfeccionize.',
+    link: { label: 'Ver roteiros prontos', href: '#instagram' },
   },
   {
     id: 'wa-mensagem',
-    prazo: '29/05 — URGENTE',
-    urgencia: 'red',
-    titulo: 'Corrigir mensagem automática do WhatsApp Business',
-    descricao: 'A mensagem de ausência atual está incorreta — não representa a AKI Jardins profissionalmente. Substituir pela mensagem padrão definida na Sessão 1 e configurar boas-vindas.',
-    nota: 'Cada mensagem automática é a primeira impressão de um prospect que veio pelo GMB ou Instagram. Mensagem errada = lead perdido antes de responder.',
-    link: { label: 'Ver guia de configuração', href: '#manuais' },
-  },
-  {
-    id: 'gmb-otimizar',
     prazo: '05/06 — SEM. 2',
     urgencia: 'orange',
-    titulo: 'Otimizar GMB — fotos, descrição e link WA',
-    descricao: 'O GMB foi criado em 15/05 mas ainda está incompleto. Subir ao menos 10 fotos de trabalhos (antes/depois, equipe, jardim da empresa), atualizar a descrição com palavras-chave de Rio do Sul/SC e adicionar o número do WA Business.',
-    nota: 'GMB completo com fotos = posição de destaque no Google Maps. Primeiro resultado orgânico para "jardineiro Rio do Sul SC" — esse espaço está vago.',
-    link: { label: 'Acessar Google Meu Negócio', href: 'https://business.google.com' },
+    titulo: 'Configurar WhatsApp Business — mensagem de boas-vindas e ausência',
+    descricao: 'Ativar o WA Business e configurar a mensagem de boas-vindas e ausência padrão para proprietários de veraneio. Cada mensagem automática é a primeira impressão de quem chegou pelo GMB ou Instagram.',
+    nota: 'A mensagem de ausência mal configurada faz o prospect ir para o concorrente enquanto dorme. Configura uma vez, funciona 24h por dia.',
+    link: { label: 'Ver guia WA Business', href: '#manuais' },
   },
   {
-    id: 'depoimento-fundisul',
+    id: 'gmb-fases-4-7',
     prazo: '10/06 — SEM. 2-3',
     urgencia: 'orange',
-    titulo: 'Solicitar depoimento da Fundisul + documentar case',
-    descricao: 'Fotografar antes/depois da área verde da Fundisul (com permissão) e pedir um depoimento ao gestor responsável. Este material é seu argumento de venda mais forte para as próximas propostas.',
-    nota: '"Atendemos a Fundisul há X meses" vale mais do que qualquer texto na proposta. Um depoimento escrito ou em vídeo multiplica a conversão em novos clientes corporativos.',
-    link: { label: 'Gerar proposta atualizada', href: 'https://geradordepropostaselva.lovable.app' },
+    titulo: 'GMB — Fases 4 a 7: Posts, respostas, Q&A e serviços',
+    descricao: 'Continuar a implementação do GMB: publicar 2 posts de serviços, configurar o catálogo de serviços com preços estimados, criar 3 perguntas e respostas (Q&A), e solicitar as primeiras 5 avaliações de clientes atuais.',
+    nota: 'Cada post no GMB aumenta a relevância do perfil nas buscas locais. Avaliações com resposta personalizada é o fator que mais separa o 1º do 2º resultado no Maps.',
+    link: { label: 'Continuar guia de GMB', href: '#manuais' },
   },
   {
-    id: 'live-case-jardim',
-    prazo: '10/06 — SEM. 2-3',
-    urgencia: 'orange',
-    titulo: 'Jardim da empresa como live case — primeiro Reel',
-    descricao: 'Filmar o jardim da própria AKI Jardins sendo mantido/implantado como primeiro conteúdo para o @akijardins. É o case mais fácil de documentar e demonstra qualidade de forma imediata.',
-    nota: 'O jardim da empresa é seu showroom gratuito. Cada vídeo postado com localização Rio do Sul/SC aumenta a cobertura de busca local.',
-    link: { label: 'Ver estratégia de conteúdo', href: '#instagram' },
-  },
-  {
-    id: 'prospeccao-lista',
-    prazo: '15/06 — PARALELO',
+    id: 'prospeccao-riviera',
+    prazo: '12/06 — CHECK-IN',
     urgencia: 'yellow',
-    titulo: 'Listar 20 empresas para prospecção ativa',
-    descricao: 'Criar documento Word com 20 empresas de Rio do Sul/SC que têm área verde e perfil corporativo — indústrias, hospitais, shoppings, condomínios. Incluir nome, contato e observação sobre a área verde atual.',
-    nota: 'Com Fundisul na carteira você já tem o argumento de entrada. Prospecção ativa com referência corporativa real é mais eficiente que qualquer anúncio.',
+    titulo: 'Mapear 20 casas e condomínios na Riviera para prospecção',
+    descricao: 'Criar lista de 20 propriedades na Riviera de São Lourenço com potencial: casas grandes com jardim visível, condomínios fechados, pousadas. Incluir endereço, observação sobre o estado do jardim atual e canal de contato (imobiliária, Instagram, GMB). Levar para o check-in.',
+    nota: 'Com o Villagio na carteira você já tem o argumento de entrada para qualquer propriedade da Riviera. "Somos a empresa do Villagio" abre mais portas do que qualquer anúncio.',
     link: null,
   },
 ]
@@ -317,14 +317,14 @@ export default function Tarefas() {
         <div className="mb-10">
           <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Compromissos</span>
           <h2 className="text-3xl font-bold text-forest-900 mt-1">Missão do Momento</h2>
-          <p className="text-gray-500 mt-2">Seus compromissos até o check-in de 11/06/2026</p>
+          <p className="text-gray-500 mt-2">Seus compromissos até o check-in de 12/06/2026</p>
         </div>
 
         <div className="bg-forest-800 rounded-2xl p-6 mb-8 text-white flex items-start gap-4">
           <AlertTriangle className="text-gold-500 shrink-0 mt-0.5" size={22} />
           <div className="flex-1">
             <p className="font-bold text-lg">Seus 6 movimentos — maio a junho/2026</p>
-            <p className="text-white/70 text-sm mt-1">NF + WA correto + GMB otimizado + Fundisul documentada + primeiro Reel + lista de prospects. Nessa ordem.</p>
+            <p className="text-white/70 text-sm mt-1">GMB fases 1-3 + depoimento Villagio + primeiro Reel @lobo_jardinagem + WA Business + GMB fases 4-7 + lista Riviera. Nessa ordem.</p>
             <div className="mt-3 flex items-center gap-3">
               <div className="flex-1 bg-forest-700 rounded-full h-2">
                 <div
@@ -344,8 +344,8 @@ export default function Tarefas() {
         <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-5 flex gap-3 items-start">
           <Calendar size={20} className="text-amber-600 shrink-0 mt-0.5" />
           <div>
-            <p className="font-bold text-amber-900">Check-in com a Juliana: 11/06/2026</p>
-            <p className="text-amber-700 text-sm mt-0.5">Chegue com NF emitida para Fundisul, WA corrigido, pelo menos 3 fotos no GMB e primeiro Reel gravado. O próximo passo depende do que você fizer agora.</p>
+            <p className="font-bold text-amber-900">Check-in com a Juliana: 12/06/2026</p>
+            <p className="text-amber-700 text-sm mt-0.5">Chegue com GMB fases 1-3 implementadas, depoimento do Villagio solicitado, @lobo_jardinagem com pelo menos 2 Reels e lista de 20 alvos na Riviera. O próximo passo depende do que você fizer agora.</p>
           </div>
         </div>
       </div>

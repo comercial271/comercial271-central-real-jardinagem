@@ -2,16 +2,16 @@ import { useState } from 'react'
 import { useMemberStorage } from '../hooks/useMemberStorage'
 import { ExternalLink, FolderOpen, Star, Zap, Edit3, Check, Building2, Briefcase, X, Copy, CheckCheck, MessageSquare, Link } from 'lucide-react'
 
-const MIDIAKIT_KEY   = 'andre_midiakit_links_v1'
-const REVIEW_LINK_KEY = 'andre_review_link_v1'
+const MIDIAKIT_KEY    = 'aleandro_midiakit_links_v1'
+const REVIEW_LINK_KEY = 'aleandro_review_link_v1'
 
 interface MidiaKitLinks {
-  industriais: string
+  veraneo: string
   condominios: string
   manutencao: string
 }
 
-const DEFAULT_MIDIAKIT: MidiaKitLinks = { industriais: '', condominios: '', manutencao: '' }
+const DEFAULT_MIDIAKIT: MidiaKitLinks = { veraneo: '', condominios: '', manutencao: '' }
 
 function EditableLink({ label, icon: Icon, value, onChange }: { label: string; icon: React.ElementType; value: string; onChange: (v: string) => void }) {
   const [editing, setEditing] = useState(false)
@@ -66,38 +66,38 @@ function EditableLink({ label, icon: Icon, value, onChange }: { label: string; i
 const REVIEW_MSGS = [
   {
     id: 'formal',
-    label: 'Para gestores B2B (indústrias, hospitais, condomínios)',
+    label: 'Para gestores e síndicos (condomínios, imobiliárias)',
     tag: 'Formal',
     tagColor: 'bg-forest-700 text-white',
     text: `Bom dia, [NOME]! Tudo bem por aí?
 
-Passando para agradecer a confiança no trabalho da AKI Jardins e perguntar se ficou satisfeito com o serviço.
+Passando para agradecer a confiança no trabalho da Lobo Jardinagem e perguntar se ficou satisfeito com o serviço.
 
-Se quiser nos ajudar a crescer, uma avaliação no Google faz toda a diferença para que mais empresas sérias nos encontrem:
+Se quiser nos ajudar a crescer, uma avaliação no Google faz toda a diferença para que mais proprietários e gestores de Bertioga nos encontrem:
 
 👉 [LINK DO GOOGLE MEU NEGÓCIO]
 
 É rápido — menos de 2 minutos. Qualquer feedback é muito bem-vindo.
 
-Att, André | AKI Jardins
+Att, Aleandro | Lobo Jardinagem
 📱 [seu número]`,
   },
   {
     id: 'informal',
-    label: 'Para contatos próximos (indicados, clientes antigos)',
+    label: 'Para proprietários de casa de veraneio (contatos próximos)',
     tag: 'Próximo',
     tagColor: 'bg-gold-500 text-forest-900',
     text: `Oi [NOME]! Tudo bem?
 
-Espero que o jardim esteja impecável!
+Espero que o jardim da sua casa em Bertioga esteja impecável!
 
-Te peço um favor rápido: se ficou satisfeito com o trabalho da AKI Jardins, me ajuda com uma avaliação no Google? Leva 1 minutinho e faz uma diferença enorme pra empresa:
+Te peço um favor rápido: se ficou satisfeito com o trabalho da Lobo Jardinagem, me ajuda com uma avaliação no Google? Leva 1 minutinho e faz uma diferença enorme pra gente aparecer quando proprietários da Riviera buscam jardinagem:
 
 ⭐ [LINK DO GOOGLE MEU NEGÓCIO]
 
 Qualquer feedback também serve — fico grato!
 
-Abs, André | AKI Jardins`,
+Abs, Aleandro | Lobo Jardinagem`,
   },
 ]
 
@@ -132,7 +132,7 @@ function CopyButton({ text }: { text: string }) {
 
 export default function LinksRapidos() {
   const [midiaKit, setMidiaKit] = useMemberStorage<MidiaKitLinks>(MIDIAKIT_KEY, DEFAULT_MIDIAKIT)
-  const [reviewLink, setReviewLink] = useMemberStorage<string>(REVIEW_LINK_KEY, 'https://g.page/r/Cc6n_Rr9T_WGEAE/review')
+  const [reviewLink, setReviewLink] = useMemberStorage<string>(REVIEW_LINK_KEY, '')
   const [editingReviewLink, setEditingReviewLink] = useState(false)
   const [reviewLinkDraft, setReviewLinkDraft] = useState('')
 
@@ -195,16 +195,16 @@ export default function LinksRapidos() {
                 <FolderOpen size={18} className="text-gold-500" />
               </div>
               <div>
-                <p className="font-bold text-forest-900 text-sm">Drive AKI Jardins</p>
+                <p className="font-bold text-forest-900 text-sm">Drive Lobo Jardinagem</p>
                 <p className="text-gray-500 text-xs">Pastas principais da mentoria</p>
               </div>
             </div>
             <div className="flex flex-col gap-2">
               {[
-                { label: 'Pasta Principal AKI Jardins', href: 'https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz' },
-                { label: 'Entregáveis da Selva (modelos e ferramentas)', href: 'https://drive.google.com/drive/folders/1rzHORP4THJuLoBzM6h_Z0tcLNiqFX_tH' },
-                { label: 'Site AKI Jardins (publicado)', href: 'https://aki-jardins-digital.lovable.app' },
-                { label: 'Google Meu Negócio', href: 'https://business.google.com' },
+                { label: 'Pasta Principal — Lobo Jardinagem', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
+                { label: 'Entregáveis da Selva (modelos e ferramentas)', href: 'https://drive.google.com/drive/folders/1HtakX6CiU9ItFDsUfLj8BpDqefMCuS0V' },
+                { label: 'Google Meu Negócio (otimizar)', href: 'https://business.google.com' },
+                { label: 'Gerador de Propostas Selva', href: 'https://geradordepropostaselva.lovable.app' },
               ].map(link => (
                 <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-between bg-white border border-gray-100 hover:border-forest-300 rounded-xl px-3 py-2.5 group transition-colors">
@@ -233,8 +233,8 @@ export default function LinksRapidos() {
             <p className="text-xs font-bold text-forest-800 uppercase tracking-wide mb-1">Mídia Kit por Segmento</p>
             <p className="text-xs text-gray-500 mb-3">Gere → salve PDF no Drive → cole o link aqui para acesso rápido</p>
             <div className="flex flex-col gap-2">
-              <EditableLink label="Mídia Kit Industriais" icon={Building2} value={midiaKit.industriais} onChange={v => updateMidiaKit('industriais', v)} />
-              <EditableLink label="Mídia Kit Condomínios" icon={Building2} value={midiaKit.condominios} onChange={v => updateMidiaKit('condominios', v)} />
+              <EditableLink label="Mídia Kit Casas de Veraneio" icon={Building2} value={midiaKit.veraneo} onChange={v => updateMidiaKit('veraneo', v)} />
+              <EditableLink label="Mídia Kit Condomínios Riviera" icon={Building2} value={midiaKit.condominios} onChange={v => updateMidiaKit('condominios', v)} />
               <EditableLink label="Mídia Kit Manutenção Recorrente" icon={Briefcase} value={midiaKit.manutencao} onChange={v => updateMidiaKit('manutencao', v)} />
             </div>
           </div>
@@ -247,17 +247,17 @@ export default function LinksRapidos() {
               </div>
               <div>
                 <p className="font-bold text-forest-900 text-sm">Presença Digital</p>
-                <p className="text-gray-500 text-xs">Canais ativos da AKI Jardins</p>
+                <p className="text-gray-500 text-xs">Canais ativos da Lobo Jardinagem</p>
               </div>
             </div>
             <div className="flex flex-col gap-2">
               {[
-                { label: 'Instagram @akijardins', href: 'https://www.instagram.com/akijardins' },
-                { label: 'Site AKI Jardins', href: 'https://aki-jardins-digital.lovable.app' },
+                { label: 'Instagram @lobo_jardinagem', href: 'https://www.instagram.com/lobo_jardinagem' },
                 { label: 'Google Meu Negócio (otimizar)', href: 'https://business.google.com' },
                 { label: 'Gerador de Propostas Selva', href: 'https://geradordepropostaselva.lovable.app' },
                 { label: 'Área de Membros Selva', href: 'https://app.greenn.club/home' },
-                { label: 'Drive — Pasta AKI Jardins', href: 'https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz' },
+                { label: 'Drive — Pasta Lobo Jardinagem', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
+                { label: 'Entregáveis da Selva', href: 'https://drive.google.com/drive/folders/1HtakX6CiU9ItFDsUfLj8BpDqefMCuS0V' },
               ].map(link => (
                 <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-between bg-white border border-gray-100 hover:border-forest-300 rounded-xl px-3 py-2.5 group transition-colors">
@@ -327,7 +327,7 @@ export default function LinksRapidos() {
 
           <div className="mt-3 flex items-start gap-2 text-xs text-gray-400">
             <Star size={11} className="text-gold-500 shrink-0 mt-0.5" />
-            <p>Confirme se este link leva ao seu perfil Google — teste abrindo em modo anônimo. Se não funcionar, acesse <span className="font-semibold">business.google.com</span> → clique em "Receber mais avaliações" → copie o novo link e cole no campo acima.</p>
+            <p>Para obter o link: acesse <span className="font-semibold">business.google.com</span> → selecione o perfil Lobo Jardinagem → clique em "Receber mais avaliações" → copie o link e cole no campo acima.</p>
           </div>
         </div>
       </div>

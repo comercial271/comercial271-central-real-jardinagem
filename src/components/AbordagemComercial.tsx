@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MessageSquare, Phone, Send, ChevronDown, ChevronUp, Smartphone, Shield, User, Building2, CheckCircle, AlertTriangle, Copy, Check } from 'lucide-react'
+import { MessageSquare, Phone, Send, ChevronDown, ChevronUp, Smartphone, Shield, User, Building2, CheckCircle, AlertTriangle, Copy, Check, Home, MapPin } from 'lucide-react'
 
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false)
@@ -73,62 +73,81 @@ function EtapasList({ etapas }: { etapas: { titulo: string; prazo?: string; desc
   )
 }
 
-const etapasIndustrial = [
-  { titulo: 'Pesquisa prévia', prazo: '30 min antes', desc: 'Google Maps, site da empresa, LinkedIn. Ver fotos das áreas externas. Identificar responsável por facilities ou manutenção predial.' },
-  { titulo: 'Primeiro contato por WhatsApp ou portaria', prazo: 'Primeiro contato', desc: 'Apresentar AKI Jardins com credencial Fundisul. Solicitar contato do responsável por serviços externos.', detalhe: '"Bom dia! Aqui é o André, da AKI Jardins. Gostaria de falar com o responsável por facilities ou manutenção. Poderia me passar o contato?"' },
-  { titulo: 'WhatsApp ao decisor', prazo: 'No mesmo dia', desc: 'Primeiro contato formal. Tom empresarial. Mencionar Fundisul como cliente corporativo ativo.' },
-  { titulo: 'Visita diagnóstica', prazo: 'Na semana', desc: 'Sem falar de preço. Portfólio com fotos Fundisul. Perguntas: frequência atual, histórico, o que incomoda hoje na área verde.' },
-  { titulo: 'Proposta via Gerador Selva', prazo: '24h após visita', desc: 'Proposta em PDF com base no que foi visto. Enviar pelo WhatsApp referenciando o que foi levantado na visita.' },
-  { titulo: 'Follow-up pós-proposta', prazo: '48–72h depois', desc: 'Máximo 2 follow-ups. Após isso, retomar em 30 dias.' },
+const etapasVeraneo = [
+  { titulo: 'Pesquisa prévia', prazo: '15 min antes', desc: 'Google Maps, Airbnb/Booking da propriedade se houver. Identificar tipo de imóvel (casa de veraneio, pousada, condomínio). Estimar presença do proprietário: imóveis de R$1M+ em Bertioga/Riviera tendem a ter donos que vivem em São Paulo.' },
+  { titulo: 'Identificar o responsável', prazo: 'Primeiro contato', desc: 'Portaria, vizinho conhecido ou indicação de cliente atual. Pergunta: "Quem cuida do jardim desta propriedade quando o dono não está?" — abre a conversa sobre ausência.', detalhe: '"Bom dia! Sou o Aleandro, da Lobo Jardinagem de Bertioga. Estou visitando a região para oferecer manutenção de jardim para proprietários que não moram aqui. Você poderia me ajudar a falar com o responsável?"' },
+  { titulo: 'WhatsApp direto ao proprietário', prazo: 'No mesmo dia', desc: 'Tom: você entende que ele não está aqui — e é exatamente por isso que você existe. Mencionar o Villagio como case âncora.' },
+  { titulo: 'Proposta com relatório fotográfico', prazo: '24h após contato', desc: 'Diferencial principal: relatório mensal com fotos enviado por WhatsApp. Proprietário vê o jardim de onde estiver. Usar Gerador Selva.' },
+  { titulo: 'Follow-up pós-proposta', prazo: '48–72h depois', desc: 'Máximo 2 follow-ups. Após isso, retomar em 30 dias ou na véspera do verão (outubro/novembro).' },
 ]
 
 const etapasCondominio = [
-  { titulo: 'Pesquisa prévia', prazo: '20 min antes', desc: 'Google Maps para ver o estado das áreas verdes. Identificar se há portaria para chegar ao síndico.' },
-  { titulo: 'Contato via portaria', prazo: 'Primeiro contato', desc: 'Apresentar AKI Jardins. Solicitar nome e contato do síndico ou responsável pelo espaço externo.', detalhe: '"Bom dia! Aqui é a AKI Jardins, empresa de paisagismo de Rio do Sul. Gostaria de falar com o síndico sobre as áreas verdes do condomínio."' },
-  { titulo: 'WhatsApp ao síndico', prazo: 'No mesmo dia', desc: 'Tom empresarial. Mencionar especialização em condomínios de alto padrão e a referência Fundisul.' },
-  { titulo: 'Visita + proposta', prazo: 'Na semana', desc: 'Proposta detalhada com cronograma de manutenção. Usar Gerador Selva.' },
-  { titulo: 'Follow-up', prazo: '48–72h depois', desc: 'Máximo 2 follow-ups. Após isso, retomar em 30 dias.' },
+  { titulo: 'Pesquisa prévia', prazo: '20 min antes', desc: 'Google Maps para ver áreas comuns. Identificar portaria, síndico ou administradora. Condomínios da Riviera costumam ter administradora terceirizada em SP.' },
+  { titulo: 'Contato via portaria ou administradora', prazo: 'Primeiro contato', desc: 'Pedir contato do síndico ou responsável pela manutenção das áreas comuns.', detalhe: '"Bom dia! Aqui é a Lobo Jardinagem, empresa de jardinagem de Bertioga. Gostaria de falar com o síndico ou responsável pelas áreas verdes do condomínio."' },
+  { titulo: 'WhatsApp ao síndico', prazo: 'No mesmo dia', desc: 'Tom: parceria de longo prazo para manter as áreas comuns impecáveis o ano todo. Mencionar Villagio como referência ativa.' },
+  { titulo: 'Visita + proposta', prazo: 'Na semana', desc: 'Proposta com cronograma de manutenção e relatório fotográfico mensal. Usar Gerador Selva. Enfatizar presença local — você está em Bertioga, não precisa vir do exterior.' },
+  { titulo: 'Follow-up', prazo: '48–72h depois', desc: 'Máximo 2 follow-ups. Retomar em 30 dias ou na virada para a temporada.' },
 ]
 
-const scriptFundisulAlavanca = `Bom dia, [NOME]! Tudo bem?
+const scriptVeraneioPrimeiro = `Bom dia, [NOME]! Tudo bem?
 
-Aqui é o André, da AKI Jardins Soluções e Paisagismo — empresa de jardinagem corporativa de Rio do Sul/SC.
+Aqui é o Aleandro, da Lobo Jardinagem — empresa de manutenção de jardins de Bertioga/SP.
 
-Trabalhamos atualmente com a Fundisul na manutenção das áreas verdes e gostaríamos de apresentar nossa solução para [NOME DA EMPRESA].
+Cuido do jardim do Villagio Bertioga e de outras propriedades na região. Trabalho com proprietários que passam a maior parte do ano fora e precisam de alguém de confiança cuidando do jardim quando não estão.
 
-Temos experiência em industriais e áreas corporativas. Posso enviar nosso portfólio e uma proposta personalizada?
+Você recebe um relatório fotográfico mensal por aqui no WhatsApp — vê tudo sem precisar estar em Bertioga.
 
-André | AKI Jardins
+Posso enviar uma proposta personalizada para a sua propriedade?
+
+Aleandro | Lobo Jardinagem
+📍 Bertioga/SP
 📱 [seu número]`
 
 const scriptCondominioNovo = `Bom dia! Tudo bem?
 
-Aqui é o André, da AKI Jardins Soluções e Paisagismo — empresa LTDA de jardinagem especializada em condomínios e áreas corporativas em Rio do Sul e região.
+Aqui é o Aleandro, da Lobo Jardinagem — empresa de jardinagem especializada em Bertioga e Riviera de São Lourenço.
 
-Gostaria de apresentar nossa solução de manutenção para o [NOME DO CONDOMÍNIO]. Trabalhamos com cronograma fixo, equipe e relatório fotográfico mensal.
+Gostaria de apresentar nossa solução de manutenção para as áreas verdes do [NOME DO CONDOMÍNIO]. Trabalhamos com cronograma fixo e relatório fotográfico mensal — síndico e condôminos acompanham tudo de onde estiverem.
 
-Posso agendar uma visita rápida para apresentar o trabalho?
+Referência ativa: Villagio Bertioga — jardim mantido por nós.
 
-André | AKI Jardins
+Posso agendar uma visita para apresentar o trabalho?
+
+Aleandro | Lobo Jardinagem
+📱 [seu número]`
+
+const scriptImobiliaria = `Bom dia! Tudo bem?
+
+Aqui é o Aleandro, da Lobo Jardinagem de Bertioga/SP.
+
+Trabalho com proprietários de casas de veraneio e condomínios da Riviera de São Lourenço e gostaria de apresentar uma parceria para gestão de jardins das propriedades que vocês administram.
+
+Proprietários que não residem em Bertioga precisam de manutenção contínua e relatório fotográfico — é exatamente o que entrego.
+
+Posso enviar um portfólio?
+
+Aleandro | Lobo Jardinagem
 📱 [seu número]`
 
 const scriptFollowUp = `Bom dia!
 
-Passando para retomar o contato sobre a manutenção das áreas verdes.
+Passando para retomar o contato sobre a manutenção do jardim.
 
-Podemos marcar uma visita de 20 minutos sem compromisso — assim você vê o que entregamos antes de qualquer decisão.
+Tenho uma proposta com relatório fotográfico mensal — você acompanha o jardim de onde estiver, sem precisar vir a Bertioga.
 
-André | AKI Jardins`
+Podemos marcar uma visita de 20 minutos sem compromisso?
 
-const scriptInstitucional = `Bom dia! Tudo bem?
+Aleandro | Lobo Jardinagem`
 
-Aqui é o André, da AKI Jardins Soluções e Paisagismo — empresa LTDA de Rio do Sul/SC.
+const scriptTemporada = `Bom dia, [NOME]!
 
-Trabalhamos com manutenção de áreas verdes corporativas e gostaríamos de apresentar nossa solução para [NOME DA INSTITUIÇÃO]. Nossa referência ativa é a Fundisul.
+O verão está chegando e as casas de veraneio da Riviera estão reabrindo para a temporada.
 
-Posso enviar nosso portfólio?
+Garanto que o jardim da sua propriedade em Bertioga vai estar impecável para a chegada. Manutenção pré-temporada + contrato de manutenção mensal.
 
-André | AKI Jardins
+Interesse em uma proposta?
+
+Aleandro | Lobo Jardinagem
 📱 [seu número]`
 
 export default function AbordagemComercial() {
@@ -136,7 +155,7 @@ export default function AbordagemComercial() {
     <section id="abordagem" className="py-20 bg-[#F4F6F0]">
       <div className="max-w-5xl mx-auto px-4">
         <div className="mb-8">
-          <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Estratégia B2B</span>
+          <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Estratégia de mercado</span>
           <h2 className="text-3xl font-bold text-forest-900 mt-1">Abordagem Comercial</h2>
         </div>
 
@@ -145,16 +164,16 @@ export default function AbordagemComercial() {
           <div className="flex items-start gap-4">
             <Shield size={22} className="text-gold-500 shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-bold text-lg mb-2">Você já tem a âncora — use ela</h3>
-              <p className="text-white/70 text-sm mb-4">A Fundisul não é só um cliente: é um argumento de vendas. Toda abordagem nova começa com ela.</p>
+              <h3 className="font-bold text-lg mb-2">Você vende tranquilidade — não jardinagem</h3>
+              <p className="text-white/70 text-sm mb-4">O proprietário de casa de veraneio na Riviera não quer saber de mato crescido quando chega no verão. Ele quer chegar e o jardim estar perfeito. Você vende isso — não roçada. Toda abordagem começa com a ausência dele.</p>
               <div className="grid md:grid-cols-2 gap-3 mt-3">
                 <div className="bg-red-500/15 border border-red-400/30 rounded-xl p-3">
                   <p className="text-red-300 text-xs font-bold uppercase tracking-wide mb-1">Não fazer</p>
-                  <p className="text-white/70 text-sm">"Oi, faço jardinagem em Rio do Sul, queria saber se precisa de serviço..."</p>
+                  <p className="text-white/70 text-sm">"Oi, faço jardinagem em Bertioga, queria saber se precisa de serviço..."</p>
                 </div>
                 <div className="bg-green-500/15 border border-green-400/30 rounded-xl p-3">
                   <p className="text-green-300 text-xs font-bold uppercase tracking-wide mb-1">Fazer</p>
-                  <p className="text-white/70 text-sm">"Bom dia, aqui é o André, da AKI Jardins. Trabalhamos com a Fundisul na manutenção das áreas verdes e gostaríamos de apresentar nossa solução para vocês."</p>
+                  <p className="text-white/70 text-sm">"Bom dia. Cuido do jardim do Villagio Bertioga e de outras propriedades na Riviera para proprietários que não moram aqui. Você recebe foto mensal pelo WhatsApp."</p>
                 </div>
               </div>
             </div>
@@ -169,7 +188,7 @@ export default function AbordagemComercial() {
             </div>
             <div>
               <p className="font-bold text-forest-900">Setup do WhatsApp Comercial</p>
-              <p className="text-gray-500 text-xs">Configure antes de qualquer contato</p>
+              <p className="text-gray-500 text-xs">Configure antes de qualquer contato — proprietário da Riviera pesquisa o número</p>
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
@@ -177,9 +196,9 @@ export default function AbordagemComercial() {
               <p className="text-xs font-bold uppercase tracking-wide text-forest-700 mb-2">Configuração do número</p>
               <ul className="flex flex-col gap-1.5">
                 {[
-                  { icon: Smartphone, text: 'Chip separado ou segundo número de app' },
-                  { icon: User,       text: 'Nome: "André | AKI Jardins"' },
-                  { icon: Building2,  text: 'Foto: logo da empresa ou foto em serviço' },
+                  { icon: Smartphone,    text: 'Chip separado ou segundo número de app' },
+                  { icon: User,          text: 'Nome: "Aleandro | Lobo Jardinagem"' },
+                  { icon: Building2,     text: 'Foto: logo da empresa ou foto no Villagio' },
                   { icon: MessageSquare, text: 'Conta: WhatsApp Business (gratuito)' },
                 ].map((item, i) => {
                   const Icon = item.icon
@@ -194,41 +213,42 @@ export default function AbordagemComercial() {
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-2">
               <AlertTriangle size={14} className="text-amber-600 shrink-0 mt-0.5" />
               <p className="text-amber-800 text-sm">
-                <strong>Por quê?</strong> Quando o gestor da indústria salvar o contato, aparece "AKI Jardins" — reforça que há empresa por trás, não um prestador autônomo.
+                <strong>Por quê?</strong> Proprietário de imóvel de R$2M na Riviera que salva o contato precisa ver "Lobo Jardinagem" — não um número desconhecido. Reforça empresa, não autônomo.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Industrial com Fundisul */}
+        {/* Casas de Veraneio */}
         <div className="bg-white rounded-2xl border border-gray-100 mb-4 overflow-hidden">
           <div className="bg-forest-800 px-6 py-4 flex items-center gap-3">
             <div className="bg-gold-500/20 p-1.5 rounded-lg shrink-0">
-              <Building2 size={16} className="text-gold-500" />
+              <Home size={16} className="text-gold-500" />
             </div>
             <div className="flex-1">
-              <p className="text-gold-400 text-xs font-bold uppercase tracking-widest">Alvo 1 — Alavancagem</p>
-              <p className="text-white font-bold text-lg leading-tight">Industriais e Corporativos — Rio do Sul</p>
+              <p className="text-gold-400 text-xs font-bold uppercase tracking-widest">Alvo 1 — Prioridade Máxima</p>
+              <p className="text-white font-bold text-lg leading-tight">Casas de Veraneio — Riviera de São Lourenço</p>
             </div>
-            <span className="bg-gold-500/20 text-gold-400 text-xs font-bold px-3 py-1 rounded-full border border-gold-500/30">FUNDISUL COMO ÂNCORA</span>
+            <span className="bg-gold-500/20 text-gold-400 text-xs font-bold px-3 py-1 rounded-full border border-gold-500/30">VILLAGIO COMO ÂNCORA</span>
           </div>
           <div className="p-6">
             <p className="text-gray-600 text-sm mb-5 bg-blue-50 border-l-4 border-blue-400 px-4 py-3 rounded-r-xl">
-              <strong className="text-blue-800">Contexto:</strong> Você já tem o case corporativo mais forte da região. Toda abordagem industrial começa mencionando a Fundisul — isso elimina a barreira de credibilidade antes de qualquer visita.
+              <strong className="text-blue-800">Contexto:</strong> A Riviera tem centenas de casas de R$1M–R$10M+ com proprietários que passam a maior parte do ano em São Paulo ou no exterior. Esses clientes precisam de alguém de confiança que cuide do jardim na ausência deles e envie prova visual mensal. O Villagio já é sua âncora — use em toda abordagem.
             </p>
-            <EtapasList etapas={etapasIndustrial} />
+            <EtapasList etapas={etapasVeraneo} />
             <div className="flex items-center gap-2 mb-3">
               <MessageSquare size={14} className="text-forest-600" />
               <p className="font-bold text-forest-900 text-sm">Scripts Prontos</p>
             </div>
             <div className="flex flex-col gap-2">
-              <Script label="Primeiro contato — alavancagem Fundisul" canal="WhatsApp" texto={scriptFundisulAlavanca} />
+              <Script label="Primeiro contato — proprietário ausente" canal="WhatsApp" texto={scriptVeraneioPrimeiro} />
+              <Script label="Abordagem pré-temporada (outubro/novembro)" canal="WhatsApp" texto={scriptTemporada} />
               <Script label="Follow-up sem resposta (48h)" canal="WhatsApp" texto={scriptFollowUp} />
             </div>
           </div>
         </div>
 
-        {/* Condomínios */}
+        {/* Condomínios Riviera */}
         <div className="bg-white rounded-2xl border border-gray-100 mb-4 overflow-hidden">
           <div className="bg-forest-700 px-6 py-4 flex items-center gap-3">
             <div className="bg-gold-500/20 p-1.5 rounded-lg shrink-0">
@@ -236,13 +256,13 @@ export default function AbordagemComercial() {
             </div>
             <div className="flex-1">
               <p className="text-gold-400 text-xs font-bold uppercase tracking-widest">Alvo 2 — Expansão</p>
-              <p className="text-white font-bold text-lg leading-tight">Condomínios Alto Padrão — Rio do Sul e Região</p>
+              <p className="text-white font-bold text-lg leading-tight">Condomínios Fechados — Riviera de São Lourenço</p>
             </div>
-            <span className="bg-amber-500/20 text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/30">PROSPECÇÃO ATIVA</span>
+            <span className="bg-amber-500/20 text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/30">ALTO TICKET</span>
           </div>
           <div className="p-6">
             <p className="text-gray-600 text-sm mb-5 bg-amber-50 border-l-4 border-amber-400 px-4 py-3 rounded-r-xl">
-              <strong className="text-amber-800">Vantagem:</strong> Nenhuma empresa de jardinagem domina o digital em Rio do Sul. Com GMB otimizado e a credencial Fundisul, você chega antes de qualquer concorrente.
+              <strong className="text-amber-800">Vantagem:</strong> Condomínios da Riviera têm administradoras que buscam fornecedores locais confiáveis. Nenhuma empresa de jardinagem domina digitalmente Bertioga. Quem aparecer primeiro no Google captura o mercado inteiro antes que qualquer concorrente perceba.
             </p>
             <EtapasList etapas={etapasCondominio} />
             <div className="flex items-center gap-2 mb-3">
@@ -258,35 +278,35 @@ export default function AbordagemComercial() {
               <div>
                 <p className="text-forest-900 font-semibold text-sm mb-1">Script na portaria</p>
                 <p className="text-gray-600 text-sm italic">
-                  "Bom dia! Aqui é o André, da AKI Jardins. Gostaria de falar com o síndico sobre a manutenção das áreas verdes do condomínio. Poderia me passar o contato?"
+                  "Bom dia! Aqui é o Aleandro, da Lobo Jardinagem de Bertioga. Gostaria de falar com o síndico ou responsável pelas áreas verdes do condomínio. Poderia me passar o contato?"
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Hospitais e Instituições */}
+        {/* Imobiliárias */}
         <div className="bg-white rounded-2xl border border-gray-100 mb-6 overflow-hidden">
           <div className="bg-forest-600 px-6 py-4 flex items-center gap-3">
             <div className="bg-gold-500/20 p-1.5 rounded-lg shrink-0">
-              <Building2 size={16} className="text-gold-500" />
+              <MapPin size={16} className="text-gold-500" />
             </div>
             <div className="flex-1">
-              <p className="text-gold-400 text-xs font-bold uppercase tracking-widest">Alvo 3 — Institucional</p>
-              <p className="text-white font-bold text-lg leading-tight">Hospital Regional + UNIDAVI + Shopping Rio Sul</p>
+              <p className="text-gold-400 text-xs font-bold uppercase tracking-widest">Alvo 3 — Canal de Indicação</p>
+              <p className="text-white font-bold text-lg leading-tight">Imobiliárias e Gestores de Propriedades — Bertioga</p>
             </div>
             <span className="bg-blue-500/20 text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-400/30">MÉDIO PRAZO</span>
           </div>
           <div className="p-6">
             <p className="text-gray-600 text-sm mb-5 bg-blue-50 border-l-4 border-blue-400 px-4 py-3 rounded-r-xl">
-              <strong className="text-blue-800">Oportunidade:</strong> Instituições públicas e privadas de grande porte têm orçamento fixo para manutenção de áreas verdes e valorizam empresa formalizada (LTDA + NF) por questão de conformidade.
+              <strong className="text-blue-800">Oportunidade:</strong> Imobiliárias que administram propriedades para locação precisam que o jardim esteja sempre apresentável para fotos e recebimento de hóspedes. Uma parceria com 3 imobiliárias pode trazer 15–20 propriedades novas sem prospecção direta.
             </p>
             <div className="flex items-center gap-2 mb-3">
               <MessageSquare size={14} className="text-forest-600" />
               <p className="font-bold text-forest-900 text-sm">Script Pronto</p>
             </div>
             <div className="flex flex-col gap-2">
-              <Script label="Primeiro contato — institucional" canal="WhatsApp" texto={scriptInstitucional} />
+              <Script label="Primeiro contato — imobiliária / gestora" canal="WhatsApp" texto={scriptImobiliaria} />
             </div>
           </div>
         </div>
@@ -294,9 +314,9 @@ export default function AbordagemComercial() {
         {/* Princípios */}
         <div className="grid md:grid-cols-3 gap-3">
           {[
-            { icon: Shield,      title: 'Sempre "nós", nunca "eu"',  desc: '"Nossa empresa", "nosso portfólio", "trabalhamos com" — posiciona LTDA, não prestador.' },
-            { icon: Send,        title: 'Fundisul em toda abertura', desc: 'A referência corporativa elimina o ceticismo antes que ele apareça. Mencione sempre.' },
-            { icon: CheckCircle, title: 'Máximo 2 follow-ups',       desc: 'Após 2 tentativas sem resposta, arquivar e retomar em 30 dias.' },
+            { icon: Shield,      title: 'A ausência é o argumento',  desc: '"Você não está em Bertioga — eu estou. E envio foto mensal para provar." Essa frase fecha mais contrato que qualquer desconto.' },
+            { icon: Send,        title: 'Villagio em toda abertura', desc: 'É a âncora de credibilidade. Um cliente de alto padrão ativo elimina ceticismo antes que ele apareça.' },
+            { icon: CheckCircle, title: 'Temporada como gatilho',    desc: 'Outubro e novembro são os meses de maior conversão — proprietários querendo a propriedade pronta para o verão.' },
           ].map((p, i) => {
             const Icon = p.icon
             return (

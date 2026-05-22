@@ -1,54 +1,54 @@
-import { Smartphone, Target, Users, ExternalLink, ArrowRight } from 'lucide-react'
+import { Smartphone, Target, DollarSign, ExternalLink, ArrowRight } from 'lucide-react'
 
 const movimentos = [
   {
     icon: Smartphone,
     badge: 'URGENTE — SEM. 1',
     badgeColor: 'bg-red-100 text-red-700',
-    title: 'Ativar Presença Digital',
-    impact: 'Visibilidade imediata no Google',
-    desc: 'GMB criado em 15/05 mas não otimizado. Mensagem automática WA Business incorreta. Instagram @akijardins sem estratégia. Três correções de alta visibilidade com impacto imediato.',
+    title: 'GMB Dominando Bertioga',
+    impact: 'Primeira posição em "jardinagem Bertioga"',
+    desc: 'Você já tem o perfil no Google Maps — mas está incompleto. Sem descrição com palavras-chave, sem fotos do Villagio e sem posts semanais, você não aparece quando proprietários da Riviera buscam "jardinagem Bertioga".',
     steps: [
-      'Otimizar GMB: fotos reais, descrição com "jardinagem Rio do Sul SC", link WA e site',
-      'Corrigir mensagem automática WA Business (texto atual passa mensagem errada)',
-      'Instagram @akijardins: primeiros 3 posts corporativos — Fundisul como âncora de credibilidade',
+      'Otimizar GMB: descrição com "jardinagem Bertioga", "Riviera de São Lourenço", "casa de veraneio" e "litoral SP"',
+      'Subir 10 fotos reais — Villagio como case âncora, antes/depois, equipe em serviço',
+      'Primeiro Google Post: "Manutenção de jardim — Bertioga/SP. Verão chegando — vagas disponíveis."',
+    ],
+  },
+  {
+    icon: DollarSign,
+    badge: 'PRIORIDADE — SEM. 2-3',
+    badgeColor: 'bg-orange-100 text-orange-700',
+    title: 'Precificação Técnica',
+    impact: 'Parar de cobrar por feeling',
+    desc: 'A trava central é preço por intuição: cobro o que acho que o cliente vai aceitar. Isso faz aceitar contratos que não pagam a operação. Com o Villagio como referência, você já sabe que R$13k de lucro é possível — agora é sistematizar.',
+    steps: [
+      'Calcular custo real por visita: Daniel (diária), combustível, equipamento amortizado, tempo',
+      'Definir ticket mínimo por tamanho de jardim: pequeno (até 200m²), médio (200-600m²), grande (600m²+)',
+      'Usar Gerador de Propostas Selva para toda proposta nova — nunca mais "quanto você quer pagar?"',
     ],
   },
   {
     icon: Target,
-    badge: 'PRIORIDADE — SEM. 2-3',
-    badgeColor: 'bg-orange-100 text-orange-700',
-    title: 'Construir Prova Social',
-    impact: '+credibilidade B2B instantânea',
-    desc: 'Fundisul é âncora — usar como case documentado. Solicitar depoimento formal. Fotografar o jardim da empresa como live case no Instagram e no site.',
-    steps: [
-      'Solicitar depoimento Fundisul: gestor responsável pelo contrato de manutenção',
-      'Fotografar antes/depois da próxima manutenção Fundisul — documentar em alta qualidade',
-      'Integrar site aki-jardins-digital.lovable.app no GMB e Instagram como link único',
-    ],
-  },
-  {
-    icon: Users,
-    badge: 'PARALELO — ATÉ 15/06',
+    badge: 'PARALELO — ATÉ 12/06',
     badgeColor: 'bg-yellow-100 text-yellow-700',
-    title: 'Prospectar Ativamente',
-    impact: 'Meta R$30.000/mês em 12m',
-    desc: 'Lista 20 empresas de Rio do Sul e região. Industriais, condomínios alto padrão, hospitais e universidades. Fundisul como referência de abertura em todas as abordagens.',
+    title: 'Riviera de São Lourenço como Território',
+    impact: 'Alto ticket — proprietários ausentes',
+    desc: 'A Riviera tem centenas de casas de veraneio com proprietários que passam a maior parte do ano fora. Esses clientes querem um serviço confiável, com relatório fotográfico, que funcione sem presença deles. Exatamente o que você entrega.',
     steps: [
-      'Listar 20 alvos: industriais + condomínios alto padrão + Hospital Regional + UNIDAVI',
-      'Abordar 3 empresas/semana com script que menciona Fundisul como cliente ativo',
-      'Shopping Rio Sul e empresas do polo industrial como expansão natural da carteira',
+      'Listar 20 casas de veraneio da Riviera: Google Maps + indicação dos clientes atuais',
+      'Script de abordagem: "O jardim da sua casa em Bertioga precisa de alguém de confiança quando você não está" — ênfase na ausência',
+      'Proposta com relatório fotográfico mensal: diferencial que justifica R$3-6k/mês por propriedade',
     ],
   },
 ]
 
 const projecoes = [
-  { situacao: 'Hoje (mai/2026)',               receita: '~R$ 3.000',        variacao: '—',      highlight: false },
-  { situacao: 'Após 1ª prospecção ativa',      receita: 'R$ 6.000–8.000',   variacao: '+150%',  highlight: false },
-  { situacao: '+ 1 contrato industrial novo',  receita: 'R$ 12.000+',       variacao: '+300%',  highlight: false },
-  { situacao: '+ 2 contratos condomínio',      receita: 'R$ 18.000–20.000', variacao: '+500%',  highlight: false },
-  { situacao: 'Meta 12 meses — Selva Premium', receita: 'R$ 30.000',        variacao: '+900%',  highlight: true  },
-  { situacao: 'Empresa estruturada (escala)',   receita: 'R$ 30.000+',       variacao: '+900%+', highlight: false },
+  { situacao: 'Hoje (mai/2026)',                    receita: 'R$ 7.000–15.000',  variacao: '—',      highlight: false },
+  { situacao: 'Após GMB otimizado (leads orgânicos)', receita: 'R$ 15.000–20.000', variacao: '+100%',  highlight: false },
+  { situacao: '+ 2 contratos Riviera (R$4k/casa)',   receita: 'R$ 23.000–28.000', variacao: '+150%',  highlight: false },
+  { situacao: '+ Precificação técnica sistemática',  receita: 'R$ 32.000–38.000', variacao: '+220%',  highlight: false },
+  { situacao: 'Meta 12 meses — Selva Premium',       receita: 'R$ 50.000',        variacao: '+400%',  highlight: true  },
+  { situacao: 'Empresa estruturada (escala)',        receita: 'R$ 50.000+',       variacao: '+400%+', highlight: false },
 ]
 
 export default function PlanoAcao() {
@@ -62,13 +62,13 @@ export default function PlanoAcao() {
 
         <div className="bg-forest-800 rounded-2xl p-6 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex-1">
-            <p className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">Sessões 1 + 2 — 13/05 e 14/05/2026</p>
-            <h3 className="text-white font-bold text-xl">Três movimentos para R$ 30.000/mês — empresa sólida, expansão digital</h3>
+            <p className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">Sessão Coletiva — 14/05/2026</p>
+            <h3 className="text-white font-bold text-xl">Três movimentos para R$ 50.000/mês — GMB, precificação e Riviera</h3>
           </div>
-          <a href="https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz"
+          <a href="https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba"
             target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 bg-gold-500 hover:bg-gold-400 text-forest-900 font-bold px-4 py-2 rounded-xl text-sm transition-colors shrink-0">
-            Drive AKI Jardins <ExternalLink size={12} />
+            Drive Lobo Jardinagem <ExternalLink size={12} />
           </a>
         </div>
 

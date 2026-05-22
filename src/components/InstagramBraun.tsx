@@ -1,19 +1,19 @@
 import { useState } from 'react'
-import { Building2, Wrench, MapPin, Camera, BookOpen, TrendingUp, CheckCircle, Circle, AlertCircle, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react'
+import { Waves, Wrench, MapPin, Camera, BookOpen, TrendingUp, CheckCircle, Circle, AlertCircle, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react'
 
-const IG_IDEAS_KEY = 'andre_ig_ideas_v1'
+const IG_IDEAS_KEY = 'aleandro_ig_ideas_v1'
 
 // ─── Pilares ─────────────────────────────────────────────────────────────────
 
 const pilares = [
   {
-    id: 'corporativo',
-    nome: 'Corporativo',
-    Icon: Building2,
+    id: 'autoridade',
+    nome: 'Autoridade Litoral',
+    Icon: Waves,
     bg: 'bg-forest-700',
     freq: '2x/semana',
-    desc: 'Mostre que é empresa: LTDA, Fundisul como cliente, NF, CNPJ. Posicionamento corporativo que diferencia de qualquer autônomo da região.',
-    gancho: '"Temos a Fundisul na carteira. Empresa registrada, 13 anos de mercado. Isso não é jardineiro — é empresa de paisagismo."',
+    desc: 'Posicione a Lobo Jardinagem como a empresa de jardins premium da Riviera. Villagio como âncora em todo post de credibilidade. Proprietário ausente como público-alvo declarado.',
+    gancho: '"Cuidamos do Villagio enquanto o proprietário está em São Paulo. Esse é o nosso cliente."',
     formato: 'Reel ou Carrossel',
   },
   {
@@ -22,18 +22,18 @@ const pilares = [
     Icon: Wrench,
     bg: 'bg-teal-600',
     freq: '1x/semana',
-    desc: 'Expertise que concorrente autônomo não tem. Equipamento profissional, técnica correta, resultado diferenciado. Prova visual de competência.',
-    gancho: '"Esse equipamento custa R$15k. Autônomo não tem. Empresa tem."',
+    desc: 'Expertise que "jardineiro de praia" não tem: sabe lidar com solo arenoso, salinidade marinha, espécies tropicais, microclima litorâneo. Prova visual de competência profissional.',
+    gancho: '"Solo arenoso + brisa marinha + temporada de alta. Manter jardim na Riviera exige técnica — não improviso."',
     formato: 'Reel (work in progress)',
   },
   {
     id: 'local',
-    nome: 'Local — Rio do Sul',
+    nome: 'Local — Bertioga/Riviera',
     Icon: MapPin,
     bg: 'bg-gold-600',
     freq: '1x/semana',
-    desc: 'Referência regional. 13 anos em Rio do Sul e região. Conhece cada condomínio, cada indústria, cada estação do Sul do Brasil.',
-    gancho: '"13 anos cuidando das áreas verdes de Rio do Sul. Sou daqui. Vou ficar."',
+    desc: 'Referência regional litorânea. Bertioga como base, Riviera de São Lourenço como território premium. Conhece o microclima, a temporada, o que funciona no litoral paulista.',
+    gancho: '"Bertioga tem 30.000 habitantes o ano todo e 300.000 na temporada. Esse é o mercado que a Lobo Jardinagem atende."',
     formato: 'Reel ou Story',
   },
   {
@@ -42,8 +42,8 @@ const pilares = [
     Icon: Camera,
     bg: 'bg-slate-600',
     freq: '2-3x/semana (Stories)',
-    desc: 'Como é a rotina de uma empresa profissional: chegada no cliente, equipamento, equipe, resultado. Humaniza sem tirar a autoridade corporativa.',
-    gancho: '"7h da manhã. Equipamento carregado. Mais um dia cuidando das áreas verdes de Rio do Sul:"',
+    desc: 'A rotina profissional que o proprietário ausente nunca vê: chegada, equipe, cuidado, resultado. Humaniza a Lobo Jardinagem sem tirar a autoridade premium.',
+    gancho: '"7h da manhã na Riviera. Equipe a postos. O proprietário está em São Paulo — e pode ficar tranquilo."',
     formato: 'Stories + Reels curtos',
   },
   {
@@ -52,8 +52,8 @@ const pilares = [
     Icon: BookOpen,
     bg: 'bg-purple-700',
     freq: '1x/semana',
-    desc: 'Dicas práticas para gestores e síndicos: quando podar, como manter, o que fazer antes de contratar. Posiciona como especialista, não como fornecedor.',
-    gancho: '"3 sinais de que sua empresa precisa de um contrato de manutenção agora:"',
+    desc: 'Conteúdo útil para proprietários de casa de veraneio e síndicos: quando cuidar antes da temporada, o que acontece quando abandona o jardim, como contratar correto. Posiciona como especialista.',
+    gancho: '"O que acontece com o jardim da sua casa de veraneio nos 8 meses que você não está aqui:"',
     formato: 'Carrossel ou Reel',
   },
 ]
@@ -61,35 +61,35 @@ const pilares = [
 // ─── Ideias ───────────────────────────────────────────────────────────────────
 
 const ideias = [
-  // Corporativo
-  { id: '01', pilar: 'corporativo', formato: 'Reel',      hook: 'Temos a Fundisul na carteira. Empresa registrada, 13 anos de mercado. Isso não é jardineiro — é empresa de paisagismo.', visual: 'André direto na câmera, no jardim da Fundisul — fala sobre o que significa ter um cliente corporativo e o que isso exige de estrutura' },
-  { id: '02', pilar: 'corporativo', formato: 'Carrossel', hook: '5 diferenças entre contratar uma empresa de jardinagem e contratar um autônomo — o que ninguém te conta:', visual: 'Cada slide: uma diferença real (NF, CNPJ, seguro, contrato, equipamento). Último slide: "AKI Jardins. Empresa LTDA."' },
-  { id: '03', pilar: 'corporativo', formato: 'Reel',      hook: 'Empresa precisa de empresa. A Fundisul entendeu isso. E você?', visual: 'Cenas do jardim Fundisul — área bem cuidada — tom de autoridade corporativa, sem arrogância' },
-  { id: '04', pilar: 'corporativo', formato: 'Carrossel', hook: 'Por que gestores de indústrias e condomínios preferem empresa com CNPJ para manutenção de áreas verdes:', visual: 'Slides: conformidade fiscal, responsabilidade, NF, garantia de serviço. Tom consultivo.' },
+  // Autoridade Litoral
+  { id: '01', pilar: 'autoridade', formato: 'Reel',      hook: 'Cuidamos do Villagio enquanto o proprietário está em São Paulo. Esse é o tipo de cliente que a Lobo Jardinagem atende.', visual: 'Aleandro direto na câmera, no jardim do Villagio — fala sobre o que é cuidar de uma propriedade premium de alto padrão na Riviera' },
+  { id: '02', pilar: 'autoridade', formato: 'Carrossel', hook: 'Casa de veraneio na Riviera: o que acontece com o jardim nos 8 meses que você não visita?', visual: 'Slides mostrando antes (abandono gradual) e depois (recuperação com manutenção regular). Último slide: "Lobo Jardinagem cuida enquanto você não está."' },
+  { id: '03', pilar: 'autoridade', formato: 'Reel',      hook: 'O jardim que recebe o proprietário na temporada começa a ser cuidado em julho. Não em dezembro.', visual: 'Aleandro no jardim Villagio — fala sobre o ciclo de manutenção anual para receber alto padrão no verão' },
+  { id: '04', pilar: 'autoridade', formato: 'Carrossel', hook: 'Por que proprietários de Riviera que moram em São Paulo nos contratam para cuidar do jardim o ano todo:', visual: 'Slides: sem surpresa na chegada, grama nova em dezembro, relatório fotográfico mensal, sem custo de recuperação. Tom de tranquilidade — "você chega e está pronto."' },
 
   // Técnico
-  { id: '05', pilar: 'tecnico',    formato: 'Reel',      hook: 'Esse equipamento custa R$15k. Autônomo não tem. Empresa tem. E você vê a diferença no resultado:', visual: 'Equipamento profissional em uso — antes/depois lado a lado — o detalhe que muda tudo' },
-  { id: '06', pilar: 'tecnico',    formato: 'Reel',      hook: 'Poda de árvore industrial: não é só cortar. É calcular carga, direção de queda e segurança da área. Vê como faz:', visual: 'Gravação da poda técnica em área industrial ou grande espaço — processo completo em 30s' },
-  { id: '07', pilar: 'tecnico',    formato: 'Carrossel', hook: '13 anos de jardinagem me ensinaram: o jardim que não tem manutenção regular custa 3x mais para recuperar:', visual: 'Casos reais de jardins abandonados vs mantidos. Custo de recuperação vs manutenção preventiva' },
-  { id: '08', pilar: 'tecnico',    formato: 'Reel',      hook: 'Antes e depois em 30 segundos. Área industrial que estava abandonada. Dois dias de trabalho:', visual: 'Transformação antes/depois de área industrial — time-lapse ou corte direto' },
+  { id: '05', pilar: 'tecnico',    formato: 'Reel',      hook: 'Jardim de litoral não é igual a jardim de cidade. Solo arenoso, brisa marinha e umidade mudam tudo. Veja como trabalhamos:', visual: 'Aleandro explica adaptações técnicas para jardim litorâneo — espécies resistentes ao sal, drenagem em solo arenoso, proteção na pré-temporada' },
+  { id: '06', pilar: 'tecnico',    formato: 'Reel',      hook: 'Pré-temporada Riviera: o que preparamos para que o jardim esteja perfeito quando você chegar em dezembro.', visual: 'Work in progress: podas, adubação, implantação de novas plantas, grama nova — preparação completa antes da alta temporada' },
+  { id: '07', pilar: 'tecnico',    formato: 'Carrossel', hook: 'Estas 5 espécies resistem ao litoral paulista — e a maioria dos jardineiros não sabe plantar elas corretamente:', visual: 'Cada slide: uma espécie (ex: bougainvillea, ixora, helicônia, frangipani, bambu) com cuidados específicos para o litoral. Tom especialista' },
+  { id: '08', pilar: 'tecnico',    formato: 'Reel',      hook: 'Antes e depois em 48 horas. Jardim abandonado na Riviera virou espaço de recepção premium. Veja:', visual: 'Transformação antes/depois em propriedade de veraneio — time-lapse ou corte direto. Foco no contraste e na qualidade do resultado final' },
 
   // Local
-  { id: '09', pilar: 'local',      formato: 'Reel',      hook: '13 anos cuidando das áreas verdes de Rio do Sul e região. Sou daqui. Conheço o clima, o solo, o que funciona aqui.', visual: 'André em ambiente local — cenas de Rio do Sul/SC — fala sobre conhecimento regional' },
-  { id: '10', pilar: 'local',      formato: 'Carrossel', hook: 'O que muda na manutenção de jardins no Sul do Brasil — e por que isso importa para sua empresa:', visual: 'Especificidades do clima de Rio do Sul: geada, estações, espécies locais. Tom de especialista regional' },
-  { id: '11', pilar: 'local',      formato: 'Reel',      hook: 'Empresas de Rio do Sul: esta é a área verde de vocês vista de perto. Veja o que um contrato de manutenção garante:', visual: 'Área verde de empresa local bem mantida — sem citar nome, mas reconhecível para quem conhece a cidade' },
-  { id: '12', pilar: 'local',      formato: 'Story',     hook: 'Rio do Sul hoje: mais uma manutenção concluída. A cidade está mais verde.', visual: 'Story simples: foto do resultado + localização Rio do Sul/SC + sticker com arroba @akijardins' },
+  { id: '09', pilar: 'local',      formato: 'Reel',      hook: 'Bertioga tem 30.000 moradores fixos e 300.000 na temporada. A Lobo Jardinagem cuida deste litoral o ano todo.', visual: 'Aleandro em paisagem de Bertioga — cenas do litoral, da cidade, da Riviera — fala sobre o território e a escala do mercado' },
+  { id: '10', pilar: 'local',      formato: 'Carrossel', hook: 'Riviera de São Lourenço: por que o padrão de jardim aqui precisa ser diferente de qualquer outro lugar no litoral paulista:', visual: 'Especificidades da Riviera: público premium, condomínios fechados exigentes, alto padrão de vizinhança, temporada como vitrine. Tom de expertise regional' },
+  { id: '11', pilar: 'local',      formato: 'Reel',      hook: 'Esta é uma das propriedades que cuidamos na Riviera. O proprietário vive em SP e chega em dezembro sabendo que está tudo certo.', visual: 'Área verde em propriedade da Riviera bem mantida — sem citar nome, mas o ambiente já contextualiza o padrão do cliente' },
+  { id: '12', pilar: 'local',      formato: 'Story',     hook: 'Bertioga hoje: mais uma manutenção concluída na Riviera. O litoral está bem cuidado.', visual: 'Story simples: foto do resultado + localização Riviera de São Lourenço/SP + sticker @lobo_jardinagem' },
 
   // Bastidores
-  { id: '13', pilar: 'bastidores', formato: 'Stories',   hook: '7h da manhã. Equipamento carregado. Mais um dia cuidando das áreas verdes de Rio do Sul. POV:', visual: '5 slides: carro com equipamento, chegada no cliente, equipamento sendo preparado, trabalho, resultado' },
-  { id: '14', pilar: 'bastidores', formato: 'Reel',      hook: 'Como preparamos o equipamento antes de cada serviço corporativo — porque profissional não improvisa:', visual: 'Câmera mostra checklist do equipamento — organização, limpeza, preparação — sinal de seriedade' },
-  { id: '15', pilar: 'bastidores', formato: 'Stories',   hook: 'Dia de visita técnica antes de fechar proposta. Isso é o que fazemos antes de qualquer orçamento:', visual: '4 slides: chegada no cliente, análise da área, medições, anotações — processo profissional' },
-  { id: '16', pilar: 'bastidores', formato: 'Reel',      hook: 'Manutenção mensal na Fundisul. Área industrial com exigência de qualidade corporativa. Como entregamos:', visual: 'Work in progress na Fundisul (sem mostrar elementos confidenciais) — trabalho em área industrial' },
+  { id: '13', pilar: 'bastidores', formato: 'Stories',   hook: '7h da manhã na Riviera. Equipe a postos. O dono está em São Paulo e pode ficar tranquilo. POV:', visual: '5 slides: van chegando na Riviera, equipe se preparando, equipamento sendo organizado, trabalho em progresso, resultado — narrativa de "profissionalismo invisível"' },
+  { id: '14', pilar: 'bastidores', formato: 'Reel',      hook: 'Como preparamos o relatório fotográfico que enviamos ao proprietário todo mês. Transparência é o nosso produto:', visual: 'Câmera mostra processo de fotos dos ângulos padrão — mesmos pontos do mês anterior para comparar — envio via WhatsApp. Profissionalismo visível' },
+  { id: '15', pilar: 'bastidores', formato: 'Stories',   hook: 'Visita técnica antes de fechar proposta para casa de veraneio na Riviera. Veja como funciona nosso processo:', visual: '4 slides: chegada na propriedade, análise da área, medições, conversa com gestora/imobiliária — processo que passa confiança ao proprietário remoto' },
+  { id: '16', pilar: 'bastidores', formato: 'Reel',      hook: 'Manutenção mensal no Villagio. A rotina de cuidado que garante que a propriedade está sempre pronta para a temporada:', visual: 'Work in progress no Villagio — equipe em ação, equipamento profissional, resultado da manutenção mensal' },
 
   // Educativo
-  { id: '17', pilar: 'educativo',  formato: 'Carrossel', hook: '3 sinais de que sua empresa precisa de um contrato de manutenção de áreas verdes agora:', visual: 'Slide 1: grama alta demais; Slide 2: plantas mortas visíveis; Slide 3: sem cronograma de manutenção. Último: o que um contrato resolve' },
-  { id: '18', pilar: 'educativo',  formato: 'Reel',      hook: 'Por que jardim de empresa mal cuidado afasta clientes e funcionários — o que a ciência diz:', visual: 'André explica: biofilia, imagem corporativa, bem-estar dos funcionários — fundamentado, não opinião' },
-  { id: '19', pilar: 'educativo',  formato: 'Carrossel', hook: 'Guia: o que perguntar antes de contratar uma empresa de jardinagem para sua indústria ou condomínio:', visual: 'Lista de perguntas: CNPJ, seguro, contrato, NF, frequência, responsável técnico. Posiciona AKI Jardins como referência' },
-  { id: '20', pilar: 'educativo',  formato: 'Reel',      hook: 'Qual é a frequência ideal de manutenção para área industrial no Sul do Brasil? Depende de 3 fatores:', visual: 'André explica os 3 fatores: área total, tipo de vegetação, estação do ano — conteúdo prático e útil' },
+  { id: '17', pilar: 'educativo',  formato: 'Carrossel', hook: '3 sinais de que o jardim da sua casa de veraneio está sendo negligenciado — e vai custar caro em dezembro:', visual: 'Slide 1: grama amarelando; Slide 2: pragas instaladas; Slide 3: custo de recuperação vs manutenção regular. Último: "Manutenção preventiva é 5x mais barata que recuperação."' },
+  { id: '18', pilar: 'educativo',  formato: 'Reel',      hook: 'Por que síndico de condomínio fechado na Riviera prefere empresa com contrato — não jardineiro avulso.', visual: 'Aleandro explica: garantia de serviço, frequência regular, responsabilidade, relatório, NF. Tom consultivo para síndico/administradora' },
+  { id: '19', pilar: 'educativo',  formato: 'Carrossel', hook: 'Guia: o que perguntar antes de contratar empresa de jardinagem para sua casa na Riviera ou condomínio em Bertioga:', visual: 'Lista de perguntas: frequência, relatório fotográfico, equipe fixa, responsabilidade, CNPJ, contrato. Posiciona Lobo Jardinagem como referência de resposta' },
+  { id: '20', pilar: 'educativo',  formato: 'Reel',      hook: 'Alta temporada chegando: o checklist de jardim que todo proprietário de veraneio deveria ter. Salva esse post:', visual: 'Aleandro explica o checklist de pré-temporada: poda, adubação, grama, flores sazonais, limpeza de drenos, manutenção de irrigação' },
 ]
 
 // ─── Roteiros de Vídeo ────────────────────────────────────────────────────────
@@ -97,159 +97,160 @@ const ideias = [
 const roteiros = [
   {
     id: 'r1',
-    titulo: 'Roteiro 1 — Apresentação Corporativa (Reel 30s)',
-    objetivo: 'Primeiro post do perfil — declaração de posicionamento',
+    titulo: 'Roteiro 1 — Apresentação Lobo Jardinagem (Reel 30s)',
+    objetivo: 'Primeiro post do perfil — declaração de posicionamento premium para veraneio',
     duracao: '25–30 segundos',
-    gancho: '"Somos a AKI Jardins. Empresa LTDA de paisagismo corporativo de Rio do Sul/SC. 13 anos de mercado. Fundisul na carteira."',
+    gancho: '"Somos a Lobo Jardinagem. Cuidamos de casas de veraneio e condomínios premium da Riviera de São Lourenço — enquanto o proprietário está em São Paulo."',
     roteiro: `[CENA 1 — 0s a 5s]
-Câmera fixa em área verde bem cuidada (Fundisul ou similar).
-André fala direto: "Somos a AKI Jardins."
+Câmera fixa em área verde bem cuidada do Villagio ou jardim similar na Riviera.
+Aleandro fala direto: "Somos a Lobo Jardinagem."
 
 [CENA 2 — 5s a 12s]
-Corte para equipamento profissional em uso.
-Voz over: "Empresa LTDA. Simples Nacional. CNPJ ativo. 13 anos de mercado em Rio do Sul e região."
+Corte para equipe em ação, equipamento profissional.
+Voz over: "Bertioga é nossa base. A Riviera de São Lourenço é nosso território premium."
 
 [CENA 3 — 12s a 20s]
-Cenas rápidas: antes/depois, equipe, resultado visual.
-Voz over: "Atendemos industriais, condomínios e espaços corporativos. Com contrato, NF e cronograma."
+Cenas: jardim bem cuidado, antes/depois, relatório fotográfico no celular.
+Voz over: "Cuidamos da sua propriedade o ano todo — com contrato, relatório mensal e equipe fixa. Para que na temporada, você só chegue."
 
 [CENA 4 — 20s a 28s]
-André olha para câmera: "Se sua empresa quer área verde profissional em Rio do Sul — somos nós."
+Aleandro olha para câmera: "Proprietário que vive em SP e tem casa na Riviera — isso foi feito para você."
 
 [LEGENDA]
-🌿 AKI Jardins Soluções e Paisagismo — LTDA
-📍 Rio do Sul / SC | 13 anos de mercado
-🏭 Industriais | Condomínios | Corporativo
+🌿 Lobo Jardinagem
+📍 Bertioga · Riviera de São Lourenço — SP
+🏡 Casas de veraneio · Condomínios premium
+📸 Relatório fotográfico mensal incluído
 🔗 Link na bio
 
-#akijardins #paisagismocorporativo #riodosulsc #jardinagem #paisagismo`,
+#lobojardinagem #bertioga #rivieradesaolourenco #jardinagem #casadeveraneio #jardinagemsp`,
   },
   {
     id: 'r2',
-    titulo: 'Roteiro 2 — Fundisul: Live Case (Reel 45s)',
-    objetivo: 'Usar Fundisul como prova social corporativa sem expor dados sigilosos',
+    titulo: 'Roteiro 2 — Villagio: Live Case (Reel 45s)',
+    objetivo: 'Usar Villagio como prova social premium sem expor dados sigilosos',
     duracao: '40–45 segundos',
-    gancho: '"Cliente industrial. Contrato ativo. 13 anos de confiança. Veja o resultado:"',
+    gancho: '"Condomínio premium na Riviera. Contrato ativo. O proprietário está em São Paulo — e chega em dezembro com jardim impecável. Veja como:"',
     roteiro: `[CENA 1 — 0s a 5s]
-Texto na tela: "Cliente industrial. Rio do Sul/SC."
-Música instrumental (sem letra).
+Texto na tela: "Condomínio Premium. Riviera de São Lourenço."
+Música suave, clima de litoral de alto padrão.
 
 [CENA 2 — 5s a 15s]
-Imagens do jardim da Fundisul ANTES da manutenção.
-Voz over: "Área industrial. Exige padrão corporativo. Frequência regular. Nada de improvisar."
+Imagens do jardim do Villagio — área externa, gramado, plantas tropicais.
+Voz over: "O proprietário mora em São Paulo. A propriedade fica aqui. O jardim não pode parar."
 
 [CENA 3 — 15s a 30s]
-Work in progress: equipamento, equipe, processo de manutenção.
-Voz over: "Equipamento profissional. Cronograma mensal. Relatório fotográfico. Isso é o que contrato de empresa entrega."
+Work in progress: equipe, equipamento, processo de manutenção.
+Voz over: "Manutenção mensal. Relatório fotográfico enviado direto para o WhatsApp. Equipe fixa que conhece cada canto da propriedade."
 
 [CENA 4 — 30s a 40s]
-DEPOIS: área completamente transformada.
-Texto: "Resultado. Todo mês. Há 13 anos."
+DEPOIS: jardim impecável.
+Texto: "Pronto para a temporada. Todo mês."
 
 [CENA 5 — 40s a 45s]
-André: "AKI Jardins. Se sua empresa precisa disso — link na bio."
+Aleandro: "Lobo Jardinagem. Se você tem casa na Riviera — link na bio."
 
 [LEGENDA]
-Manutenção industrial mensal concluída 🌿
-13 anos cuidando das áreas verdes de quem leva sério.
+Manutenção mensal concluída 🌿
+O dono está em SP. O jardim está perfeito.
 
-AKI Jardins Soluções e Paisagismo — LTDA
-📍 Rio do Sul / SC
+Lobo Jardinagem
+📍 Bertioga · Riviera de São Lourenço
 
-#akijardins #paisagismoindustrial #riodosulsc #manutencaojardinagem`,
+#lobojardinagem #villagio #rivieradesaolourenco #casadeveraneio #jardinagempremium #bertioga`,
   },
   {
     id: 'r3',
-    titulo: 'Roteiro 3 — Autoridade Local (Reel 20s)',
-    objetivo: 'Posicionamento regional — Rio do Sul como território da AKI Jardins',
+    titulo: 'Roteiro 3 — Autoridade Bertioga (Reel 20s)',
+    objetivo: 'Posicionamento regional — Bertioga/Riviera como território da Lobo Jardinagem',
     duracao: '18–22 segundos',
-    gancho: '"13 anos cuidando de Rio do Sul. Sou daqui. Conheço o que cresce aqui."',
+    gancho: '"Bertioga. Riviera. Este litoral é nosso território."',
     roteiro: `[CENA 1 — 0s a 4s]
-Imagem aérea ou panorâmica de Rio do Sul/SC.
-Texto animado: "Rio do Sul / SC"
+Imagem de drone ou panorâmica da Riviera de São Lourenço / praia de Bertioga.
+Texto animado: "Bertioga · Riviera de São Lourenço"
 
 [CENA 2 — 4s a 10s]
-André: "13 anos cuidando das áreas verdes desta cidade."
-Cenas de clientes conhecidos da região (sem revelar nomes se não autorizado).
+Aleandro: "Cuidamos de jardins neste litoral. Casas de veraneio. Condomínios. Propriedades premium."
+Cenas de propriedades atendidas — sem revelar nomes.
 
 [CENA 3 — 10s a 16s]
-Voz over: "Conheço o clima, o solo, as espécies que funcionam aqui. Isso não se aprende em 1 ano."
+Voz over: "Solo arenoso, brisa marinha, temporada de verão. Jardim de litoral exige quem conhece. A gente conhece."
 
 [CENA 4 — 16s a 20s]
-André: "AKI Jardins. A empresa de Rio do Sul."
+Aleandro: "Lobo Jardinagem. A empresa de Bertioga."
 
 [LEGENDA]
-Rio do Sul tem empresa de paisagismo 🌿
-13 anos de mercado. Empresa LTDA.
+O litoral tem empresa de jardinagem profissional 🌿
+📍 Bertioga · Riviera de São Lourenço — SP
 
-#akijardins #riodosul #paisagismoriodosul #jardinagemsc`,
+#lobojardinagem #bertioga #rivieradesaolourenco #paisagismolitoral`,
   },
   {
     id: 'r4',
-    titulo: 'Roteiro 4 — Antes e Depois (Reel 30s)',
-    objetivo: 'Transformação visual — o conteúdo que mais viraliza no nicho',
+    titulo: 'Roteiro 4 — Antes e Depois (Casa de Veraneio) (Reel 30s)',
+    objetivo: 'Transformação visual — proprietário que não visitava há 6 meses',
     duracao: '28–32 segundos',
-    gancho: '"Área verde abandonada. 2 dias de trabalho. Veja:"',
+    gancho: '"Casa de veraneio. 6 meses sem visita. O que encontramos — e o que entregamos:"',
     roteiro: `[CENA 1 — 0s a 3s]
-Texto: "Antes 👇" — tela preta ou fade in.
+Texto: "6 meses sem manutenção 👇" — tela preta ou fade in.
 
 [CENA 2 — 3s a 8s]
-Área verde em estado de abandono (grama alta, plantas mortas, entulho).
-Música começa.
+Área verde em estado de abandono: grama alta, plantas mortas, entulho litorâneo.
+Música começa. Tom de "chegamos para resolver."
 
 [CENA 3 — 8s a 12s]
-Work in progress: equipamento em ação, velocidade 2x.
+Work in progress: equipamento em ação, equipe, velocidade 2x.
 
 [CENA 4 — 12s a 17s]
-Texto: "Depois 👇"
+Texto: "48 horas depois 👇"
 
 [CENA 5 — 17s a 25s]
-Mesmos ângulos do antes — área completamente transformada.
+Mesmos ângulos — jardim completamente recuperado, limpo, pronto para receber.
 Câmera lenta para valorizar o resultado.
 
 [CENA 6 — 25s a 30s]
-André: "AKI Jardins. Rio do Sul/SC. Orçamento no link da bio."
+Aleandro: "Lobo Jardinagem. Bertioga e Riviera. Orçamento no link da bio."
 
 [LEGENDA]
-Transformação completa 🌿✅
-Área abandonada → jardim corporativo em 2 dias.
+Casa de veraneio recuperada 🌿✅
+6 meses de abandono → jardim premium em 48h.
 
-📍 Rio do Sul / SC
-📋 Contrato mensal disponível
+📍 Riviera de São Lourenço — SP
+📋 Contrato mensal: nunca mais passa por isso.
 
-#antesedepois #paisagismo #akijardins #riodosulsc #jardinagem`,
+#antesedepois #lobojardinagem #rivieradesaolourenco #casadeveraneio #bertioga #jardinagem`,
   },
 ]
 
 // ─── Bio ──────────────────────────────────────────────────────────────────────
 
-const novaBio = `🌿 AKI Jardins Soluções e Paisagismo
-📍 Rio do Sul / SC | 13 anos de mercado
-🏭 Jardinagem para as maiores empresas da região
-🌱 Industrial · Condomínios · Corporativo
-🔗 aki-jardins-digital.lovable.app`
+const novaBio = `🌿 Lobo Jardinagem
+📍 Bertioga · Riviera de São Lourenço — SP
+🏡 Casas de veraneio · Condomínios premium
+📸 Relatório fotográfico mensal incluído
+🔗 [link da central]`
 
 // ─── Destaques ────────────────────────────────────────────────────────────────
 
 const destaques = [
-  { emoji: '🌿', nome: 'Quem Somos', desc: 'Empresa LTDA, CNPJ, Fundisul, 13 anos. Credenciais corporativas em 5 slides.' },
-  { emoji: '🏭', nome: 'Cases',      desc: 'Fundisul e outros clientes documentados. Fotos antes/depois. Prova real.' },
-  { emoji: '🛠️', nome: 'Serviços',   desc: 'O que a AKI Jardins faz: manutenção, implantação, poda técnica, corporativo.' },
-  { emoji: '📍', nome: 'Rio do Sul', desc: 'Presença local: cidades atendidas, referências da região.' },
+  { emoji: '🌿', nome: 'Quem Somos',  desc: 'Lobo Jardinagem, Bertioga/Riviera. Equipe profissional, contrato, relatório fotográfico.' },
+  { emoji: '🏡', nome: 'Cases',       desc: 'Villagio e outras propriedades premium documentadas. Fotos antes/depois reais.' },
+  { emoji: '🛠️', nome: 'Serviços',    desc: 'Manutenção mensal, pré-temporada, implantação, poda técnica, condomínios.' },
+  { emoji: '📍', nome: 'Riviera',     desc: 'Propriedades atendidas na Riviera de São Lourenço. Presença local documentada.' },
   { emoji: '📋', nome: 'Orçamento',  desc: 'Como funciona: visita gratuita, proposta em 24h, contrato mensal.' },
 ]
 
 // ─── Badge colors ─────────────────────────────────────────────────────────────
 
 const pilarBadge: Record<string, string> = {
-  corporativo: 'bg-forest-100 text-forest-800 border-forest-200',
+  autoridade:  'bg-forest-100 text-forest-800 border-forest-200',
   tecnico:     'bg-teal-100 text-teal-800 border-teal-200',
   local:       'bg-yellow-100 text-yellow-800 border-yellow-200',
   bastidores:  'bg-slate-100 text-slate-800 border-slate-200',
   educativo:   'bg-purple-100 text-purple-800 border-purple-200',
 }
 const pilarLabel: Record<string, string> = {
-  corporativo: 'Corporativo',
+  autoridade:  'Autoridade',
   tecnico:     'Técnico',
   local:       'Local',
   bastidores:  'Bastidores',
@@ -301,8 +302,8 @@ export default function InstagramBraun() {
     <section id="instagram" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-8">
-          <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Presença digital B2B</span>
-          <h2 className="text-3xl font-bold text-forest-900 mt-1">Instagram @akijardins</h2>
+          <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Presença digital premium</span>
+          <h2 className="text-3xl font-bold text-forest-900 mt-1">Instagram @lobo_jardinagem</h2>
           <p className="text-gray-500 mt-2">Bio, destaques, estratégia de conteúdo e roteiros prontos para gravar.</p>
         </div>
 
@@ -310,9 +311,9 @@ export default function InstagramBraun() {
         <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8 flex gap-3 items-start">
           <AlertCircle size={20} className="text-amber-600 shrink-0 mt-0.5" />
           <div>
-            <p className="font-bold text-amber-900">@akijardins precisa de presença agora</p>
+            <p className="font-bold text-amber-900">@lobo_jardinagem precisa de presença agora</p>
             <p className="text-amber-800 text-sm mt-1">
-              Gestores de indústrias e síndicos de condomínios pesquisam no Instagram antes de contratar. Um perfil sem posts é pior que não ter perfil — passa insegurança. Use a Fundisul como âncora: <strong>o primeiro Reel já posiciona você acima de 90% dos concorrentes locais.</strong>
+              Proprietários de casas de veraneio pesquisam no Instagram antes de contratar quem vai cuidar da propriedade na ausência deles. Um perfil sem posts passa insegurança — o oposto do que você vende. Use o Villagio como âncora: <strong>o primeiro Reel já posiciona você como a empresa premium da Riviera.</strong>
             </p>
           </div>
         </div>
@@ -321,7 +322,7 @@ export default function InstagramBraun() {
         <div className="bg-forest-800 rounded-2xl p-6 mb-8 text-white">
           <div className="flex items-center justify-between gap-4 mb-4">
             <div>
-              <p className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">Nova Bio @akijardins</p>
+              <p className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">Nova Bio @lobo_jardinagem</p>
               <p className="text-white/70 text-sm">Copie e cole no Instagram → Editar Perfil → Biografia</p>
             </div>
             <CopyButton text={novaBio} />
@@ -329,9 +330,9 @@ export default function InstagramBraun() {
           <pre className="bg-forest-900/50 rounded-xl p-4 text-white text-sm whitespace-pre-wrap font-sans leading-relaxed border border-forest-700">{novaBio}</pre>
           <div className="mt-4 grid sm:grid-cols-3 gap-3 text-xs">
             {[
-              { label: '13 anos de mercado', desc: 'Autoridade local que ninguém questiona' },
-              { label: 'Maiores empresas',   desc: 'Prova social implícita — sem nomear cliente na bio' },
-              { label: 'Link do site', desc: 'Conversão direta para orçamento' },
+              { label: 'Riviera de São Lourenço', desc: 'Território premium que nenhum concorrente local posiciona explicitamente' },
+              { label: 'Casas de veraneio',        desc: 'Declara o público-alvo — proprietário ausente vai se identificar imediatamente' },
+              { label: 'Relatório fotográfico',    desc: 'Diferencial visível na bio — transmite confiança para quem está longe' },
             ].map((item, i) => (
               <div key={i} className="bg-forest-700/50 rounded-xl p-3">
                 <p className="text-gold-400 font-bold">{item.label}</p>
@@ -362,17 +363,17 @@ export default function InstagramBraun() {
         {/* ── Narrativa Central ── */}
         <div className="bg-forest-800 rounded-2xl p-6 mb-10 text-white">
           <div className="flex items-center gap-2 mb-5">
-            <Building2 size={18} className="text-gold-500" />
-            <p className="font-bold text-lg">A narrativa que diferencia @akijardins de todos</p>
+            <Waves size={18} className="text-gold-500" />
+            <p className="font-bold text-lg">A narrativa que diferencia @lobo_jardinagem de todos</p>
           </div>
           <p className="text-white/70 text-sm mb-6 max-w-2xl leading-relaxed">
-            Nenhuma empresa de jardinagem em Rio do Sul conta uma história corporativa no Instagram. Você não é "mais um jardineiro" — você é a <strong className="text-white">empresa que já tem cliente industrial e vai dominar o digital da cidade antes que alguém perceba.</strong>
+            Nenhuma empresa de jardinagem em Bertioga ou na Riviera conta uma história pensada para proprietários ausentes no Instagram. Você não é "mais um jardineiro de praia" — você é a <strong className="text-white">empresa que cuida do patrimônio premium enquanto o dono não está, com prova de que está sendo feito.</strong>
           </p>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { n: '01', titulo: 'Mostre a empresa', desc: 'LTDA, CNPJ, NF, contrato. Posicionamento corporativo que gestor reconhece e respeita.' },
-              { n: '02', titulo: 'Use a Fundisul', desc: 'Primeiro case em todo post de credibilidade. "Trabalhamos com a Fundisul" vale mais que mil seguidos.' },
-              { n: '03', titulo: 'Domine o local', desc: '13 anos de Rio do Sul é autoridade que nenhum concorrente novo tem. Use sempre como argumento.' },
+              { n: '01', titulo: 'Fale com o ausente', desc: 'Todo post deve fazer o proprietário que está em SP pensar "é exatamente o que eu preciso." Ele está sempre presente no copy.' },
+              { n: '02', titulo: 'Use o Villagio', desc: 'Primeiro case em todo post de credibilidade. "Cuidamos do Villagio" vale mais que mil seguidores. Mencione sem pedir permissão — você está lá.' },
+              { n: '03', titulo: 'Domine o litoral', desc: 'Bertioga + Riviera = território declarado. Nenhum concorrente faz isso. Quem crava o território primeiro, domina as buscas e a memória do cliente.' },
             ].map(r => (
               <div key={r.n} className="bg-forest-700/50 rounded-xl p-4">
                 <p className="text-gold-500 font-bold text-2xl mb-1 leading-none">{r.n}</p>
@@ -385,7 +386,7 @@ export default function InstagramBraun() {
 
         {/* ── Roteiros ── */}
         <h3 className="font-bold text-forest-900 text-lg mb-2">Roteiros de Vídeo — Prontos para Gravar</h3>
-        <p className="text-gray-500 text-sm mb-5">4 roteiros completos com gancho, cena a cena e legenda. Grave na próxima visita à Fundisul.</p>
+        <p className="text-gray-500 text-sm mb-5">4 roteiros completos com gancho, cena a cena e legenda. Grave na próxima visita ao Villagio.</p>
         <div className="space-y-3 mb-10">
           {roteiros.map(r => {
             const isOpen = openRoteiro === r.id
@@ -394,7 +395,7 @@ export default function InstagramBraun() {
                 <button onClick={() => setOpenRoteiro(isOpen ? null : r.id)}
                   className="w-full text-left px-5 py-4 flex items-center gap-4">
                   <div className="bg-forest-800 rounded-xl p-2.5 shrink-0">
-                    <Building2 size={16} className="text-gold-500" />
+                    <Waves size={16} className="text-gold-500" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-forest-900 text-sm">{r.titulo}</p>
@@ -462,13 +463,13 @@ export default function InstagramBraun() {
           <p className="text-gray-500 text-sm mb-5">Mínimo realista: 4 posts + Stories diários</p>
           <div className="grid grid-cols-7 gap-1.5">
             {[
-              { dia: 'SEG', acao: 'Corporativo',      formato: 'Reel',      bg: 'bg-forest-100 text-forest-800' },
-              { dia: 'TER', acao: 'Bastidores',       formato: 'Stories',   bg: 'bg-slate-100 text-slate-800' },
-              { dia: 'QUA', acao: 'Técnico',          formato: 'Reel',      bg: 'bg-teal-100 text-teal-800' },
-              { dia: 'QUI', acao: 'Bastidores',       formato: 'Stories',   bg: 'bg-slate-100 text-slate-800' },
-              { dia: 'SEX', acao: 'Educativo ou Local', formato: 'Carrossel', bg: 'bg-purple-100 text-purple-800' },
-              { dia: 'SAB', acao: 'Bastidores obra',  formato: 'Stories',   bg: 'bg-gray-100 text-gray-600' },
-              { dia: 'DOM', acao: 'Off ou Repost',    formato: '—',         bg: 'bg-gray-50 text-gray-400' },
+              { dia: 'SEG', acao: 'Autoridade',    formato: 'Reel',      bg: 'bg-forest-100 text-forest-800' },
+              { dia: 'TER', acao: 'Bastidores',    formato: 'Stories',   bg: 'bg-slate-100 text-slate-800' },
+              { dia: 'QUA', acao: 'Técnico',       formato: 'Reel',      bg: 'bg-teal-100 text-teal-800' },
+              { dia: 'QUI', acao: 'Bastidores',    formato: 'Stories',   bg: 'bg-slate-100 text-slate-800' },
+              { dia: 'SEX', acao: 'Educativo/Local', formato: 'Carrossel', bg: 'bg-purple-100 text-purple-800' },
+              { dia: 'SAB', acao: 'Bastidores obra', formato: 'Stories', bg: 'bg-gray-100 text-gray-600' },
+              { dia: 'DOM', acao: 'Off ou Repost', formato: '—',         bg: 'bg-gray-50 text-gray-400' },
             ].map(item => (
               <div key={item.dia} className={`rounded-xl p-2.5 ${item.bg}`}>
                 <p className="font-bold text-xs uppercase tracking-wider mb-2">{item.dia}</p>
@@ -531,10 +532,10 @@ export default function InstagramBraun() {
         {/* CTA final */}
         <div className="bg-forest-800 rounded-2xl p-6 text-white text-center">
           <TrendingUp size={28} className="text-gold-500 mx-auto mb-3" />
-          <p className="font-bold text-lg mb-2">Comece pelo Roteiro 1 — Apresentação Corporativa</p>
+          <p className="font-bold text-lg mb-2">Comece pelo Roteiro 1 — Apresentação Lobo Jardinagem</p>
           <p className="text-white/70 text-sm max-w-lg mx-auto">
-            Na próxima visita à Fundisul, grave o Roteiro 2 (Live Case). Dois vídeos e @akijardins já tem mais presença que 95% dos concorrentes de Rio do Sul.{' '}
-            <span className="text-gold-500 font-semibold">Quem grava primeiro, domina primeiro.</span>
+            Na próxima visita ao Villagio, grave o Roteiro 2 (Live Case). Dois vídeos e @lobo_jardinagem já tem mais presença que 100% dos concorrentes de Bertioga.{' '}
+            <span className="text-gold-500 font-semibold">Quem declara o território primeiro, domina primeiro.</span>
           </p>
         </div>
       </div>

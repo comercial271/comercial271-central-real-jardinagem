@@ -1,42 +1,42 @@
-import { Zap, PlayCircle, List, Star, FileText, FolderOpen, ExternalLink, Globe } from 'lucide-react'
+import { Zap, PlayCircle, List, Star, FileText, FolderOpen, ExternalLink } from 'lucide-react'
 
 interface DocLink { label: string; href: string; internal?: boolean }
 
 const docs: Array<{ icon: React.ElementType; title: string; desc: string; link: DocLink }> = [
   {
     icon: FileText,
-    title: 'Diagnóstico 360° — AKI Jardins',
-    desc: 'Perfil completo da empresa, trava identificada, plano de ação e estratégia de posicionamento digital.',
-    link: { label: 'Abrir', href: 'https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz' },
+    title: 'Diagnóstico 360° — Lobo Jardinagem',
+    desc: 'Perfil completo da empresa, trava central (precificação por feeling), case Villagio e plano de ataque ao mercado de Bertioga/Riviera.',
+    link: { label: 'Abrir', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
   },
   {
     icon: PlayCircle,
-    title: 'Gravação — Sessão 1 (13/05)',
-    desc: 'Sessão individual de diagnóstico: GMB, WA Business, Instagram, portfólio e estratégia Fundisul.',
-    link: { label: 'Abrir', href: 'https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz' },
-  },
-  {
-    icon: PlayCircle,
-    title: 'Gravação — Sessão 2 (14/05)',
-    desc: 'Sessão coletiva: mentalidade estratégica, precificação com margem real, gerador de propostas e posicionamento LTDA.',
-    link: { label: 'Abrir', href: 'https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz' },
-  },
-  {
-    icon: Globe,
-    title: 'Site AKI Jardins — Publicado',
-    desc: 'Site institucional publicado em 15/05/2026. Integrar no GMB e Instagram como link principal.',
-    link: { label: 'Ver site', href: 'https://aki-jardins-digital.lovable.app' },
+    title: 'Gravação — Sessão Coletiva (14/05)',
+    desc: 'Mentalidade estratégica, precificação com margem real, gerador de propostas com IA, posicionamento B2B.',
+    link: { label: 'Abrir', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
   },
   {
     icon: List,
     title: 'Modelos de Contrato B2B',
-    desc: 'Contratos para industriais, condomínios e manutenção recorrente — disponíveis nos Entregáveis da Selva.',
+    desc: 'Contratos para manutenção recorrente e serviço pontual — disponíveis nos Entregáveis da Selva.',
     link: { label: 'Acessar modelos', href: 'https://drive.google.com/drive/folders/1HtakX6CiU9ItFDsUfLj8BpDqefMCuS0V' },
+  },
+  {
+    icon: PlayCircle,
+    title: 'Guia GMB Ultra-Detalhado',
+    desc: '11 fases, 48 passos — do perfil incompleto à primeira posição em "jardinagem Bertioga" e "paisagismo Riviera de São Lourenço".',
+    link: { label: 'Ver guia', href: '#manuais', internal: true },
+  },
+  {
+    icon: List,
+    title: 'Gerador de Propostas Selva',
+    desc: 'Propostas corporativas profissionais em minutos — para casas de veraneio, condomínios e clientes B2B da Riviera.',
+    link: { label: 'Abrir Gerador', href: 'https://geradordepropostaselva.lovable.app' },
   },
   {
     icon: Star,
     title: 'Tarefas e Acompanhamento',
-    desc: 'Histórico de tarefas, checkpoints e evolução na mentoria. Check-in: 11/06/2026.',
+    desc: 'Histórico de tarefas, checkpoints e evolução na mentoria. Check-in: 12/06/2026.',
     link: { label: 'Ver tarefas', href: '#tarefas', internal: true },
   },
 ]
@@ -59,7 +59,7 @@ export default function Arsenal() {
               EXCLUSIVO SELVA PREMIUM
             </span>
             <h3 className="text-white font-bold text-lg">Gerador de Propostas Selva</h3>
-            <p className="text-white/60 text-sm mt-0.5">Propostas corporativas em minutos — posiciona você como LTDA, não como prestador autônomo</p>
+            <p className="text-white/60 text-sm mt-0.5">Propostas corporativas em minutos — para casas de veraneio e condomínios da Riviera</p>
           </div>
           <a href="https://geradordepropostaselva.lovable.app" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-forest-900 font-bold px-5 py-2.5 rounded-xl text-sm transition-colors shrink-0">
@@ -98,10 +98,10 @@ export default function Arsenal() {
         <div className="bg-white border border-gray-100 rounded-2xl p-4 flex items-center gap-3">
           <FolderOpen size={18} className="text-forest-600 shrink-0" />
           <div className="flex-1 min-w-0">
-            <p className="font-semibold text-forest-900 text-sm">Pasta Principal — AKI Jardins no Drive</p>
+            <p className="font-semibold text-forest-900 text-sm">Pasta Principal — Lobo Jardinagem no Drive</p>
             <p className="text-gray-400 text-xs">Todos os materiais da mentoria organizados por categoria</p>
           </div>
-          <a href="https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz" target="_blank" rel="noopener noreferrer"
+          <a href="https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 bg-forest-800 hover:bg-forest-700 text-white text-xs font-semibold px-4 py-2 rounded-xl transition-colors shrink-0">
             Abrir <ExternalLink size={10} />
           </a>

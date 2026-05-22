@@ -1,37 +1,37 @@
-import { ClipboardList, BarChart2, FileText, Video, ExternalLink, Brain } from 'lucide-react'
+import { ClipboardList, BarChart2, Video, ExternalLink, Brain, MapPin } from 'lucide-react'
 
 const cards = [
   {
     icon: ClipboardList,
     badge: 'FORMULÁRIO ✅',
     badgeColor: 'bg-green-100 text-green-700',
-    title: 'Diagnóstico 360° — Perfil Completo',
-    desc: 'Empresa LTDA ativa, Simples Nacional, Fundisul como cliente corporativo, 13+ anos de mercado. Experiência técnica sólida — trava está no posicionamento digital e prospecção ativa.',
-    link: { label: 'Abrir no Drive', href: 'https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz' },
-  },
-  {
-    icon: FileText,
-    badge: 'SESSÃO 1 — 13/05',
-    badgeColor: 'bg-purple-100 text-purple-700',
-    title: 'Sessão Individual — Digitalização e Contratos',
-    desc: 'Diagnóstico do GMB criado (15/05), portfólio inexistente digitalmente, WhatsApp com mensagem automática incorreta, ausência de contratos padrão. Fundisul como alavanca de credibilidade.',
-    link: { label: 'Ver no Drive', href: 'https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz' },
+    title: 'Diagnóstico 360° — Lobo Jardinagem',
+    desc: 'Bertioga/SP, 1-3 anos no ramo, faturamento R$7-15k/mês. Case âncora: Villagio (lucro R$13k). Carteira 8/10 — já cortou clientes problemáticos. Presença digital incipiente (Google Maps + site), mas Instagram sem posts.',
+    link: { label: 'Abrir no Drive', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
   },
   {
     icon: Video,
-    badge: 'SESSÃO 2 — 14/05',
+    badge: 'SESSÃO 1 — 14/05 (COLETIVA)',
     badgeColor: 'bg-gold-100 text-yellow-700',
     title: 'Sessão Coletiva — Mentalidade Estratégica',
-    desc: 'Modelo mental de empresa, precificação com margem real, gerador de propostas com IA, posicionamento como LTDA corporativa vs. jardineiro autônomo.',
-    link: { label: 'Ver no Drive', href: 'https://drive.google.com/drive/folders/1SRtvql2L6jnXuaMTqisVUNdX1CnxXlkz' },
+    desc: 'Modelo mental de empresa, precificação com margem real, gerador de propostas com IA, posicionamento B2B. Participação com André Krieger e outros membros da turma Selva Premium.',
+    link: { label: 'Ver no Drive', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
+  },
+  {
+    icon: MapPin,
+    badge: 'MERCADO ✅',
+    badgeColor: 'bg-blue-100 text-blue-700',
+    title: 'Riviera de São Lourenço — Janela Aberta',
+    desc: 'A Riviera tem imóveis de R$1M–R$10M+ com proprietários ausentes na maior parte do ano. Nenhum concorrente domina o digital em Bertioga. Quem aparecer primeiro no Google captura o mercado inteiro.',
+    link: { label: 'Ver estratégia', href: '#plano' },
   },
   {
     icon: BarChart2,
-    badge: 'PUBLICADO ✅',
-    badgeColor: 'bg-blue-100 text-blue-700',
-    title: 'Site AKI Jardins — Publicado',
-    desc: 'Site institucional publicado em 15/05/2026. Apresentação da empresa, serviços e contato. Integrar no GMB e Instagram como link principal.',
-    link: { label: 'Ver site', href: 'https://aki-jardins-digital.lovable.app' },
+    badge: 'SITE ATIVO ✅',
+    badgeColor: 'bg-purple-100 text-purple-700',
+    title: 'Presença Digital Existente',
+    desc: 'Google Maps ativo, site publicado, veículo com logo — base melhor que a maioria dos membros Selva na entrada. Próximo passo: otimizar GMB para aparecer em "jardinagem Bertioga" e "paisagismo Riviera".',
+    link: { label: 'Abrir GMB', href: 'https://business.google.com' },
   },
 ]
 
@@ -47,6 +47,7 @@ export default function Diagnostico() {
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           {cards.map((c, i) => {
             const Icon = c.icon
+            const isInternal = c.link.href.startsWith('#')
             return (
               <div key={i} className="bg-white rounded-2xl p-5 border border-gray-100 flex flex-col gap-3">
                 <div className="flex items-center gap-2">
@@ -59,10 +60,17 @@ export default function Diagnostico() {
                   <h3 className="font-bold text-forest-900 text-sm mb-1">{c.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{c.desc}</p>
                 </div>
-                <a href={c.link.href} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-forest-700 hover:text-forest-900 text-sm font-semibold transition-colors w-fit">
-                  {c.link.label} <ExternalLink size={12} />
-                </a>
+                {isInternal ? (
+                  <a href={c.link.href}
+                    className="inline-flex items-center gap-1.5 text-forest-700 hover:text-forest-900 text-sm font-semibold transition-colors w-fit">
+                    {c.link.label}
+                  </a>
+                ) : (
+                  <a href={c.link.href} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-forest-700 hover:text-forest-900 text-sm font-semibold transition-colors w-fit">
+                    {c.link.label} <ExternalLink size={12} />
+                  </a>
+                )}
               </div>
             )
           })}
@@ -74,10 +82,10 @@ export default function Diagnostico() {
             <div>
               <p className="text-white font-bold mb-1">Trava Central Identificada</p>
               <p className="text-white/80 text-sm leading-relaxed">
-                <span className="text-gold-500 font-semibold">Empresa sólida, cliente corporativo, 13 anos de experiência — mas posicionamento digital zero.</span> Fundisul é âncora financeira e risco ao mesmo tempo: depender de um único cliente expõe a operação. O próximo contrato não vai chegar por indicação — vai te encontrar no Google. Ou não vai te encontrar.
+                <span className="text-gold-500 font-semibold">Tem o case (Villagio, R$13k), tem o mercado (Riviera de São Lourenço) e tem a estrutura inicial — mas cobra por feeling e não sabe quanto lucra por cliente.</span> Sem controle financeiro, aceitar o contrato errado é mais perigoso que não aceitar nenhum. O próximo passo não é prospectar mais — é saber o preço certo para cada jardim.
               </p>
               <p className="text-gold-400 text-sm italic mt-3">
-                A janela de vantagem em Rio do Sul/SC está aberta agora. Nenhum concorrente local domina o digital. Você chega primeiro ou chega tarde.
+                Bertioga não tem nenhuma empresa de jardinagem dominando o digital. Você tem Google Maps — mas o perfil não aparece em "jardinagem Bertioga" ainda. Três ajustes no GMB e você está na primeira posição antes que qualquer concorrente perceba.
               </p>
             </div>
           </div>

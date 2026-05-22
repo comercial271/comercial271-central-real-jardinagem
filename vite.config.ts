@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/comercial271-central-aki-jardins/',
+  base: '/comercial271-central-lobo-jardinagem/',
 })

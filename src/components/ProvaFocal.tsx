@@ -3,8 +3,8 @@ import { Star, CheckCircle, XCircle, Zap, Camera, MessageSquare, ChevronDown, Ch
 
 // ─── Storage ──────────────────────────────────────────────────────────────────
 
-const CASES_KEY = 'andre_cases_v1'
-const REVIEWS_KEY = 'andre_reviews_meta_v1'
+const CASES_KEY = 'aleandro_cases_v1'
+const REVIEWS_KEY = 'aleandro_reviews_meta_v1'
 
 interface CaseExtra {
   depoimento: string
@@ -36,38 +36,38 @@ const defaultExtra: CaseExtra = { depoimento: '', autor: '', linkAntes: '', link
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const cases = [
-  { initials: 'FS', color: 'bg-gold-500',    name: 'Fundisul',                      segment: 'Industrial — Rio do Sul/SC — contrato ativo',       note: 'Cliente ativo há 13+ anos — âncora de credibilidade',     status: '✅ CLIENTE ATIVO',   statusColor: 'text-green-700' },
-  { initials: 'HR', color: 'bg-blue-700',    name: 'Hospital Regional Alto Vale',   segment: 'Hospitalar — Rio do Sul/SC — alvo corporativo',      note: 'Área verde permanente — contato com gestão patrimonial',  status: '🎯 ALVO PRIORIDADE', statusColor: 'text-forest-700' },
-  { initials: 'RS', color: 'bg-forest-700',  name: 'Shopping Rio Sul',              segment: 'Comercial — Rio do Sul/SC — alto padrão',            note: 'Paisagismo de imagem — prospecção ativa sem. 2',          status: '🎯 ALVO PRIORIDADE', statusColor: 'text-forest-700' },
-  { initials: 'UN', color: 'bg-teal-600',    name: 'UNIDAVI',                       segment: 'Educacional — Rio do Sul/SC — campus extenso',       note: 'Amplas áreas verdes — gestão acadêmica de campus',        status: '🎯 ALVO PRIORITÁRIO', statusColor: 'text-forest-700' },
-  { initials: 'C1', color: 'bg-forest-500',  name: 'Condomínio Alto Padrão 1',      segment: 'Condomínio — Rio do Sul — área verde extensa',       note: 'Documentar para portfólio de condomínios',               status: '📁 PORTFÓLIO',       statusColor: 'text-blue-700' },
-  { initials: 'C2', color: 'bg-slate-600',   name: 'Empresa Local 2',               segment: 'Corporativo — Rio do Sul e Região',                  note: 'Documentar para portfólio corporativo',                   status: '📁 PORTFÓLIO',       statusColor: 'text-blue-700' },
+  { initials: 'VL', color: 'bg-gold-500',    name: 'Villagio Bertioga',                     segment: 'Alto padrão — Bertioga/SP — contrato ativo',             note: 'Case âncora — lucro R$13k realizado — credencial máxima',    status: '✅ CLIENTE ATIVO',   statusColor: 'text-green-700' },
+  { initials: 'R1', color: 'bg-forest-700',  name: 'Casa de Veraneio Riviera 1',            segment: 'Residencial premium — Riviera de São Lourenço',          note: 'Proprietário ausente — proposta com relatório fotográfico',   status: '🎯 ALVO PRIORIDADE', statusColor: 'text-forest-700' },
+  { initials: 'R2', color: 'bg-blue-700',    name: 'Condomínio Fechado Riviera',            segment: 'Condomínio — Riviera — alto padrão',                     note: 'Síndico / administradora — recorrência mensal',              status: '🎯 ALVO PRIORIDADE', statusColor: 'text-forest-700' },
+  { initials: 'C1', color: 'bg-teal-600',    name: 'Casa de Veraneio Bertioga 1',           segment: 'Residencial — Bertioga — veranistas',                    note: 'Documentar para portfólio de casas de veraneio',             status: '📁 PORTFÓLIO',       statusColor: 'text-blue-700' },
+  { initials: 'C2', color: 'bg-forest-500',  name: 'Condomínio Bertioga',                   segment: 'Condomínio — Bertioga — área verde extensa',             note: 'Documentar para portfólio de condomínios',                   status: '📁 PORTFÓLIO',       statusColor: 'text-blue-700' },
+  { initials: 'IM', color: 'bg-slate-600',   name: 'Imobiliária Parceira',                  segment: 'Canal de indicação — gestão de propriedades',            note: 'Parceria estratégica — indicação de proprietários Riviera',  status: '🤝 PARCERIA',        statusColor: 'text-purple-700' },
 ]
 
 const reviews = [
-  { name: 'Gestor — Fundisul', date: '13 anos de parceria', quote: 'A AKI Jardins mantém nossas áreas verdes em excelente estado há mais de uma década. Empresa séria, com CNPJ ativo e NF mensal. Indicamos sem hesitar.', stars: 5 },
-  { name: 'Contratante — Rio do Sul/SC', date: '2024–2026', quote: 'Pontualidade e qualidade que a maioria dos fornecedores da região não entrega. Empresa registrada, equipe treinada — diferencial real.', stars: 5 },
-  { name: 'Síndico — Condomínio Rio do Sul', date: '2025', quote: 'Trabalho impecável. Cada visita deixa as áreas comuns impecáveis. Já indiquei para outros condomínios da cidade.', stars: 5 },
+  { name: 'Proprietário — Villagio Bertioga', date: 'Contrato ativo', quote: 'A Lobo Jardinagem cuida do Villagio como se fosse a casa deles. Chego em Bertioga no verão e o jardim está sempre perfeito. O relatório fotográfico mensal me dá tranquilidade mesmo estando em São Paulo.', stars: 5 },
+  { name: 'Proprietário — Casa de Veraneio, Riviera', date: '2025–2026', quote: 'Finalmente encontrei alguém de confiança em Bertioga. Aleandro cuida do jardim o ano todo, manda fotos mensais e eu não preciso me preocupar. Vale cada centavo.', stars: 5 },
+  { name: 'Síndico — Condomínio, Bertioga/SP', date: '2025', quote: 'Trabalho impecável, pontual e com relatório fotográfico mensal. Os condôminos aprovaram o serviço. Renovamos o contrato sem questionar.', stars: 5 },
 ]
 
 const jatem = [
-  'Empresa LTDA ativa — contrato formal, NF mensal, auditoria aprovada',
-  'Fundisul como cliente ativo há 13+ anos — referência corporativa incontestável',
-  'Simples Nacional — carga tributária otimizada, preço competitivo com margem',
-  'Equipamentos próprios — sem dependência de locação, disponibilidade imediata',
-  'Site publicado — aki-jardins-digital.lovable.app — presença digital B2B',
-  'GMB criado (15/05/2026) — base para posicionamento no Google Maps',
-  '13 anos de mercado — conhecimento do território Rio do Sul e região',
-  'Posicionamento B2B: industriais, condomínios e corporativos',
+  'Villagio Bertioga como case ativo — lucro R$13k realizado — prova concreta de alto padrão',
+  'Presença local permanente em Bertioga — empresa que mora e trabalha aqui',
+  'Veículo com logo — visibilidade na cidade, profissionalismo visível',
+  'Site publicado — presença digital base para captação orgânica',
+  'Google Maps ativo — base para posicionamento em "jardinagem Bertioga"',
+  'Equipe ativa (Daniel) — capacidade de escala sem depender só do Aleandro',
+  '1–3 anos de mercado — conhecimento do território Bertioga e Riviera',
+  'Relatório fotográfico mensal — diferencial que proprietários ausentes pagam a mais',
 ]
 
 const fomentar = [
-  'GMB otimizado — 5+ fotos reais, descrição com palavras-chave, categorias corretas',
+  'GMB otimizado — 11 fases / 48 passos (guia completo no Manuais)',
+  'Instagram @lobo_jardinagem — bio, destaques e primeiro Reel com Villagio',
   'WhatsApp Business — mensagem de ausência e boas-vindas profissionais',
-  'Instagram @akijardins — bio corporativa + primeiro Reel Fundisul',
-  'Depoimento formal do gestor responsável na Fundisul (escrito ou vídeo)',
-  'Portfólio documentado: fotos antes/depois de 3+ serviços reais',
-  '50 avaliações Google — solicitar a cada cliente atual (meta semana 1)',
+  'Depoimento formal do proprietário do Villagio (escrito ou vídeo 30s)',
+  'Portfólio documentado: fotos antes/depois de 3+ propriedades reais',
+  '50 avaliações Google — meta semana 1 — dominar Bertioga/Riviera',
 ]
 
 // ─── PhotoSlot ────────────────────────────────────────────────────────────────
@@ -195,7 +195,7 @@ function CaseCard({ c, idx, extra, onUpdate }: {
             <textarea
               value={extra.depoimento}
               onChange={e => onUpdate({ depoimento: e.target.value })}
-              placeholder="Cole o depoimento real do cliente — print de WhatsApp, avaliação Google, e-mail formal..."
+              placeholder="Cole o depoimento real do cliente — print de WhatsApp, avaliação Google, mensagem de aprovação..."
               className="w-full text-sm text-gray-700 bg-white border border-gray-200 rounded-xl px-3 py-2 resize-none focus:outline-none focus:border-forest-400 transition-colors"
               rows={2}
             />
@@ -203,7 +203,7 @@ function CaseCard({ c, idx, extra, onUpdate }: {
               type="text"
               value={extra.autor}
               onChange={e => onUpdate({ autor: e.target.value })}
-              placeholder="Nome — Cargo / Empresa (ex: João Silva — Gerente de Operações, Fundisul)"
+              placeholder="Nome — Perfil (ex: João Silva — Proprietário, Villagio Bertioga)"
               className="mt-1.5 w-full text-xs text-gray-600 bg-white border border-gray-200 rounded-xl px-3 py-2 focus:outline-none focus:border-forest-400 transition-colors"
             />
             {extra.depoimento && <p className="text-xs text-gray-400 mt-0.5">Salvo automaticamente</p>}
@@ -237,7 +237,7 @@ function ReviewGoalTracker() {
       <div className="flex items-start justify-between mb-4">
         <div>
           <p className="font-bold text-forest-900 text-lg">Meta de Avaliações Google</p>
-          <p className="text-gray-500 text-sm mt-0.5">Mais avaliações = posição de destaque no Google Maps = leads orgânicos gratuitos</p>
+          <p className="text-gray-500 text-sm mt-0.5">50 avaliações = posição de destaque em "jardinagem Bertioga" e "paisagismo Riviera" = leads orgânicos gratuitos</p>
         </div>
         <div className="text-right shrink-0 ml-4">
           {editing ? (
@@ -275,7 +275,7 @@ function ReviewGoalTracker() {
       </div>
       <p className="text-xs text-gray-400 mb-6">
         {meta.goal - meta.current > 0
-          ? `Faltam ${meta.goal - meta.current} avaliações para atingir a meta de ${meta.goal}`
+          ? `Faltam ${meta.goal - meta.current} avaliações para dominar Bertioga e Riviera no Google`
           : `Meta atingida! Continue pedindo — cada avaliação reforça a posição no Google Maps.`}
       </p>
 
@@ -283,10 +283,10 @@ function ReviewGoalTracker() {
         <p className="text-xs font-bold text-forest-800 uppercase tracking-wide mb-3">Como pedir avaliações — rotina de 5 min</p>
         <div className="grid sm:grid-cols-2 gap-2">
           {[
-            { n: 1, tip: 'Após cada visita: "Ficou como esperado? Me ajuda com uma avaliação no Google? Leva 30 segundos — tenho o link fixado no WhatsApp."' },
-            { n: 2, tip: 'Foto do resultado → enviar pro cliente com a legenda "ficou ótimo!" → "Se quiser me ajudar, aqui o link da avaliação 🙏"' },
-            { n: 3, tip: 'Meta: 5 avaliações novas por mês. Comece pelos clientes mais satisfeitos — Fundisul, condomínios ativos.' },
-            { n: 4, tip: 'QR Code do Google Meu Negócio laminado na capa da proposta — cliente escaneia ali mesmo na visita técnica.' },
+            { n: 1, tip: 'Após cada visita: envie foto do resultado com a legenda "ficou ótimo!" e adicione: "Se quiser me ajudar, aqui o link da avaliação Google 🙏"' },
+            { n: 2, tip: 'QR Code do GMB laminado: entregue junto com o relatório fotográfico mensal — proprietário escaneia de qualquer lugar.' },
+            { n: 3, tip: 'Meta: 5 avaliações novas por mês. Comece pelos clientes mais satisfeitos — Villagio primeiro, depois condomínios ativos.' },
+            { n: 4, tip: 'Scripts prontos estão na seção Links Rápidos — dois modelos (formal para síndico e próximo para proprietário de veraneio).' },
           ].map(item => (
             <div key={item.n} className="flex items-start gap-2 bg-green-50 rounded-xl px-3 py-2.5 border border-green-100">
               <span className="text-green-700 font-bold text-xs shrink-0 bg-green-200 w-5 h-5 rounded-full flex items-center justify-center mt-0.5">{item.n}</span>
@@ -316,18 +316,18 @@ export default function ProvaFocal() {
         <div className="mb-8">
           <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Credibilidade real</span>
           <h2 className="text-3xl font-bold text-forest-900 mt-1">Arsenal de Prova Social</h2>
-          <p className="text-gray-500 mt-2">O que você já construiu — e que a maioria do mercado não tem</p>
+          <p className="text-gray-500 mt-2">O que você já construiu — e que a maioria do mercado em Bertioga não tem</p>
         </div>
 
         <div className="bg-forest-800 rounded-2xl p-6 mb-10 text-white">
           <p className="text-white/80 text-sm leading-relaxed">
-            Você tem algo que nenhum concorrente em Rio do Sul consegue copiar amanhã: uma empresa LTDA ativa, 13 anos de mercado e a Fundisul como cliente de referência.{' '}
+            Você tem algo que nenhum concorrente em Bertioga consegue copiar amanhã: o case Villagio com lucro real de R$13k, presença local permanente e capacidade de entregar relatório fotográfico mensal.{' '}
             <span className="text-gold-500 font-semibold">Cada case documentado, cada avaliação e cada depoimento multiplica o poder desta âncora. Documente tudo. Use em cada proposta.</span>
           </p>
         </div>
 
-        {/* Cases B2B */}
-        <h3 className="font-bold text-forest-900 text-lg mb-2">Cases B2B — Documente Cada Um</h3>
+        {/* Cases */}
+        <h3 className="font-bold text-forest-900 text-lg mb-2">Cases — Documente Cada Um</h3>
         <p className="text-gray-500 text-sm mb-5">
           Clique em cada card para adicionar fotos antes/depois e depoimento do cliente. Estes materiais são seu arsenal de vendas — use nas propostas e nas abordagens comerciais.
         </p>
@@ -343,12 +343,12 @@ export default function ProvaFocal() {
           ))}
         </div>
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-12">
-          <p className="text-sm text-amber-800 font-medium">Prioridade imediata: solicitar depoimento formal ao gestor responsável na Fundisul — escrito ou vídeo de 30 segundos. É a prova social mais poderosa que você tem.</p>
+          <p className="text-sm text-amber-800 font-medium">Prioridade imediata: solicitar depoimento formal do proprietário do Villagio — mensagem de WhatsApp, avaliação Google ou vídeo de 30 segundos. É a prova social mais poderosa que você tem para capturar a Riviera.</p>
         </div>
 
         {/* Avaliações Google */}
         <h3 className="font-bold text-forest-900 text-lg mb-2">Avaliações Reais de Clientes</h3>
-        <p className="text-gray-500 text-sm mb-5">Google Meu Negócio criado em 15/05/2026. Meta: 50 avaliações — domine o Google Maps de Rio do Sul antes que qualquer concorrente perceba.</p>
+        <p className="text-gray-500 text-sm mb-5">Meta: 50 avaliações — domine Bertioga e Riviera no Google Maps antes que qualquer concorrente perceba.</p>
         <div className="grid md:grid-cols-3 gap-4 mb-5">
           {reviews.map((r, i) => (
             <div key={i} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
@@ -366,14 +366,14 @@ export default function ProvaFocal() {
           ))}
         </div>
         <div className="bg-forest-800 rounded-xl p-4 mb-10">
-          <p className="text-white text-sm font-medium">Salve prints dos elogios de WhatsApp dos seus clientes corporativos atuais — são a prova social mais imediata enquanto o Google Meu Negócio acumula avaliações públicas.</p>
+          <p className="text-white text-sm font-medium">Salve prints dos elogios de WhatsApp dos seus clientes — proprietários de veraneio costumam mandar mensagens no grupo ou direto após cada visita. São a prova social mais imediata enquanto o GMB acumula avaliações públicas.</p>
         </div>
 
         {/* Meta de Avaliações */}
         <ReviewGoalTracker />
 
         {/* Diferenciais — split */}
-        <h3 className="font-bold text-forest-900 text-lg mb-5">O que te separa do mercado</h3>
+        <h3 className="font-bold text-forest-900 text-lg mb-5">O que te separa do mercado em Bertioga</h3>
 
         <div className="mb-6">
           <div className="flex items-center gap-2 mb-3">
@@ -410,7 +410,7 @@ export default function ProvaFocal() {
           <XCircle size={18} className="text-red-400 shrink-0 mt-0.5" />
           <div>
             <p className="font-bold text-red-800 text-sm">O que não é seu cliente ideal</p>
-            <p className="text-red-700 text-sm mt-1">Residencial pequeno sem recorrência, clientes fora do raio de rota, quem exige serviço informal sem NF, distância acima de 80km sem contrato. Use o <a href="#icp" className="underline font-semibold hover:text-red-900">Qualificador de ICP</a> para nunca mais perder tempo com o prospect errado.</p>
+            <p className="text-red-700 text-sm mt-1">Residencial pequeno sem recorrência, clientes fora do raio Bertioga/Riviera, quem quer serviço pontual sem contrato, ticket abaixo de R$3k. Use o <a href="#icp" className="underline font-semibold hover:text-red-900">Qualificador de ICP</a> para nunca mais perder tempo com o prospect errado.</p>
           </div>
         </div>
       </div>

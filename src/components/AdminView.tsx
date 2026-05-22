@@ -56,19 +56,19 @@ export default function AdminView({ onBack }: { onBack: () => void }) {
   }
 
   function icpProgress(memberId: string) {
-    const r = getVal<Record<string, string>>(memberId, 'alexandre_icp_builder_v1')
+    const r = getVal<Record<string, string>>(memberId, 'aleandro_icp_builder_v1')
     if (!r) return 0
     return Object.values(r).filter(v => v.trim().length > 20).length
   }
 
   function lastRevenue(memberId: string) {
-    const entries = getVal<Array<{ mes: string; faturamento: number }>>(memberId, 'alexandre_jornada_revenue_v1')
+    const entries = getVal<Array<{ mes: string; faturamento: number }>>(memberId, 'aleandro_jornada_revenue_v1')
     if (!entries || entries.length === 0) return null
     return entries[entries.length - 1]
   }
 
   function tarefasProgress(memberId: string) {
-    const state = getVal<Record<string, { concluida: boolean }>>(memberId, 'alexandre_tarefas_v1')
+    const state = getVal<Record<string, { concluida: boolean }>>(memberId, 'aleandro_tarefas_v1')
     if (!state) return null
     const vals = Object.values(state)
     return { done: vals.filter(t => t.concluida).length, total: vals.length }
@@ -142,8 +142,8 @@ export default function AdminView({ onBack }: { onBack: () => void }) {
               const loaded = !!memberData[m.id]
               const icp = loaded ? icpProgress(m.id) : null
               const rev = loaded ? lastRevenue(m.id) : null
-              const cont = loaded ? (getVal<unknown[]>(m.id, 'alexandre_jornada_contratos_v1') ?? []).length : null
-              const leads = loaded ? (getVal<unknown[]>(m.id, 'alexandre_icp_leads_v1') ?? []).length : null
+              const cont = loaded ? (getVal<unknown[]>(m.id, 'aleandro_jornada_contratos_v1') ?? []).length : null
+              const leads = loaded ? (getVal<unknown[]>(m.id, 'aleandro_icp_leads_v1') ?? []).length : null
               const tarefas = loaded ? tarefasProgress(m.id) : null
 
               return (
@@ -231,7 +231,7 @@ export default function AdminView({ onBack }: { onBack: () => void }) {
 
                           {/* ICP Builder */}
                           {(() => {
-                            const r = getVal<Record<string, string>>(m.id, 'alexandre_icp_builder_v1')
+                            const r = getVal<Record<string, string>>(m.id, 'aleandro_icp_builder_v1')
                             const filled = r ? Object.entries(r).filter(([, v]) => v.trim().length > 0) : []
                             if (filled.length === 0) return null
                             return (
@@ -253,7 +253,7 @@ export default function AdminView({ onBack }: { onBack: () => void }) {
 
                           {/* Evolução de faturamento */}
                           {(() => {
-                            const entries = getVal<Array<{ mes: string; faturamento: number; nota?: string }>>(m.id, 'alexandre_jornada_revenue_v1')
+                            const entries = getVal<Array<{ mes: string; faturamento: number; nota?: string }>>(m.id, 'aleandro_jornada_revenue_v1')
                             if (!entries || entries.length === 0) return null
                             return (
                               <div>
@@ -273,7 +273,7 @@ export default function AdminView({ onBack }: { onBack: () => void }) {
 
                           {/* Contratos fechados */}
                           {(() => {
-                            const contratos = getVal<Array<{ nome: string; valorMensal: number; data: string }>>(m.id, 'alexandre_jornada_contratos_v1')
+                            const contratos = getVal<Array<{ nome: string; valorMensal: number; data: string }>>(m.id, 'aleandro_jornada_contratos_v1')
                             if (!contratos || contratos.length === 0) return null
                             return (
                               <div>
