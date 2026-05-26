@@ -4,11 +4,11 @@ import { TrendingUp, Award, Plus, Trash2, Check, X, ChevronRight, Zap, Star } fr
 
 // ─── Storage ──────────────────────────────────────────────────────────────────
 
-const REVENUE_KEY  = 'aleandro_jornada_revenue_v1'
-const CONTRACT_KEY = 'aleandro_jornada_contratos_v1'
+const REVENUE_KEY  = 'guilherme_jornada_revenue_v1'
+const CONTRACT_KEY = 'guilherme_jornada_contratos_v1'
 
 const INVESTIMENTO = 997
-const META = 50000
+const META = 15000
 
 interface RevenueEntry {
   id: string
@@ -26,23 +26,23 @@ interface Contrato {
 }
 
 const DEFAULT_REVENUE: RevenueEntry[] = [
-  { id: 'base', mes: 'mai/2026', faturamento: 10000, nota: 'Faturamento na entrada da Selva Premium', locked: true }
+  { id: 'base', mes: 'mai/2026', faturamento: 5000, nota: 'Faturamento na entrada da Selva Premium', locked: true }
 ]
 
 // ─── Deliverables ─────────────────────────────────────────────────────────────
 
 const entregas = [
-  { item: 'Sessão coletiva de Diagnóstico e Estratégia (14/05/2026)',                        valor: 600  },
-  { item: 'Guia GMB Ultra-Detalhado — 11 fases, 48 passos para dominar Bertioga/Riviera',   valor: 1400 },
-  { item: 'Plano de Ação 90 dias — GMB, precificação técnica e Riviera como território',    valor: 1200 },
-  { item: 'Mapa de alvos — casas de veraneio + condomínios Riviera + imobiliárias',         valor: 400  },
-  { item: 'Scripts de abordagem comercial — proprietário ausente, síndico e imobiliária',   valor: 400  },
-  { item: 'Central Lobo Jardinagem — plataforma digital exclusiva',                         valor: 4500 },
-  { item: 'Estratégia Instagram @lobo_jardinagem — bio, destaques e 4 roteiros de vídeo',  valor: 800  },
-  { item: 'Qualificador de ICP personalizado para mercado premium de Bertioga/Riviera',     valor: 300  },
-  { item: 'Acesso ao Gerador de Propostas Selva Premium',                                   valor: 1200 },
-  { item: 'Modelos de contrato B2B (casas de veraneio, condomínios, recorrência)',          valor: 300  },
-  { item: 'Acesso ao grupo Selva Premium Fundadores (por mês)',                             valor: 300  },
+  { item: 'Sessão Individual de Diagnóstico e Estratégia (27/05/2026)',                             valor: 600  },
+  { item: 'Guia GMB Ultra-Detalhado — 11 fases, 48 passos para dominar Gaspar e Blumenau',         valor: 1400 },
+  { item: 'Plano de Ação 90 dias — precificação, GMB e expansão Blumenau',                         valor: 1200 },
+  { item: 'Mapa de alvos — residências premium + empresas/condomínios + imobiliárias',             valor: 400  },
+  { item: 'Scripts de abordagem comercial — proprietário, síndico, imobiliária e reajuste',        valor: 400  },
+  { item: 'Central Real Jardinagem — plataforma digital exclusiva',                                valor: 4500 },
+  { item: 'Estratégia Instagram @realjardinag — bio, destaques e 4 roteiros de vídeo',            valor: 800  },
+  { item: 'Qualificador de ICP personalizado para mercado Gaspar/Blumenau',                       valor: 300  },
+  { item: 'Acesso ao Gerador de Propostas Selva Premium',                                          valor: 1200 },
+  { item: 'Modelos de contrato B2B (residências, empresas, manutenção recorrente)',               valor: 300  },
+  { item: 'Acesso ao grupo Selva Premium Fundadores (por mês)',                                    valor: 300  },
 ]
 const TOTAL_ENTREGAS = entregas.reduce((s, e) => s + e.valor, 0)
 
@@ -57,7 +57,7 @@ function RevenueChart({ entries }: { entries: RevenueEntry[] }) {
     <div className="relative">
       {/* Meta line */}
       <div className="absolute left-0 right-0 border-t-2 border-dashed border-gold-400 pointer-events-none" style={{ bottom: `${metaH}%`, top: 'auto' }}>
-        <span className="absolute right-0 -top-5 text-xs text-gold-600 font-bold bg-gold-100 px-1.5 py-0.5 rounded">Meta R$50k</span>
+        <span className="absolute right-0 -top-5 text-xs text-gold-600 font-bold bg-gold-100 px-1.5 py-0.5 rounded">Meta R$15k</span>
       </div>
       <div className="flex items-end gap-2" style={{ height: '120px' }}>
         {entries.map(e => {
@@ -103,7 +103,7 @@ export default function MinhaJornada() {
   const [cValor, setCValor]         = useState('')
   const [cData, setCData]           = useState('')
 
-  const lastFaturamento = entries.length > 0 ? entries[entries.length - 1].faturamento : 10000
+  const lastFaturamento = entries.length > 0 ? entries[entries.length - 1].faturamento : 5000
   const progPct = Math.min(100, Math.round((lastFaturamento / META) * 100))
 
   const totalContratosMonth = contratos.reduce((s, c) => s + c.valorMensal, 0)
@@ -142,7 +142,7 @@ export default function MinhaJornada() {
         <div className="mb-8">
           <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Crescimento real</span>
           <h2 className="text-3xl font-bold text-forest-900 mt-1">Minha Jornada</h2>
-          <p className="text-gray-500 mt-2">De R$10.000 para R$50.000/mês — registre cada passo desta trajetória</p>
+          <p className="text-gray-500 mt-2">De R$5.000 para R$15.000/mês — registre cada passo desta trajetória</p>
         </div>
 
         {/* ── Progresso para meta ── */}
@@ -154,7 +154,7 @@ export default function MinhaJornada() {
             </div>
             <div className="text-right shrink-0">
               <p className="text-white/60 text-sm">Meta 12 meses</p>
-              <p className="text-2xl font-bold text-gold-500">R$ 50.000</p>
+              <p className="text-2xl font-bold text-gold-500">R$ 15.000</p>
             </div>
           </div>
           <div className="w-full bg-forest-700 rounded-full h-5 mb-2 overflow-hidden">
@@ -193,7 +193,7 @@ export default function MinhaJornada() {
                   <input type="text" value={revMes} onChange={e => setRevMes(e.target.value)} placeholder="ex: jun/2026" className="flex-1 text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-forest-400" />
                   <input type="text" value={revFat} onChange={e => setRevFat(e.target.value)} placeholder="Faturamento (R$)" className="flex-1 text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-forest-400" />
                 </div>
-                <input type="text" value={revNota} onChange={e => setRevNota(e.target.value)} placeholder="Nota (opcional) — ex: fechou 2 casas Riviera" className="w-full text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-forest-400" />
+                <input type="text" value={revNota} onChange={e => setRevNota(e.target.value)} placeholder="Nota (opcional) — ex: fechou 2 empresas em Gaspar" className="w-full text-sm border border-gray-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-forest-400" />
                 <div className="flex gap-2">
                   <button onClick={addRevenue} className="text-xs bg-forest-700 hover:bg-forest-600 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors flex items-center gap-1"><Check size={11} /> Salvar</button>
                   <button onClick={() => setAddingRev(false)} className="text-xs text-gray-400 hover:text-gray-600 px-2 py-1.5 flex items-center gap-1"><X size={11} /> Cancelar</button>
@@ -256,7 +256,7 @@ export default function MinhaJornada() {
               <div className="border-2 border-dashed border-gray-200 rounded-xl p-6 text-center">
                 <TrendingUp size={24} className="text-gray-200 mx-auto mb-2" />
                 <p className="text-gray-400 text-sm">Nenhum contrato registrado ainda</p>
-                <p className="text-gray-400 text-xs mt-0.5">Casas de veraneio e condomínios da Riviera estão a caminho →</p>
+                <p className="text-gray-400 text-xs mt-0.5">Residências, empresas e condomínios de Gaspar e Blumenau estão a caminho →</p>
               </div>
             ) : (
               <div className="space-y-2.5 mb-4">
@@ -323,8 +323,8 @@ export default function MinhaJornada() {
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 { label: 'Investimento no programa', value: 'R$ 997', color: 'text-white' },
-                { label: 'Se fechar 8 casas Riviera (R$4k/cada)', value: 'R$ 384.000/ano', color: 'text-gold-400' },
-                { label: 'ROI potencial', value: '~38.500%', color: 'text-green-400' },
+                { label: 'Ao atingir meta R$15k/mês', value: 'R$ 180.000/ano', color: 'text-gold-400' },
+                { label: 'ROI potencial', value: '~18.000%', color: 'text-green-400' },
               ].map(item => (
                 <div key={item.label} className="bg-forest-700/50 rounded-xl p-4">
                   <p className="text-white/60 text-xs mb-1">{item.label}</p>

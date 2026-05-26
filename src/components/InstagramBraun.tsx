@@ -1,19 +1,19 @@
 import { useState } from 'react'
-import { Waves, Wrench, MapPin, Camera, BookOpen, TrendingUp, CheckCircle, Circle, AlertCircle, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react'
+import { Leaf, Wrench, MapPin, Camera, BookOpen, TrendingUp, CheckCircle, Circle, AlertCircle, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react'
 
-const IG_IDEAS_KEY = 'aleandro_ig_ideas_v1'
+const IG_IDEAS_KEY = 'guilherme_ig_ideas_v1'
 
 // ─── Pilares ─────────────────────────────────────────────────────────────────
 
 const pilares = [
   {
     id: 'autoridade',
-    nome: 'Autoridade Litoral',
-    Icon: Waves,
+    nome: 'Autoridade Gaspar',
+    Icon: Leaf,
     bg: 'bg-forest-700',
     freq: '2x/semana',
-    desc: 'Posicione a Lobo Jardinagem como a empresa de jardins premium da Riviera. Villagio como âncora em todo post de credibilidade. Proprietário ausente como público-alvo declarado.',
-    gancho: '"Cuidamos do Villagio enquanto o proprietário está em São Paulo. Esse é o nosso cliente."',
+    desc: 'Posicione a Real Jardinagem como a empresa de jardins profissional de Gaspar. Zero concorrência digital na cidade — quem declara o território primeiro, domina. Use seu melhor cliente como âncora de credibilidade.',
+    gancho: '"A Real Jardinagem é a empresa de jardinagem profissional de Gaspar. Com contrato, proposta e nota fiscal."',
     formato: 'Reel ou Carrossel',
   },
   {
@@ -22,28 +22,28 @@ const pilares = [
     Icon: Wrench,
     bg: 'bg-teal-600',
     freq: '1x/semana',
-    desc: 'Expertise que "jardineiro de praia" não tem: sabe lidar com solo arenoso, salinidade marinha, espécies tropicais, microclima litorâneo. Prova visual de competência profissional.',
-    gancho: '"Solo arenoso + brisa marinha + temporada de alta. Manter jardim na Riviera exige técnica — não improviso."',
+    desc: 'Expertise que jardineiro avulso não tem: conhece o microclima do Vale Europeu, espécies que funcionam em SC, técnicas de poda e manutenção que preservam o jardim por mais tempo. Prova visual de competência.',
+    gancho: '"Vale Europeu tem clima diferente. Solo, espécies e manutenção — tudo muda. A Real Jardinagem conhece cada detalhe."',
     formato: 'Reel (work in progress)',
   },
   {
     id: 'local',
-    nome: 'Local — Bertioga/Riviera',
+    nome: 'Local — Gaspar/Blumenau',
     Icon: MapPin,
     bg: 'bg-gold-600',
     freq: '1x/semana',
-    desc: 'Referência regional litorânea. Bertioga como base, Riviera de São Lourenço como território premium. Conhece o microclima, a temporada, o que funciona no litoral paulista.',
-    gancho: '"Bertioga tem 30.000 habitantes o ano todo e 300.000 na temporada. Esse é o mercado que a Lobo Jardinagem atende."',
+    desc: 'Referência regional do Vale Europeu. Gaspar como base, Blumenau como expansão natural. Conhece as empresas, os condomínios, o que funciona nesta região. Posicionamento de quem pertence ao território.',
+    gancho: '"Gaspar e Blumenau. Este é o território da Real Jardinagem. Aqui é onde crescemos."',
     formato: 'Reel ou Story',
   },
   {
     id: 'bastidores',
-    nome: 'Bastidores',
+    nome: 'Bastidores / Fiorino',
     Icon: Camera,
     bg: 'bg-slate-600',
     freq: '2-3x/semana (Stories)',
-    desc: 'A rotina profissional que o proprietário ausente nunca vê: chegada, equipe, cuidado, resultado. Humaniza a Lobo Jardinagem sem tirar a autoridade premium.',
-    gancho: '"7h da manhã na Riviera. Equipe a postos. O proprietário está em São Paulo — e pode ficar tranquilo."',
+    desc: 'A rotina de quem trabalha com seriedade: a Fiorino na rua cedo, equipamento organizado, equipe em ação, resultado entregue. Humaniza a Real Jardinagem sem tirar a autoridade profissional.',
+    gancho: '"7h da manhã. A Fiorino na rua. Mais um dia de Real Jardinagem em Gaspar."',
     formato: 'Stories + Reels curtos',
   },
   {
@@ -52,8 +52,8 @@ const pilares = [
     Icon: BookOpen,
     bg: 'bg-purple-700',
     freq: '1x/semana',
-    desc: 'Conteúdo útil para proprietários de casa de veraneio e síndicos: quando cuidar antes da temporada, o que acontece quando abandona o jardim, como contratar correto. Posiciona como especialista.',
-    gancho: '"O que acontece com o jardim da sua casa de veraneio nos 8 meses que você não está aqui:"',
+    desc: 'Conteúdo útil para donos de empresa, síndicos e proprietários: o que acontece com jardim sem manutenção regular, por que contrato vale mais que serviço avulso, como contratar jardinagem corretamente. Posiciona como especialista.',
+    gancho: '"O que acontece com o jardim da sua empresa quando você não tem contrato de manutenção:"',
     formato: 'Carrossel ou Reel',
   },
 ]
@@ -61,35 +61,35 @@ const pilares = [
 // ─── Ideias ───────────────────────────────────────────────────────────────────
 
 const ideias = [
-  // Autoridade Litoral
-  { id: '01', pilar: 'autoridade', formato: 'Reel',      hook: 'Cuidamos do Villagio enquanto o proprietário está em São Paulo. Esse é o tipo de cliente que a Lobo Jardinagem atende.', visual: 'Aleandro direto na câmera, no jardim do Villagio — fala sobre o que é cuidar de uma propriedade premium de alto padrão na Riviera' },
-  { id: '02', pilar: 'autoridade', formato: 'Carrossel', hook: 'Casa de veraneio na Riviera: o que acontece com o jardim nos 8 meses que você não visita?', visual: 'Slides mostrando antes (abandono gradual) e depois (recuperação com manutenção regular). Último slide: "Lobo Jardinagem cuida enquanto você não está."' },
-  { id: '03', pilar: 'autoridade', formato: 'Reel',      hook: 'O jardim que recebe o proprietário na temporada começa a ser cuidado em julho. Não em dezembro.', visual: 'Aleandro no jardim Villagio — fala sobre o ciclo de manutenção anual para receber alto padrão no verão' },
-  { id: '04', pilar: 'autoridade', formato: 'Carrossel', hook: 'Por que proprietários de Riviera que moram em São Paulo nos contratam para cuidar do jardim o ano todo:', visual: 'Slides: sem surpresa na chegada, grama nova em dezembro, relatório fotográfico mensal, sem custo de recuperação. Tom de tranquilidade — "você chega e está pronto."' },
+  // Autoridade Gaspar
+  { id: '01', pilar: 'autoridade', formato: 'Reel',      hook: 'Zero concorrência digital em Gaspar. A Real Jardinagem vai ser a primeira empresa de paisagismo a dominar o Google da cidade.', visual: 'Guilherme direto na câmera, no jardim do melhor cliente — fala sobre o que é cuidar de uma propriedade com profissionalismo no Vale Europeu' },
+  { id: '02', pilar: 'autoridade', formato: 'Carrossel', hook: '9 dos 10 clientes que temos nunca reclamaram de preço. Isso significa uma coisa: estamos cobrando abaixo do que o mercado aceita.', visual: 'Slides: o que cliente sem reclamação de preço sinaliza, o que você poderia cobrar, como reajustar sem perder o cliente. Tom de crescimento consciente.' },
+  { id: '03', pilar: 'autoridade', formato: 'Reel',      hook: 'A empresa de jardinagem de Gaspar que trabalha com contrato, proposta e nota fiscal. Veja por que isso muda tudo para o cliente:', visual: 'Guilherme explica o diferencial de ser empresa formal vs jardineiro avulso — segurança, garantia, recorrência, proposta por escrito' },
+  { id: '04', pilar: 'autoridade', formato: 'Carrossel', hook: 'Por que donos de empresa e síndicos em Gaspar estão trocando o jardineiro avulso por contrato com empresa profissional:', visual: 'Slides: garantia de frequência, proposta documentada, NF para despesa, responsabilidade, sem "sumiço". Tom consultivo para quem decide.' },
 
   // Técnico
-  { id: '05', pilar: 'tecnico',    formato: 'Reel',      hook: 'Jardim de litoral não é igual a jardim de cidade. Solo arenoso, brisa marinha e umidade mudam tudo. Veja como trabalhamos:', visual: 'Aleandro explica adaptações técnicas para jardim litorâneo — espécies resistentes ao sal, drenagem em solo arenoso, proteção na pré-temporada' },
-  { id: '06', pilar: 'tecnico',    formato: 'Reel',      hook: 'Pré-temporada Riviera: o que preparamos para que o jardim esteja perfeito quando você chegar em dezembro.', visual: 'Work in progress: podas, adubação, implantação de novas plantas, grama nova — preparação completa antes da alta temporada' },
-  { id: '07', pilar: 'tecnico',    formato: 'Carrossel', hook: 'Estas 5 espécies resistem ao litoral paulista — e a maioria dos jardineiros não sabe plantar elas corretamente:', visual: 'Cada slide: uma espécie (ex: bougainvillea, ixora, helicônia, frangipani, bambu) com cuidados específicos para o litoral. Tom especialista' },
-  { id: '08', pilar: 'tecnico',    formato: 'Reel',      hook: 'Antes e depois em 48 horas. Jardim abandonado na Riviera virou espaço de recepção premium. Veja:', visual: 'Transformação antes/depois em propriedade de veraneio — time-lapse ou corte direto. Foco no contraste e na qualidade do resultado final' },
+  { id: '05', pilar: 'tecnico',    formato: 'Reel',      hook: 'O Vale Europeu tem microclima único em SC. O que funciona em Florianópolis não funciona aqui. Veja como trabalhamos na região:', visual: 'Guilherme explica adaptações para o clima de Gaspar/Blumenau — espécies resistentes ao frio do outono, poda no timing certo, gramado em SC' },
+  { id: '06', pilar: 'tecnico',    formato: 'Reel',      hook: 'Antes e depois em 24 horas. Área verde de empresa em Gaspar completamente transformada. Veja:', visual: 'Work in progress: chegada, equipamento, trabalho em ação, resultado final. Velocidade e qualidade visíveis no corte direto.' },
+  { id: '07', pilar: 'tecnico',    formato: 'Carrossel', hook: '5 espécies que funcionam muito bem no clima do Vale Europeu — e como manter cada uma corretamente:', visual: 'Cada slide: uma espécie com cuidados específicos para SC. Tom de especialista que conhece a região.' },
+  { id: '08', pilar: 'tecnico',    formato: 'Reel',      hook: 'Como a Real Jardinagem transforma área verde de empresa em vitrine de profissionalismo. Veja o processo completo:', visual: 'Processo de implantação ou manutenção completa em empresa — planejamento, execução, resultado. Cada etapa documentada.' },
 
   // Local
-  { id: '09', pilar: 'local',      formato: 'Reel',      hook: 'Bertioga tem 30.000 moradores fixos e 300.000 na temporada. A Lobo Jardinagem cuida deste litoral o ano todo.', visual: 'Aleandro em paisagem de Bertioga — cenas do litoral, da cidade, da Riviera — fala sobre o território e a escala do mercado' },
-  { id: '10', pilar: 'local',      formato: 'Carrossel', hook: 'Riviera de São Lourenço: por que o padrão de jardim aqui precisa ser diferente de qualquer outro lugar no litoral paulista:', visual: 'Especificidades da Riviera: público premium, condomínios fechados exigentes, alto padrão de vizinhança, temporada como vitrine. Tom de expertise regional' },
-  { id: '11', pilar: 'local',      formato: 'Reel',      hook: 'Esta é uma das propriedades que cuidamos na Riviera. O proprietário vive em SP e chega em dezembro sabendo que está tudo certo.', visual: 'Área verde em propriedade da Riviera bem mantida — sem citar nome, mas o ambiente já contextualiza o padrão do cliente' },
-  { id: '12', pilar: 'local',      formato: 'Story',     hook: 'Bertioga hoje: mais uma manutenção concluída na Riviera. O litoral está bem cuidado.', visual: 'Story simples: foto do resultado + localização Riviera de São Lourenço/SP + sticker @lobo_jardinagem' },
+  { id: '09', pilar: 'local',      formato: 'Reel',      hook: 'Gaspar tem dezenas de empresas sem jardinagem profissional. A Real Jardinagem chegou para mudar esse cenário.', visual: 'Guilherme mostrando o território — cenas de Gaspar, exemplos de áreas verdes sem manutenção vs com manutenção, oportunidade clara' },
+  { id: '10', pilar: 'local',      formato: 'Carrossel', hook: 'Por que empresas e condomínios de Blumenau e Gaspar deveriam ter contrato de jardinagem — e não serviço avulso:', visual: 'Especificidades do Vale Europeu: padrão das empresas têxteis, condomínios novos, exigência de apresentação. Tom de expertise regional.' },
+  { id: '11', pilar: 'local',      formato: 'Reel',      hook: 'Esta é uma empresa que cuidamos em Gaspar. Jardim que antes era descuidado — agora é a vitrine da entrada.', visual: 'Área verde em empresa de Gaspar bem mantida — sem citar nome, mas o ambiente contextualiza o padrão do cliente' },
+  { id: '12', pilar: 'local',      formato: 'Story',     hook: 'Mais um serviço concluído no Vale Europeu. A Real Jardinagem cuida desta região.', visual: 'Story simples: foto do resultado + localização Gaspar/SC + sticker @realjardinag' },
 
-  // Bastidores
-  { id: '13', pilar: 'bastidores', formato: 'Stories',   hook: '7h da manhã na Riviera. Equipe a postos. O dono está em São Paulo e pode ficar tranquilo. POV:', visual: '5 slides: van chegando na Riviera, equipe se preparando, equipamento sendo organizado, trabalho em progresso, resultado — narrativa de "profissionalismo invisível"' },
-  { id: '14', pilar: 'bastidores', formato: 'Reel',      hook: 'Como preparamos o relatório fotográfico que enviamos ao proprietário todo mês. Transparência é o nosso produto:', visual: 'Câmera mostra processo de fotos dos ângulos padrão — mesmos pontos do mês anterior para comparar — envio via WhatsApp. Profissionalismo visível' },
-  { id: '15', pilar: 'bastidores', formato: 'Stories',   hook: 'Visita técnica antes de fechar proposta para casa de veraneio na Riviera. Veja como funciona nosso processo:', visual: '4 slides: chegada na propriedade, análise da área, medições, conversa com gestora/imobiliária — processo que passa confiança ao proprietário remoto' },
-  { id: '16', pilar: 'bastidores', formato: 'Reel',      hook: 'Manutenção mensal no Villagio. A rotina de cuidado que garante que a propriedade está sempre pronta para a temporada:', visual: 'Work in progress no Villagio — equipe em ação, equipamento profissional, resultado da manutenção mensal' },
+  // Bastidores / Fiorino
+  { id: '13', pilar: 'bastidores', formato: 'Stories',   hook: '7h da manhã. A Fiorino na rua. Equipe a postos. Mais um dia de Real Jardinagem em Gaspar. POV:', visual: '5 slides: Fiorino saindo cedo, Guilherme preparando equipamento, trabalho em progresso, detalhe do resultado, encerramento — narrativa de profissionalismo real' },
+  { id: '14', pilar: 'bastidores', formato: 'Reel',      hook: 'Como preparamos nossa proposta profissional para empresas e condomínios. Transparência é parte do serviço:', visual: 'Câmera mostra visita técnica, anotações, montagem da proposta, envio via WhatsApp. Profissionalismo visível desde o primeiro contato.' },
+  { id: '15', pilar: 'bastidores', formato: 'Stories',   hook: 'Visita técnica em empresa de Blumenau. Como avaliamos antes de montar a proposta:', visual: '4 slides: chegada na empresa, avaliação da área, medições, conversa com responsável — processo que passa confiança' },
+  { id: '16', pilar: 'bastidores', formato: 'Reel',      hook: 'A Fiorino que carrega o sonho da Real Jardinagem. De onde viemos para onde vamos em 2026:', visual: 'Guilherme fala sobre a trajetória — a Fiorino como símbolo da operação, crescimento, meta R$15k/mês, o que mudou com profissionalização' },
 
   // Educativo
-  { id: '17', pilar: 'educativo',  formato: 'Carrossel', hook: '3 sinais de que o jardim da sua casa de veraneio está sendo negligenciado — e vai custar caro em dezembro:', visual: 'Slide 1: grama amarelando; Slide 2: pragas instaladas; Slide 3: custo de recuperação vs manutenção regular. Último: "Manutenção preventiva é 5x mais barata que recuperação."' },
-  { id: '18', pilar: 'educativo',  formato: 'Reel',      hook: 'Por que síndico de condomínio fechado na Riviera prefere empresa com contrato — não jardineiro avulso.', visual: 'Aleandro explica: garantia de serviço, frequência regular, responsabilidade, relatório, NF. Tom consultivo para síndico/administradora' },
-  { id: '19', pilar: 'educativo',  formato: 'Carrossel', hook: 'Guia: o que perguntar antes de contratar empresa de jardinagem para sua casa na Riviera ou condomínio em Bertioga:', visual: 'Lista de perguntas: frequência, relatório fotográfico, equipe fixa, responsabilidade, CNPJ, contrato. Posiciona Lobo Jardinagem como referência de resposta' },
-  { id: '20', pilar: 'educativo',  formato: 'Reel',      hook: 'Alta temporada chegando: o checklist de jardim que todo proprietário de veraneio deveria ter. Salva esse post:', visual: 'Aleandro explica o checklist de pré-temporada: poda, adubação, grama, flores sazonais, limpeza de drenos, manutenção de irrigação' },
+  { id: '17', pilar: 'educativo',  formato: 'Carrossel', hook: '3 sinais de que o jardim da sua empresa está prejudicando sua imagem — e vai custar caro recuperar:', visual: 'Slide 1: grama alta na entrada; Slide 2: sem manutenção regular; Slide 3: custo de recuperação vs manutenção. Último: "Manutenção preventiva custa 5x menos que recuperação."' },
+  { id: '18', pilar: 'educativo',  formato: 'Reel',      hook: 'Por que síndico de condomínio em Gaspar prefere empresa com contrato — e não jardineiro avulso.', visual: 'Guilherme explica: garantia de frequência, proposta documentada, responsabilidade, NF para condomínio, relatório de serviço. Tom consultivo.' },
+  { id: '19', pilar: 'educativo',  formato: 'Carrossel', hook: 'O que perguntar antes de contratar empresa de jardinagem para sua empresa ou condomínio em Gaspar e Blumenau:', visual: 'Lista de perguntas: frequência, contrato escrito, CNPJ ativo, nota fiscal, equipe fixa. Posiciona Real Jardinagem como referência de resposta.' },
+  { id: '20', pilar: 'educativo',  formato: 'Reel',      hook: 'Quanto custa não ter jardinagem profissional na entrada da sua empresa. A conta que poucos fazem:', visual: 'Guilherme explica custo de recuperação vs manutenção regular, impacto na imagem do negócio, custo por m² de recuperação total' },
 ]
 
 // ─── Roteiros de Vídeo ────────────────────────────────────────────────────────
@@ -97,147 +97,147 @@ const ideias = [
 const roteiros = [
   {
     id: 'r1',
-    titulo: 'Roteiro 1 — Apresentação Lobo Jardinagem (Reel 30s)',
-    objetivo: 'Primeiro post do perfil — declaração de posicionamento premium para veraneio',
+    titulo: 'Roteiro 1 — Apresentação Real Jardinagem (Reel 30s)',
+    objetivo: 'Primeiro post do perfil — declaração de posicionamento profissional em Gaspar',
     duracao: '25–30 segundos',
-    gancho: '"Somos a Lobo Jardinagem. Cuidamos de casas de veraneio e condomínios premium da Riviera de São Lourenço — enquanto o proprietário está em São Paulo."',
+    gancho: '"Somos a Real Jardinagem. Cuidamos de residências, empresas e condomínios em Gaspar e Blumenau — com contrato, proposta e nota fiscal."',
     roteiro: `[CENA 1 — 0s a 5s]
-Câmera fixa em área verde bem cuidada do Villagio ou jardim similar na Riviera.
-Aleandro fala direto: "Somos a Lobo Jardinagem."
+Câmera fixa em área verde bem cuidada — jardim de empresa ou residência em Gaspar.
+Guilherme fala direto: "Somos a Real Jardinagem."
 
 [CENA 2 — 5s a 12s]
-Corte para equipe em ação, equipamento profissional.
-Voz over: "Bertioga é nossa base. A Riviera de São Lourenço é nosso território premium."
+Corte para equipe em ação, equipamento profissional, Fiorino ao fundo.
+Voz over: "Gaspar é nossa base. Blumenau é nossa expansão. Vale Europeu é o nosso território."
 
 [CENA 3 — 12s a 20s]
-Cenas: jardim bem cuidado, antes/depois, relatório fotográfico no celular.
-Voz over: "Cuidamos da sua propriedade o ano todo — com contrato, relatório mensal e equipe fixa. Para que na temporada, você só chegue."
+Cenas: jardim bem cuidado, antes/depois, proposta sendo enviada pelo celular.
+Voz over: "Cuidamos do jardim da sua empresa ou residência com contrato, frequência garantida e proposta por escrito."
 
 [CENA 4 — 20s a 28s]
-Aleandro olha para câmera: "Proprietário que vive em SP e tem casa na Riviera — isso foi feito para você."
+Guilherme olha para câmera: "Dono de empresa ou síndico que quer profissionalismo no jardim — isso foi feito para você."
 
 [LEGENDA]
-🌿 Lobo Jardinagem
-📍 Bertioga · Riviera de São Lourenço — SP
-🏡 Casas de veraneio · Condomínios premium
-📸 Relatório fotográfico mensal incluído
+🌿 Real Jardinagem
+📍 Gaspar · Blumenau — SC
+🏡 Residências · Condomínios · Empresas
+📋 Proposta profissional com contrato
 🔗 Link na bio
 
-#lobojardinagem #bertioga #rivieradesaolourenco #jardinagem #casadeveraneio #jardinagemsp`,
+#realjardinagem #gaspar #blumenau #valeeuropeu #jardinagem #paisagismo #jardinagemdeem presas`,
   },
   {
     id: 'r2',
-    titulo: 'Roteiro 2 — Villagio: Live Case (Reel 45s)',
-    objetivo: 'Usar Villagio como prova social premium sem expor dados sigilosos',
+    titulo: 'Roteiro 2 — Melhor Cliente como Live Case (Reel 45s)',
+    objetivo: 'Usar o melhor cliente como prova social premium sem expor dados sigilosos',
     duracao: '40–45 segundos',
-    gancho: '"Condomínio premium na Riviera. Contrato ativo. O proprietário está em São Paulo — e chega em dezembro com jardim impecável. Veja como:"',
+    gancho: '"Empresa em Gaspar. Contrato ativo há meses. O jardim que todo visitante vê na entrada. Veja como mantemos:"',
     roteiro: `[CENA 1 — 0s a 5s]
-Texto na tela: "Condomínio Premium. Riviera de São Lourenço."
-Música suave, clima de litoral de alto padrão.
+Texto na tela: "Empresa em Gaspar. Contrato mensal ativo."
+Música instrumental, clima profissional.
 
 [CENA 2 — 5s a 15s]
-Imagens do jardim do Villagio — área externa, gramado, plantas tropicais.
-Voz over: "O proprietário mora em São Paulo. A propriedade fica aqui. O jardim não pode parar."
+Imagens do jardim da empresa — área externa, gramado, plantas, entrada organizada.
+Voz over: "O responsável não tem tempo de se preocupar com o jardim. Esse é o nosso trabalho."
 
 [CENA 3 — 15s a 30s]
-Work in progress: equipe, equipamento, processo de manutenção.
-Voz over: "Manutenção mensal. Relatório fotográfico enviado direto para o WhatsApp. Equipe fixa que conhece cada canto da propriedade."
+Work in progress: equipe, equipamento, manutenção.
+Voz over: "Manutenção mensal com contrato. Proposta documentada. Equipe fixa que conhece cada canto da área."
 
 [CENA 4 — 30s a 40s]
 DEPOIS: jardim impecável.
-Texto: "Pronto para a temporada. Todo mês."
+Texto: "Pronto para receber clientes. Todo mês."
 
 [CENA 5 — 40s a 45s]
-Aleandro: "Lobo Jardinagem. Se você tem casa na Riviera — link na bio."
+Guilherme: "Real Jardinagem. Gaspar e Blumenau — link na bio."
 
 [LEGENDA]
 Manutenção mensal concluída 🌿
-O dono está em SP. O jardim está perfeito.
+A entrada está perfeita. O responsável não precisou se preocupar.
 
-Lobo Jardinagem
-📍 Bertioga · Riviera de São Lourenço
+Real Jardinagem
+📍 Gaspar · Blumenau — SC
 
-#lobojardinagem #villagio #rivieradesaolourenco #casadeveraneio #jardinagempremium #bertioga`,
+#realjardinagem #gaspar #blumenau #valeeuropeu #jardinagem #empresas`,
   },
   {
     id: 'r3',
-    titulo: 'Roteiro 3 — Autoridade Bertioga (Reel 20s)',
-    objetivo: 'Posicionamento regional — Bertioga/Riviera como território da Lobo Jardinagem',
+    titulo: 'Roteiro 3 — Autoridade Vale Europeu (Reel 20s)',
+    objetivo: 'Posicionamento regional — Gaspar/Blumenau como território da Real Jardinagem',
     duracao: '18–22 segundos',
-    gancho: '"Bertioga. Riviera. Este litoral é nosso território."',
+    gancho: '"Gaspar. Blumenau. Este é o nosso território."',
     roteiro: `[CENA 1 — 0s a 4s]
-Imagem de drone ou panorâmica da Riviera de São Lourenço / praia de Bertioga.
-Texto animado: "Bertioga · Riviera de São Lourenço"
+Imagem de Gaspar ou Blumenau — cenas da cidade, empresas, condomínios.
+Texto animado: "Gaspar · Blumenau — Vale Europeu/SC"
 
 [CENA 2 — 4s a 10s]
-Aleandro: "Cuidamos de jardins neste litoral. Casas de veraneio. Condomínios. Propriedades premium."
+Guilherme: "Cuidamos de jardins neste Vale. Residências. Empresas. Condomínios."
 Cenas de propriedades atendidas — sem revelar nomes.
 
 [CENA 3 — 10s a 16s]
-Voz over: "Solo arenoso, brisa marinha, temporada de verão. Jardim de litoral exige quem conhece. A gente conhece."
+Voz over: "Clima diferente, exigência maior. Jardim de empresa no Vale Europeu exige quem conhece. A gente conhece."
 
 [CENA 4 — 16s a 20s]
-Aleandro: "Lobo Jardinagem. A empresa de Bertioga."
+Guilherme: "Real Jardinagem. A empresa de Gaspar."
 
 [LEGENDA]
-O litoral tem empresa de jardinagem profissional 🌿
-📍 Bertioga · Riviera de São Lourenço — SP
+O Vale Europeu tem empresa de jardinagem profissional 🌿
+📍 Gaspar · Blumenau — SC
 
-#lobojardinagem #bertioga #rivieradesaolourenco #paisagismolitoral`,
+#realjardinagem #gaspar #blumenau #valeeuropeu #paisagismo`,
   },
   {
     id: 'r4',
-    titulo: 'Roteiro 4 — Antes e Depois (Casa de Veraneio) (Reel 30s)',
-    objetivo: 'Transformação visual — proprietário que não visitava há 6 meses',
+    titulo: 'Roteiro 4 — Antes e Depois (Empresa/Residência) (Reel 30s)',
+    objetivo: 'Transformação visual — impacto imediato do serviço profissional',
     duracao: '28–32 segundos',
-    gancho: '"Casa de veraneio. 6 meses sem visita. O que encontramos — e o que entregamos:"',
+    gancho: '"Área verde sem manutenção há meses. O que encontramos — e o que entregamos em 24h:"',
     roteiro: `[CENA 1 — 0s a 3s]
-Texto: "6 meses sem manutenção 👇" — tela preta ou fade in.
+Texto: "Sem manutenção há meses 👇" — tela preta ou fade in.
 
 [CENA 2 — 3s a 8s]
-Área verde em estado de abandono: grama alta, plantas mortas, entulho litorâneo.
+Área verde em estado descuidado: grama alta, ervas daninhas, bordas mal definidas.
 Música começa. Tom de "chegamos para resolver."
 
 [CENA 3 — 8s a 12s]
 Work in progress: equipamento em ação, equipe, velocidade 2x.
 
 [CENA 4 — 12s a 17s]
-Texto: "48 horas depois 👇"
+Texto: "24 horas depois 👇"
 
 [CENA 5 — 17s a 25s]
-Mesmos ângulos — jardim completamente recuperado, limpo, pronto para receber.
+Mesmos ângulos — jardim completamente recuperado, limpo, profissional.
 Câmera lenta para valorizar o resultado.
 
 [CENA 6 — 25s a 30s]
-Aleandro: "Lobo Jardinagem. Bertioga e Riviera. Orçamento no link da bio."
+Guilherme: "Real Jardinagem. Gaspar e Blumenau. Orçamento no link da bio."
 
 [LEGENDA]
-Casa de veraneio recuperada 🌿✅
-6 meses de abandono → jardim premium em 48h.
+Área verde transformada 🌿✅
+Meses de abandono → jardim profissional em 24h.
 
-📍 Riviera de São Lourenço — SP
+📍 Gaspar — SC
 📋 Contrato mensal: nunca mais passa por isso.
 
-#antesedepois #lobojardinagem #rivieradesaolourenco #casadeveraneio #bertioga #jardinagem`,
+#antesedepois #realjardinagem #gaspar #blumenau #jardinagem #manutencaojardim`,
   },
 ]
 
 // ─── Bio ──────────────────────────────────────────────────────────────────────
 
-const novaBio = `🌿 Lobo Jardinagem
-📍 Bertioga · Riviera de São Lourenço — SP
-🏡 Casas de veraneio · Condomínios premium
-📸 Relatório fotográfico mensal incluído
-🔗 comercial271.github.io/comercial271-central-lobo-jardinagem`
+const novaBio = `🌿 Real Jardinagem
+📍 Gaspar · Blumenau — SC
+🏡 Residências · Condomínios · Empresas
+📋 Proposta profissional com contrato
+🔗 comercial271.github.io/comercial271-central-real-jardinagem`
 
 // ─── Destaques ────────────────────────────────────────────────────────────────
 
 const destaques = [
-  { emoji: '🌿', nome: 'Quem Somos',  desc: 'Lobo Jardinagem, Bertioga/Riviera. Equipe profissional, contrato, relatório fotográfico.' },
-  { emoji: '🏡', nome: 'Cases',       desc: 'Villagio e outras propriedades premium documentadas. Fotos antes/depois reais.' },
-  { emoji: '🛠️', nome: 'Serviços',    desc: 'Manutenção mensal, pré-temporada, implantação, poda técnica, condomínios.' },
-  { emoji: '📍', nome: 'Riviera',     desc: 'Propriedades atendidas na Riviera de São Lourenço. Presença local documentada.' },
-  { emoji: '📋', nome: 'Orçamento',  desc: 'Como funciona: visita gratuita, proposta em 24h, contrato mensal.' },
+  { emoji: '🌿', nome: 'Quem Somos',  desc: 'Real Jardinagem, Gaspar/Blumenau. Equipe profissional, contrato, proposta documentada.' },
+  { emoji: '🏡', nome: 'Cases',       desc: 'Residências, empresas e condomínios do Vale Europeu. Fotos antes/depois reais.' },
+  { emoji: '🛠️', nome: 'Serviços',    desc: 'Manutenção recorrente, implantação, poda técnica, limpeza, empresas e condomínios.' },
+  { emoji: '📍', nome: 'Gaspar/BNU',  desc: 'Propriedades atendidas em Gaspar e Blumenau. Presença local documentada.' },
+  { emoji: '📋', nome: 'Orçamento',   desc: 'Como funciona: visita gratuita, proposta em 24h, contrato mensal.' },
 ]
 
 // ─── Badge colors ─────────────────────────────────────────────────────────────
@@ -302,8 +302,8 @@ export default function InstagramBraun() {
     <section id="instagram" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-8">
-          <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Presença digital premium</span>
-          <h2 className="text-3xl font-bold text-forest-900 mt-1">Instagram @lobo_jardinagem</h2>
+          <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Presença digital profissional</span>
+          <h2 className="text-3xl font-bold text-forest-900 mt-1">Instagram @realjardinag</h2>
           <p className="text-gray-500 mt-2">Bio, destaques, estratégia de conteúdo e roteiros prontos para gravar.</p>
         </div>
 
@@ -311,9 +311,9 @@ export default function InstagramBraun() {
         <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8 flex gap-3 items-start">
           <AlertCircle size={20} className="text-amber-600 shrink-0 mt-0.5" />
           <div>
-            <p className="font-bold text-amber-900">@lobo_jardinagem precisa de presença agora</p>
+            <p className="font-bold text-amber-900">@realjardinag precisa de presença agora</p>
             <p className="text-amber-800 text-sm mt-1">
-              Proprietários de casas de veraneio pesquisam no Instagram antes de contratar quem vai cuidar da propriedade na ausência deles. Um perfil sem posts passa insegurança — o oposto do que você vende. Use o Villagio como âncora: <strong>o primeiro Reel já posiciona você como a empresa premium da Riviera.</strong>
+              Não existe nenhuma empresa de jardinagem com presença digital em Gaspar. Donos de empresa e síndicos pesquisam no Instagram antes de contratar. Um perfil sem posts passa insegurança — o oposto do que você vende. Use seu melhor cliente como âncora: <strong>o primeiro Reel já posiciona a Real Jardinagem como a empresa profissional da região.</strong>
             </p>
           </div>
         </div>
@@ -322,7 +322,7 @@ export default function InstagramBraun() {
         <div className="bg-forest-800 rounded-2xl p-6 mb-8 text-white">
           <div className="flex items-center justify-between gap-4 mb-4">
             <div>
-              <p className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">Nova Bio @lobo_jardinagem</p>
+              <p className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">Nova Bio @realjardinag</p>
               <p className="text-white/70 text-sm">Copie e cole no Instagram → Editar Perfil → Biografia</p>
             </div>
             <CopyButton text={novaBio} />
@@ -330,9 +330,9 @@ export default function InstagramBraun() {
           <pre className="bg-forest-900/50 rounded-xl p-4 text-white text-sm whitespace-pre-wrap font-sans leading-relaxed border border-forest-700">{novaBio}</pre>
           <div className="mt-4 grid sm:grid-cols-3 gap-3 text-xs">
             {[
-              { label: 'Riviera de São Lourenço', desc: 'Território premium que nenhum concorrente local posiciona explicitamente' },
-              { label: 'Casas de veraneio',        desc: 'Declara o público-alvo — proprietário ausente vai se identificar imediatamente' },
-              { label: 'Relatório fotográfico',    desc: 'Diferencial visível na bio — transmite confiança para quem está longe' },
+              { label: 'Gaspar · Blumenau — SC', desc: 'Território declarado — nenhum concorrente local posiciona as duas cidades explicitamente' },
+              { label: 'Residências · Condomínios · Empresas', desc: 'Declara os 3 ICP — qualquer responsável vai se identificar imediatamente' },
+              { label: 'Proposta profissional com contrato', desc: 'Diferencial visível na bio — transmite confiança antes mesmo do primeiro contato' },
             ].map((item, i) => (
               <div key={i} className="bg-forest-700/50 rounded-xl p-3">
                 <p className="text-gold-400 font-bold">{item.label}</p>
@@ -363,17 +363,17 @@ export default function InstagramBraun() {
         {/* ── Narrativa Central ── */}
         <div className="bg-forest-800 rounded-2xl p-6 mb-10 text-white">
           <div className="flex items-center gap-2 mb-5">
-            <Waves size={18} className="text-gold-500" />
-            <p className="font-bold text-lg">A narrativa que diferencia @lobo_jardinagem de todos</p>
+            <Leaf size={18} className="text-gold-500" />
+            <p className="font-bold text-lg">A narrativa que diferencia @realjardinag de todos</p>
           </div>
           <p className="text-white/70 text-sm mb-6 max-w-2xl leading-relaxed">
-            Nenhuma empresa de jardinagem em Bertioga ou na Riviera conta uma história pensada para proprietários ausentes no Instagram. Você não é "mais um jardineiro de praia" — você é a <strong className="text-white">empresa que cuida do patrimônio premium enquanto o dono não está, com prova de que está sendo feito.</strong>
+            Nenhuma empresa de jardinagem em Gaspar tem presença digital. Você não é "mais um jardineiro" — você é a <strong className="text-white">empresa profissional do Vale Europeu: com contrato, proposta, CNPJ e equipe. Quem declara o território primeiro, domina.</strong>
           </p>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { n: '01', titulo: 'Fale com o ausente', desc: 'Todo post deve fazer o proprietário que está em SP pensar "é exatamente o que eu preciso." Ele está sempre presente no copy.' },
-              { n: '02', titulo: 'Use o Villagio', desc: 'Primeiro case em todo post de credibilidade. "Cuidamos do Villagio" vale mais que mil seguidores. Mencione sem pedir permissão — você está lá.' },
-              { n: '03', titulo: 'Domine o litoral', desc: 'Bertioga + Riviera = território declarado. Nenhum concorrente faz isso. Quem crava o território primeiro, domina as buscas e a memória do cliente.' },
+              { n: '01', titulo: 'Declare o território', desc: 'Todo post deve fazer o dono de empresa ou síndico de Gaspar pensar "é exatamente o que eu preciso." Gaspar + Blumenau = território declarado — nenhum concorrente faz isso.' },
+              { n: '02', titulo: 'Use seus clientes atuais', desc: '9/10 clientes nunca reclamaram de preço. Isso é prova social. Mostre o trabalho com esses clientes e cobre mais nos próximos contratos.' },
+              { n: '03', titulo: 'Profissionalismo como diferencial', desc: 'Contrato, proposta, NF, frequência garantida — isso é raro em Gaspar. Quem demonstra processo profissional fecha sem negociar preço.' },
             ].map(r => (
               <div key={r.n} className="bg-forest-700/50 rounded-xl p-4">
                 <p className="text-gold-500 font-bold text-2xl mb-1 leading-none">{r.n}</p>
@@ -386,7 +386,7 @@ export default function InstagramBraun() {
 
         {/* ── Roteiros ── */}
         <h3 className="font-bold text-forest-900 text-lg mb-2">Roteiros de Vídeo — Prontos para Gravar</h3>
-        <p className="text-gray-500 text-sm mb-5">4 roteiros completos com gancho, cena a cena e legenda. Grave na próxima visita ao Villagio.</p>
+        <p className="text-gray-500 text-sm mb-5">4 roteiros completos com gancho, cena a cena e legenda. Grave na próxima visita ao melhor cliente.</p>
         <div className="space-y-3 mb-10">
           {roteiros.map(r => {
             const isOpen = openRoteiro === r.id
@@ -395,7 +395,7 @@ export default function InstagramBraun() {
                 <button onClick={() => setOpenRoteiro(isOpen ? null : r.id)}
                   className="w-full text-left px-5 py-4 flex items-center gap-4">
                   <div className="bg-forest-800 rounded-xl p-2.5 shrink-0">
-                    <Waves size={16} className="text-gold-500" />
+                    <Leaf size={16} className="text-gold-500" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-forest-900 text-sm">{r.titulo}</p>
@@ -532,9 +532,9 @@ export default function InstagramBraun() {
         {/* CTA final */}
         <div className="bg-forest-800 rounded-2xl p-6 text-white text-center">
           <TrendingUp size={28} className="text-gold-500 mx-auto mb-3" />
-          <p className="font-bold text-lg mb-2">Comece pelo Roteiro 1 — Apresentação Lobo Jardinagem</p>
+          <p className="font-bold text-lg mb-2">Comece pelo Roteiro 1 — Apresentação Real Jardinagem</p>
           <p className="text-white/70 text-sm max-w-lg mx-auto">
-            Na próxima visita ao Villagio, grave o Roteiro 2 (Live Case). Dois vídeos e @lobo_jardinagem já tem mais presença que 100% dos concorrentes de Bertioga.{' '}
+            Na próxima visita ao melhor cliente, grave o Roteiro 2 (Live Case). Dois vídeos e @realjardinag já tem mais presença que 100% dos concorrentes de Gaspar.{' '}
             <span className="text-gold-500 font-semibold">Quem declara o território primeiro, domina primeiro.</span>
           </p>
         </div>

@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useMemberStorage } from '../hooks/useMemberStorage'
 import { ExternalLink, FolderOpen, Star, Zap, Edit3, Check, Building2, Briefcase, X, Copy, CheckCheck, MessageSquare, Link } from 'lucide-react'
 
-const MIDIAKIT_KEY    = 'aleandro_midiakit_links_v1'
-const REVIEW_LINK_KEY = 'aleandro_review_link_v1'
+const MIDIAKIT_KEY    = 'guilherme_midiakit_links_v1'
+const REVIEW_LINK_KEY = 'guilherme_review_link_v1'
 
 interface MidiaKitLinks {
   veraneo: string
@@ -66,38 +66,38 @@ function EditableLink({ label, icon: Icon, value, onChange }: { label: string; i
 const REVIEW_MSGS = [
   {
     id: 'formal',
-    label: 'Para gestores e síndicos (condomínios, imobiliárias)',
+    label: 'Para síndicos, gestores de empresas e imobiliárias',
     tag: 'Formal',
     tagColor: 'bg-forest-700 text-white',
     text: `Bom dia, [NOME]! Tudo bem por aí?
 
-Passando para agradecer a confiança no trabalho da Lobo Jardinagem e perguntar se ficou satisfeito com o serviço.
+Passando para agradecer a confiança no trabalho da Real Jardinagem e perguntar se ficou satisfeito com o serviço.
 
-Se quiser nos ajudar a crescer, uma avaliação no Google faz toda a diferença para que mais proprietários e gestores de Bertioga nos encontrem:
+Se quiser nos ajudar a crescer, uma avaliação no Google faz toda a diferença para que mais proprietários e gestores de Gaspar e Blumenau nos encontrem:
 
 👉 [LINK DO GOOGLE MEU NEGÓCIO]
 
 É rápido — menos de 2 minutos. Qualquer feedback é muito bem-vindo.
 
-Att, Aleandro | Lobo Jardinagem
+Att, Guilherme | Real Jardinagem
 📱 [seu número]`,
   },
   {
     id: 'informal',
-    label: 'Para proprietários de casa de veraneio (contatos próximos)',
+    label: 'Para clientes residenciais (contatos próximos)',
     tag: 'Próximo',
     tagColor: 'bg-gold-500 text-forest-900',
     text: `Oi [NOME]! Tudo bem?
 
-Espero que o jardim da sua casa em Bertioga esteja impecável!
+Espero que o jardim esteja impecável!
 
-Te peço um favor rápido: se ficou satisfeito com o trabalho da Lobo Jardinagem, me ajuda com uma avaliação no Google? Leva 1 minutinho e faz uma diferença enorme pra gente aparecer quando proprietários da Riviera buscam jardinagem:
+Te peço um favor rápido: se ficou satisfeito com o trabalho da Real Jardinagem, me ajuda com uma avaliação no Google? Leva 1 minutinho e faz uma diferença enorme pra gente aparecer quando empresas e famílias de Gaspar e Blumenau buscam jardinagem:
 
 ⭐ [LINK DO GOOGLE MEU NEGÓCIO]
 
 Qualquer feedback também serve — fico grato!
 
-Abs, Aleandro | Lobo Jardinagem`,
+Abs, Guilherme | Real Jardinagem`,
   },
 ]
 
@@ -195,13 +195,13 @@ export default function LinksRapidos() {
                 <FolderOpen size={18} className="text-gold-500" />
               </div>
               <div>
-                <p className="font-bold text-forest-900 text-sm">Drive Lobo Jardinagem</p>
+                <p className="font-bold text-forest-900 text-sm">Drive Real Jardinagem</p>
                 <p className="text-gray-500 text-xs">Pastas principais da mentoria</p>
               </div>
             </div>
             <div className="flex flex-col gap-2">
               {[
-                { label: 'Pasta Principal — Lobo Jardinagem', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
+                { label: 'Pasta Principal — Real Jardinagem', href: 'https://drive.google.com/drive/folders/1V1B9aWuZkuRV8EoGT1rfYmcornS4fDew' },
                 { label: 'Entregáveis da Selva (modelos e ferramentas)', href: 'https://drive.google.com/drive/folders/1HtakX6CiU9ItFDsUfLj8BpDqefMCuS0V' },
                 { label: 'Google Meu Negócio (otimizar)', href: 'https://business.google.com' },
                 { label: 'Gerador de Propostas Selva', href: 'https://geradordepropostaselva.lovable.app' },
@@ -233,8 +233,8 @@ export default function LinksRapidos() {
             <p className="text-xs font-bold text-forest-800 uppercase tracking-wide mb-1">Mídia Kit por Segmento</p>
             <p className="text-xs text-gray-500 mb-3">Gere → salve PDF no Drive → cole o link aqui para acesso rápido</p>
             <div className="flex flex-col gap-2">
-              <EditableLink label="Mídia Kit Casas de Veraneio" icon={Building2} value={midiaKit.veraneo} onChange={v => updateMidiaKit('veraneo', v)} />
-              <EditableLink label="Mídia Kit Condomínios Riviera" icon={Building2} value={midiaKit.condominios} onChange={v => updateMidiaKit('condominios', v)} />
+              <EditableLink label="Mídia Kit Residências Premium" icon={Building2} value={midiaKit.veraneo} onChange={v => updateMidiaKit('veraneo', v)} />
+              <EditableLink label="Mídia Kit Condomínios / Empresas" icon={Building2} value={midiaKit.condominios} onChange={v => updateMidiaKit('condominios', v)} />
               <EditableLink label="Mídia Kit Manutenção Recorrente" icon={Briefcase} value={midiaKit.manutencao} onChange={v => updateMidiaKit('manutencao', v)} />
             </div>
           </div>
@@ -247,16 +247,16 @@ export default function LinksRapidos() {
               </div>
               <div>
                 <p className="font-bold text-forest-900 text-sm">Presença Digital</p>
-                <p className="text-gray-500 text-xs">Canais ativos da Lobo Jardinagem</p>
+                <p className="text-gray-500 text-xs">Canais ativos da Real Jardinagem</p>
               </div>
             </div>
             <div className="flex flex-col gap-2">
               {[
-                { label: 'Instagram @lobo_jardinagem', href: 'https://www.instagram.com/lobo_jardinagem' },
+                { label: 'Instagram @realjardinag', href: 'https://www.instagram.com/realjardinag' },
                 { label: 'Google Meu Negócio (otimizar)', href: 'https://business.google.com' },
                 { label: 'Gerador de Propostas Selva', href: 'https://geradordepropostaselva.lovable.app' },
                 { label: 'Área de Membros Selva', href: 'https://app.greenn.club/home' },
-                { label: 'Drive — Pasta Lobo Jardinagem', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
+                { label: 'Drive — Pasta Real Jardinagem', href: 'https://drive.google.com/drive/folders/1V1B9aWuZkuRV8EoGT1rfYmcornS4fDew' },
                 { label: 'Entregáveis da Selva', href: 'https://drive.google.com/drive/folders/1HtakX6CiU9ItFDsUfLj8BpDqefMCuS0V' },
               ].map(link => (
                 <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
@@ -327,7 +327,7 @@ export default function LinksRapidos() {
 
           <div className="mt-3 flex items-start gap-2 text-xs text-gray-400">
             <Star size={11} className="text-gold-500 shrink-0 mt-0.5" />
-            <p>Para obter o link: acesse <span className="font-semibold">business.google.com</span> → selecione o perfil Lobo Jardinagem → clique em "Receber mais avaliações" → copie o link e cole no campo acima.</p>
+            <p>Para obter o link: acesse <span className="font-semibold">business.google.com</span> → selecione o perfil Real Jardinagem → clique em "Receber mais avaliações" → copie o link e cole no campo acima.</p>
           </div>
         </div>
       </div>

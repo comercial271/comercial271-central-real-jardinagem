@@ -2,53 +2,53 @@ import { Smartphone, Target, DollarSign, ExternalLink, ArrowRight } from 'lucide
 
 const movimentos = [
   {
-    icon: Smartphone,
+    icon: Target,
     badge: 'URGENTE — SEM. 1',
     badgeColor: 'bg-red-100 text-red-700',
-    title: 'GMB Dominando Bertioga',
-    impact: 'Primeira posição em "jardinagem Bertioga"',
-    desc: 'Você já tem o perfil no Google Maps — mas está incompleto. Sem descrição com palavras-chave, sem fotos do Villagio e sem posts semanais, você não aparece quando proprietários da Riviera buscam "jardinagem Bertioga".',
+    title: 'Planilha de Custos Operacionais',
+    impact: 'Parar de cobrar por feeling',
+    desc: 'Você tem clientes que nunca questionam o preço — isso é um sinal de que está cobrando abaixo do que o mercado aceita. A Fiorino tem custo real de depreciação, combustível e manutenção que precisa entrar no preço. Sem isso, trabalho vira prejuízo disfarçado de lucro.',
     steps: [
-      'Otimizar GMB: descrição com "jardinagem Bertioga", "Riviera de São Lourenço", "casa de veraneio" e "litoral SP"',
-      'Subir 10 fotos reais — Villagio como case âncora, antes/depois, equipe em serviço',
-      'Primeiro Google Post: "Manutenção de jardim — Bertioga/SP. Verão chegando — vagas disponíveis."',
+      'Calcular custo real por dia: Fiorino (combustível + depreciação), equipamentos amortizados, horas trabalhadas',
+      'Definir ticket mínimo por tipo: manutenção mensal (recorrente), limpeza pontual, implantação',
+      'Usar Gerador de Propostas Selva para toda proposta nova — nunca mais "cobrar no feeling"',
+    ],
+  },
+  {
+    icon: Smartphone,
+    badge: 'PRIORIDADE — SEM. 2-3',
+    badgeColor: 'bg-orange-100 text-orange-700',
+    title: 'Ativação Digital — GMB + @realjardinag',
+    impact: 'Zero concorrência digital em Gaspar',
+    desc: 'O Vale Europeu tem alta renda e nenhum jardineiro com presença digital forte. Criar o Google Meu Negócio agora é cravar uma bandeira antes de qualquer concorrente. O @realjardinag parado é oportunidade perdida toda semana.',
+    steps: [
+      'Criar GMB em Gaspar: "jardinagem Gaspar", "jardineiro Blumenau", "manutenção de jardim Vale Europeu"',
+      'Reativar @realjardinag com Reel de antes/depois — Marco Zero: "Comecei com uma Fiorino e muito trabalho"',
+      'Meta: 5 avaliações GMB no primeiro mês + 4 posts/mês no Instagram',
     ],
   },
   {
     icon: DollarSign,
-    badge: 'PRIORIDADE — SEM. 2-3',
-    badgeColor: 'bg-orange-100 text-orange-700',
-    title: 'Precificação Técnica',
-    impact: 'Parar de cobrar por feeling',
-    desc: 'A trava central é preço por intuição: cobro o que acho que o cliente vai aceitar. Isso faz aceitar contratos que não pagam a operação. Com o Villagio como referência, você já sabe que R$13k de lucro é possível — agora é sistematizar.',
-    steps: [
-      'Calcular custo real por visita: Daniel (diária), combustível, equipamento amortizado, tempo',
-      'Definir ticket mínimo por tamanho de jardim: pequeno (até 200m²), médio (200-600m²), grande (600m²+)',
-      'Usar Gerador de Propostas Selva para toda proposta nova — nunca mais "quanto você quer pagar?"',
-    ],
-  },
-  {
-    icon: Target,
-    badge: 'PARALELO — ATÉ 12/06',
+    badge: 'PARALELO — ATÉ 17/06',
     badgeColor: 'bg-yellow-100 text-yellow-700',
-    title: 'Riviera de São Lourenço como Território',
-    impact: 'Alto ticket — proprietários ausentes',
-    desc: 'A Riviera tem centenas de casas de veraneio com proprietários que passam a maior parte do ano fora. Esses clientes querem um serviço confiável, com relatório fotográfico, que funcione sem presença deles. Exatamente o que você entrega.',
+    title: 'Contratos + MEI → ME',
+    impact: 'Profissionalizar a operação',
+    desc: 'Receber no PIX pessoal e trabalhar sem contrato são os dois maiores riscos de uma operação que está crescendo. Com o faturamento chegando em R$15k/mês, o MEI deixa de ser suficiente — e o contrato é o que protege você quando um cliente tenta não pagar.',
     steps: [
-      'Listar 20 casas de veraneio da Riviera: Google Maps + indicação dos clientes atuais',
-      'Script de abordagem: "O jardim da sua casa em Bertioga precisa de alguém de confiança quando você não está" — ênfase na ausência',
-      'Proposta com relatório fotográfico mensal: diferencial que justifica R$3-6k/mês por propriedade',
+      'Assinar modelo de contrato Selva com os próximos 2 clientes novos',
+      'Abrir conta PJ separada para receber pagamentos de clientes',
+      'Simular tributação MEI vs Simples Nacional com Planilha Margem quando atingir R$15k/mês',
     ],
   },
 ]
 
 const projecoes = [
-  { situacao: 'Hoje (mai/2026)',                    receita: 'R$ 7.000–15.000',  variacao: '—',      highlight: false },
-  { situacao: 'Após GMB otimizado (leads orgânicos)', receita: 'R$ 15.000–20.000', variacao: '+100%',  highlight: false },
-  { situacao: '+ 2 contratos Riviera (R$4k/casa)',   receita: 'R$ 23.000–28.000', variacao: '+150%',  highlight: false },
-  { situacao: '+ Precificação técnica sistemática',  receita: 'R$ 32.000–38.000', variacao: '+220%',  highlight: false },
-  { situacao: 'Meta 12 meses — Selva Premium',       receita: 'R$ 50.000',        variacao: '+400%',  highlight: true  },
-  { situacao: 'Empresa estruturada (escala)',        receita: 'R$ 50.000+',       variacao: '+400%+', highlight: false },
+  { situacao: 'Hoje (mai/2026)',                            receita: 'R$ 3.000–7.000',   variacao: '—',      highlight: false },
+  { situacao: 'Após precificação técnica (sem. 1-2)',       receita: 'R$ 7.000–10.000',  variacao: '+70%',   highlight: false },
+  { situacao: '+ GMB Gaspar ativo (leads orgânicos)',       receita: 'R$ 10.000–13.000', variacao: '+130%',  highlight: false },
+  { situacao: '+ 3 contratos fechados — prospecção ativa',  receita: 'R$ 13.000–16.000', variacao: '+180%',  highlight: false },
+  { situacao: 'Meta 6 meses — Selva Premium',               receita: 'R$ 15.000',        variacao: '+200%',  highlight: true  },
+  { situacao: 'Empresa estruturada (MEI → ME)',             receita: 'R$ 15.000+',       variacao: '+200%+', highlight: false },
 ]
 
 export default function PlanoAcao() {
@@ -62,13 +62,13 @@ export default function PlanoAcao() {
 
         <div className="bg-forest-800 rounded-2xl p-6 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex-1">
-            <p className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">Sessão Coletiva — 14/05/2026</p>
-            <h3 className="text-white font-bold text-xl">Três movimentos para R$ 50.000/mês — GMB, precificação e Riviera</h3>
+            <p className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">Sessão Individual — 27/05/2026</p>
+            <h3 className="text-white font-bold text-xl">Quatro módulos para R$ 15.000/mês — precificação, contratos, digital e MEI→ME</h3>
           </div>
-          <a href="https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba"
+          <a href="https://drive.google.com/drive/folders/1V1B9aWuZkuRV8EoGT1rfYmcornS4fDew"
             target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 bg-gold-500 hover:bg-gold-400 text-forest-900 font-bold px-4 py-2 rounded-xl text-sm transition-colors shrink-0">
-            Drive Lobo Jardinagem <ExternalLink size={12} />
+            Drive Real Jardinagem <ExternalLink size={12} />
           </a>
         </div>
 

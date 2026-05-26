@@ -49,7 +49,7 @@ export default function Navbar({ onAdminClick }: { onAdminClick?: () => void }) 
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         <div className="flex items-center gap-2">
           <Leaf className="text-gold-500" size={20} />
-          <span className="text-white font-bold text-sm tracking-wide">LOBO JARDINAGEM</span>
+          <span className="text-white font-bold text-sm tracking-wide">REAL JARDINAGEM</span>
           <span className="hidden sm:inline-block ml-2 text-xs bg-gold-500 text-forest-900 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Selva Premium</span>
         </div>
         <div className="hidden lg:flex items-center gap-1">

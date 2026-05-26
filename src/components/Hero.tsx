@@ -1,12 +1,12 @@
 import { TrendingUp, Target, DollarSign, Clock, Award, MapPin } from 'lucide-react'
 
 const metrics = [
-  { value: 'Villagio',     label: 'Case âncora',       sub: 'Paisagismo — lucro R$13k realizado',           icon: Award },
-  { value: 'R$ 50.000',   label: 'Meta 12 meses',     sub: 'Crescimento: +400% no faturamento',            icon: TrendingUp },
-  { value: 'R$ 7–15k',    label: 'Faturamento atual', sub: 'Base sólida com clientes recorrentes',         icon: DollarSign },
-  { value: '1 Sessão',    label: 'Concluída',         sub: 'Coletiva 14/05/2026 — Selva Premium',          icon: Clock },
-  { value: '1–3 anos',    label: 'No mercado',        sub: 'Crescimento acelerado desde o início',         icon: Clock },
-  { value: 'Bertioga/SP', label: 'Posicionamento',    sub: 'Riviera de São Lourenço — alto padrão',        icon: MapPin },
+  { value: 'Fiorino',    label: 'Símbolo da conquista', sub: 'Comprada com esforço próprio — estrutura real',       icon: Award },
+  { value: 'R$ 15.000', label: 'Meta 6 meses',          sub: 'Crescimento: +200% no faturamento',                   icon: TrendingUp },
+  { value: 'R$ 3–7k',   label: 'Faturamento atual',     sub: 'Clientes que nunca questionam o preço',               icon: DollarSign },
+  { value: '1 Sessão',  label: 'Agendada',               sub: 'Individual 27/05/2026 — Selva Premium',              icon: Clock },
+  { value: '< 1 ano',   label: 'No mercado',             sub: 'Crescimento rápido desde o início',                  icon: Clock },
+  { value: 'Gaspar/SC', label: 'Posicionamento',         sub: 'Vale Europeu — alto padrão, zero concorrência',       icon: MapPin },
 ]
 
 export default function Hero() {
@@ -18,19 +18,20 @@ export default function Hero() {
             SELVA PREMIUM — MEMBRO ATIVO
           </span>
           <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
-            Central Lobo Jardinagem
+            Central Real Jardinagem
           </h1>
-          <p className="text-white/70 text-lg mb-2">Aleandro Lobo — Bertioga / SP</p>
+          <p className="text-white/70 text-lg mb-2">Guilherme Gomes — Gaspar / SC</p>
           <p className="text-gold-500 text-xl italic font-medium mb-6">
-            "Villagio fechado, lucro de R$13k.<br />Agora é GMB, precificação técnica e Riviera como território."
+            "Carteira que nunca reclama de preço. Fiorino conquistada com esforço.<br />Agora é precificação técnica, contratos e dominar o digital."
           </p>
           <p className="text-white/60 text-sm leading-relaxed max-w-lg">
-            Aqui está tudo que foi construído na sua mentoria — diagnóstico, plano de ação,
-            documentos, estratégias e o arsenal para você dominar o mercado premium de Bertioga. Use como referência diária.
+            Aqui está tudo construído na sua mentoria — diagnóstico, plano de ação,
+            documentos, estratégias e o arsenal para crescer de forma sustentável em
+            Gaspar e Blumenau. Use como referência diária.
           </p>
           <div className="mt-8 flex items-center gap-2">
             <Award size={16} className="text-gold-500" />
-            <span className="text-white/50 text-xs">Mentoria: Jean Francis | Sessão Coletiva: 14/05/2026 | Check-in: 12/06/2026</span>
+            <span className="text-white/50 text-xs">Mentoria: Jean Francis | Sessão 1: 27/05/2026 | Check-in: 17/06/2026</span>
           </div>
         </div>
 

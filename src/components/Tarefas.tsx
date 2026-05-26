@@ -21,7 +21,7 @@ interface TarefaState {
 
 // ─── Storage helpers ──────────────────────────────────────────────────────────
 
-const STORAGE_KEY = 'aleandro_tarefas_v1'
+const STORAGE_KEY = 'guilherme_tarefas_v1'
 
 type AllState = Record<string, TarefaState>
 type SetAllState = (v: AllState | ((p: AllState) => AllState)) => void
@@ -30,63 +30,54 @@ type SetAllState = (v: AllState | ((p: AllState) => AllState)) => void
 
 const tarefas = [
   {
-    id: 'gmb-fases-1-3',
-    prazo: '29/05 — URGENTE',
+    id: 'planilha-custos',
+    prazo: '01/06 — URGENTE',
     urgencia: 'red',
-    titulo: 'GMB — Fases 1, 2 e 3: Acesso, informações e fotos iniciais',
-    descricao: 'Implementar as três primeiras fases do guia completo de GMB: garantir acesso de proprietário ao perfil, preencher 100% das informações (nome, endereço, horário, site, WA, categoria primária e secundárias) e subir as primeiras 10 fotos de alta qualidade com geolocalização ativada.',
-    nota: 'O GMB é a maior oportunidade de Bertioga agora: busca "jardinagem Bertioga" e "manutenção jardim Riviera" está sem concorrência. Quem otimiza primeiro domina por meses.',
-    link: { label: 'Abrir guia completo de GMB', href: '#manuais' },
+    titulo: 'Montar planilha de custos operacionais',
+    descricao: 'Mapear todos os custos fixos e variáveis da operação: Fiorino (combustível, IPVA, manutenção, depreciação), equipamentos amortizados, horas trabalhadas por tipo de serviço. Usar a Planilha de Margem disponível no Arsenal.',
+    nota: 'Sem esse número na mão, cada proposta é um chute. Com o custo/hora calculado, você sabe qual é o valor mínimo que não pode baixar — e cobra com segurança sem medo.',
+    link: { label: 'Abrir Planilha de Margem', href: 'https://docs.google.com/spreadsheets/d/1FUW7A1egXwdWi1HCKxV6Bzg14GASEJV__5eneMELrZw/edit' },
   },
   {
-    id: 'depoimento-villagio',
-    prazo: '29/05 — URGENTE',
+    id: 'gerador-propostas',
+    prazo: '01/06 — URGENTE',
     urgencia: 'red',
-    titulo: 'Solicitar depoimento formal do proprietário do Villagio',
-    descricao: 'Na próxima manutenção no Villagio, pedir ao proprietário (ou gestor responsável) um depoimento escrito ou em vídeo sobre o serviço. Fotografar antes/depois da manutenção do mês com permissão para usar nas redes sociais e propostas.',
-    nota: '"Cuidamos do Villagio na Riviera" com depoimento real vale mais do que qualquer copy escrita. É o argumento de abertura para todos os outros contratos da Riviera.',
-    link: { label: 'Gerar proposta para novo alvo', href: 'https://geradordepropostaselva.lovable.app' },
+    titulo: 'Testar Gerador de Propostas Selva + definir preço mínimo',
+    descricao: 'Acessar o Gerador de Propostas Selva e gerar uma proposta teste para cada tipo de serviço: manutenção mensal (recorrente), limpeza pontual, implantação. Usar os custos calculados na tarefa anterior para definir o preço mínimo de cada tipo.',
+    nota: 'A partir daqui, toda proposta nova sai do Gerador — nunca mais de cabeça. Padronizar o preço mínimo elimina o "cobrar no feeling" que é a trava central do negócio.',
+    link: { label: 'Abrir Gerador de Propostas', href: 'https://geradordepropostaselva.lovable.app' },
+  },
+  {
+    id: 'gmb-gaspar',
+    prazo: '03/06 — PRIORIDADE',
+    urgencia: 'orange',
+    titulo: 'Criar Google Meu Negócio em Gaspar',
+    descricao: 'Criar e verificar o perfil GMB: nome "Real Jardinagem", categoria "Jardineiro", endereço Gaspar/SC, telefone, horário, descrição com "jardinagem Gaspar", "manutenção de jardim Blumenau", "jardineiro Vale Europeu". Subir as 5 primeiras fotos de serviços reais.',
+    nota: 'Zero concorrentes com GMB ativo em Gaspar. Criar agora é cravar uma bandeira antes que qualquer outro jardineiro perceba. Quem aparece primeiro no Google captura o mercado inteiro.',
+    link: { label: 'Abrir guia GMB', href: '#manuais' },
   },
   {
     id: 'instagram-reel1',
-    prazo: '05/06 — SEM. 2',
+    prazo: '06/06 — PRIORIDADE',
     urgencia: 'orange',
-    titulo: 'Gravar e postar Roteiro 1 — @lobo_jardinagem',
-    descricao: 'Gravar o primeiro Reel do @lobo_jardinagem usando o Roteiro 1 (Apresentação Lobo Jardinagem) disponível na aba Instagram. Na mesma visita ao Villagio, gravar também o Roteiro 2 (Live Case). Dois vídeos — perfil lançado.',
-    nota: 'Proprietários de veraneio pesquisam no Instagram. Um perfil com 2 Reels bem feitos já posiciona a Lobo Jardinagem acima de 100% dos concorrentes de Bertioga. Grave — não perfeccionize.',
-    link: { label: 'Ver roteiros prontos', href: '#instagram' },
+    titulo: 'Reativar @realjardinag com primeiro Reel de antes/depois',
+    descricao: 'Gravar e publicar o primeiro Reel do @realjardinag usando um serviço recente. Legenda: "Jardineiro profissional em Gaspar/SC. Comecei com uma Fiorino e muito trabalho. Se você quer um jardim que valorize seu espaço, me chama." Atualizar bio com Gaspar/SC e link do WhatsApp.',
+    nota: 'O @realjardinag parado é oportunidade perdida toda semana. Um Reel de antes/depois já posiciona acima de 100% dos concorrentes da região. Grave — não perfeccionize.',
+    link: { label: 'Ver guia Instagram', href: '#instagram' },
   },
   {
-    id: 'wa-mensagem',
-    prazo: '05/06 — SEM. 2',
-    urgencia: 'orange',
-    titulo: 'Configurar WhatsApp Business — mensagem de boas-vindas e ausência',
-    descricao: 'Ativar o WA Business e configurar a mensagem de boas-vindas e ausência padrão para proprietários de veraneio. Cada mensagem automática é a primeira impressão de quem chegou pelo GMB ou Instagram.',
-    nota: 'A mensagem de ausência mal configurada faz o prospect ir para o concorrente enquanto dorme. Configura uma vez, funciona 24h por dia.',
-    link: { label: 'Ver guia WA Business', href: '#manuais' },
-  },
-  {
-    id: 'gmb-fases-4-7',
-    prazo: '10/06 — SEM. 2-3',
-    urgencia: 'orange',
-    titulo: 'GMB — Fases 4 a 7: Posts, respostas, Q&A e serviços',
-    descricao: 'Continuar a implementação do GMB: publicar 2 posts de serviços, configurar o catálogo de serviços com preços estimados, criar 3 perguntas e respostas (Q&A), e solicitar as primeiras 5 avaliações de clientes atuais.',
-    nota: 'Cada post no GMB aumenta a relevância do perfil nas buscas locais. Avaliações com resposta personalizada é o fator que mais separa o 1º do 2º resultado no Maps.',
-    link: { label: 'Continuar guia de GMB', href: '#manuais' },
-  },
-  {
-    id: 'prospeccao-riviera',
-    prazo: '12/06 — CHECK-IN',
+    id: 'contrato-proximo-cliente',
+    prazo: '10/06 — MÉDIO PRAZO',
     urgencia: 'yellow',
-    titulo: 'Mapear 20 casas e condomínios na Riviera para prospecção',
-    descricao: 'Criar lista de 20 propriedades na Riviera de São Lourenço com potencial: casas grandes com jardim visível, condomínios fechados, pousadas. Incluir endereço, observação sobre o estado do jardim atual e canal de contato (imobiliária, Instagram, GMB). Levar para o check-in.',
-    nota: 'Com o Villagio na carteira você já tem o argumento de entrada para qualquer propriedade da Riviera. "Somos a empresa do Villagio" abre mais portas do que qualquer anúncio.',
-    link: null,
+    titulo: 'Assinar contrato com próximo cliente novo — modelo Selva',
+    descricao: 'Usar o Contrato Recorrente (manutenção mensal) ou o Contrato Empreitada (serviço pontual) disponíveis no Arsenal para formalizar o próximo cliente novo. Não aceitar novo cliente sem contrato assinado a partir de agora.',
+    nota: 'Trabalhar sem contrato é um dos maiores riscos jurídicos de uma operação que cresce. O modelo já está pronto no Arsenal — é só personalizar e enviar para assinar. Clientes que nunca reclamam de preço assinam contrato sem problema.',
+    link: { label: 'Abrir Contrato Recorrente', href: 'https://docs.google.com/document/d/1ps4_GPgF9W3D92YsMiLpT2y_lG3MaqfnxsAmy_t3b8g/edit' },
   },
 ]
 
 const urgenciaConfig: Record<string, { bg: string; text: string }> = {
-  red: { bg: 'bg-red-100', text: 'text-red-700' },
+  red:    { bg: 'bg-red-100',    text: 'text-red-700'    },
   orange: { bg: 'bg-orange-100', text: 'text-orange-700' },
   yellow: { bg: 'bg-yellow-100', text: 'text-yellow-700' },
 }
@@ -317,14 +308,14 @@ export default function Tarefas() {
         <div className="mb-10">
           <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Compromissos</span>
           <h2 className="text-3xl font-bold text-forest-900 mt-1">Missão do Momento</h2>
-          <p className="text-gray-500 mt-2">Seus compromissos até o check-in de 12/06/2026</p>
+          <p className="text-gray-500 mt-2">Seus compromissos até o check-in de 17/06/2026</p>
         </div>
 
         <div className="bg-forest-800 rounded-2xl p-6 mb-8 text-white flex items-start gap-4">
           <AlertTriangle className="text-gold-500 shrink-0 mt-0.5" size={22} />
           <div className="flex-1">
-            <p className="font-bold text-lg">Seus 6 movimentos — maio a junho/2026</p>
-            <p className="text-white/70 text-sm mt-1">GMB fases 1-3 + depoimento Villagio + primeiro Reel @lobo_jardinagem + WA Business + GMB fases 4-7 + lista Riviera. Nessa ordem.</p>
+            <p className="font-bold text-lg">Seus 5 movimentos — maio a junho/2026</p>
+            <p className="text-white/70 text-sm mt-1">Planilha de custos + Gerador de Propostas + GMB Gaspar + @realjardinag ativo + primeiro contrato assinado. Nessa ordem.</p>
             <div className="mt-3 flex items-center gap-3">
               <div className="flex-1 bg-forest-700 rounded-full h-2">
                 <div
@@ -344,8 +335,8 @@ export default function Tarefas() {
         <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-5 flex gap-3 items-start">
           <Calendar size={20} className="text-amber-600 shrink-0 mt-0.5" />
           <div>
-            <p className="font-bold text-amber-900">Check-in com a Juliana: 12/06/2026</p>
-            <p className="text-amber-700 text-sm mt-0.5">Chegue com GMB fases 1-3 implementadas, depoimento do Villagio solicitado, @lobo_jardinagem com pelo menos 2 Reels e lista de 20 alvos na Riviera. O próximo passo depende do que você fizer agora.</p>
+            <p className="font-bold text-amber-900">Check-in com a Juliana: 17/06/2026</p>
+            <p className="text-amber-700 text-sm mt-0.5">Chegue com custo/hora calculado, GMB criado, primeiro Reel publicado e pelo menos um contrato novo assinado com o modelo Selva. O próximo passo depende do que você fizer agora.</p>
           </div>
         </div>
       </div>

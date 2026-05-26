@@ -5,39 +5,39 @@ interface DocLink { label: string; href: string; internal?: boolean }
 const docs: Array<{ icon: React.ElementType; title: string; desc: string; link: DocLink }> = [
   {
     icon: FileText,
-    title: 'Diagnóstico 360° — Lobo Jardinagem',
-    desc: 'Perfil completo da empresa, trava central (precificação por feeling), case Villagio e plano de ataque ao mercado de Bertioga/Riviera.',
-    link: { label: 'Abrir', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
+    title: 'Diagnóstico 360° — Real Jardinagem',
+    desc: 'Perfil completo da empresa, trava central (precificação por feeling), carteira âncora e plano de ataque ao mercado de Gaspar e Blumenau.',
+    link: { label: 'Abrir', href: 'https://docs.google.com/document/d/1naIxd0sAyirHxCT36U7N26lqeheAFfUSfHSnXqjgYos/edit' },
   },
   {
     icon: PlayCircle,
-    title: 'Gravação — Sessão Coletiva (14/05)',
-    desc: 'Mentalidade estratégica, precificação com margem real, gerador de propostas com IA, posicionamento B2B.',
-    link: { label: 'Abrir', href: 'https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba' },
+    title: 'Planilha de Margem Operacional',
+    desc: 'Calculadora de custo real por serviço: Fiorino, equipamentos amortizados, horas trabalhadas e margem mínima. Base para toda proposta.',
+    link: { label: 'Abrir', href: 'https://docs.google.com/spreadsheets/d/1FUW7A1egXwdWi1HCKxV6Bzg14GASEJV__5eneMELrZw/edit' },
   },
   {
     icon: List,
-    title: 'Modelos de Contrato B2B',
-    desc: 'Contratos para manutenção recorrente e serviço pontual — disponíveis nos Entregáveis da Selva.',
-    link: { label: 'Acessar modelos', href: 'https://drive.google.com/drive/folders/1HtakX6CiU9ItFDsUfLj8BpDqefMCuS0V' },
-  },
-  {
-    icon: PlayCircle,
-    title: 'Guia GMB Ultra-Detalhado',
-    desc: '11 fases, 48 passos — do perfil incompleto à primeira posição em "jardinagem Bertioga" e "paisagismo Riviera de São Lourenço".',
-    link: { label: 'Ver guia', href: '#manuais', internal: true },
+    title: 'Contrato Recorrente (Manutenção Mensal)',
+    desc: 'Modelo de contrato para clientes mensais — proteção jurídica e previsibilidade de receita.',
+    link: { label: 'Abrir', href: 'https://docs.google.com/document/d/1ps4_GPgF9W3D92YsMiLpT2y_lG3MaqfnxsAmy_t3b8g/edit' },
   },
   {
     icon: List,
-    title: 'Gerador de Propostas Selva',
-    desc: 'Propostas corporativas profissionais em minutos — para casas de veraneio, condomínios e clientes B2B da Riviera.',
-    link: { label: 'Abrir Gerador', href: 'https://geradordepropostaselva.lovable.app' },
+    title: 'Contrato Empreitada (Serviço Pontual)',
+    desc: 'Modelo para limpezas, implantações e serviços únicos. Essencial para não trabalhar sem contrato.',
+    link: { label: 'Abrir', href: 'https://docs.google.com/document/d/1C3Vq6dNxUKzsjwh8J3-z2shj4K9vEh9bNAVelhTDz-k/edit' },
+  },
+  {
+    icon: FileText,
+    title: 'Roteiro de Formação de Preço',
+    desc: 'Passo a passo para calcular o preço justo de cada tipo de serviço sem perder margem.',
+    link: { label: 'Abrir', href: 'https://docs.google.com/document/d/1eAhnIhGQZeIzl87JEVFjoZEsEEdCBCjU7M1o9N-VXic/edit' },
   },
   {
     icon: Star,
-    title: 'Tarefas e Acompanhamento',
-    desc: 'Histórico de tarefas, checkpoints e evolução na mentoria. Check-in: 12/06/2026.',
-    link: { label: 'Ver tarefas', href: '#tarefas', internal: true },
+    title: 'Script de Prospecção para Empresas',
+    desc: 'Abordagem consultiva para fechar contratos com empresas, condomínios e residências de alto padrão em Gaspar e Blumenau.',
+    link: { label: 'Abrir', href: 'https://docs.google.com/document/d/1a73V7ekpVz3bN5jy8hAqOLn30sNT81Tzbb9wLqJta58/edit' },
   },
 ]
 
@@ -59,7 +59,7 @@ export default function Arsenal() {
               EXCLUSIVO SELVA PREMIUM
             </span>
             <h3 className="text-white font-bold text-lg">Gerador de Propostas Selva</h3>
-            <p className="text-white/60 text-sm mt-0.5">Propostas corporativas em minutos — para casas de veraneio e condomínios da Riviera</p>
+            <p className="text-white/60 text-sm mt-0.5">Propostas profissionais em minutos — para residências e empresas em Gaspar e Blumenau</p>
           </div>
           <a href="https://geradordepropostaselva.lovable.app" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-forest-900 font-bold px-5 py-2.5 rounded-xl text-sm transition-colors shrink-0">
@@ -98,10 +98,10 @@ export default function Arsenal() {
         <div className="bg-white border border-gray-100 rounded-2xl p-4 flex items-center gap-3">
           <FolderOpen size={18} className="text-forest-600 shrink-0" />
           <div className="flex-1 min-w-0">
-            <p className="font-semibold text-forest-900 text-sm">Pasta Principal — Lobo Jardinagem no Drive</p>
+            <p className="font-semibold text-forest-900 text-sm">Pasta Principal — Real Jardinagem no Drive</p>
             <p className="text-gray-400 text-xs">Todos os materiais da mentoria organizados por categoria</p>
           </div>
-          <a href="https://drive.google.com/drive/folders/1gQIrHV7QTdkOdgllt9EIucidBwnGGjba" target="_blank" rel="noopener noreferrer"
+          <a href="https://drive.google.com/drive/folders/1V1B9aWuZkuRV8EoGT1rfYmcornS4fDew" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 bg-forest-800 hover:bg-forest-700 text-white text-xs font-semibold px-4 py-2 rounded-xl transition-colors shrink-0">
             Abrir <ExternalLink size={10} />
           </a>

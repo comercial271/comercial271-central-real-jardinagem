@@ -2,8 +2,8 @@ import { useState, useCallback } from 'react'
 import { useMemberStorage } from '../hooks/useMemberStorage'
 import { CheckCircle, XCircle, AlertCircle, Target, Trash2, Clock, ChevronDown, ChevronUp } from 'lucide-react'
 
-const ICP_LEADS_KEY    = 'aleandro_icp_leads_v1'
-const ICP_BUILDER_KEY  = 'aleandro_icp_builder_v1'
+const ICP_LEADS_KEY    = 'guilherme_icp_leads_v1'
+const ICP_BUILDER_KEY  = 'guilherme_icp_builder_v1'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -33,48 +33,48 @@ const builderQuestions: BuilderQ[] = [
     num: 1,
     titulo: 'Seus melhores clientes hoje',
     pergunta: 'Pense nos 2 ou 3 clientes que você mais gosta de atender. O que eles têm em comum — tipo de propriedade, perfil do responsável, localização, frequência de pagamento?',
-    dica: 'O Villagio é a âncora. O que esse tipo de cliente (alto padrão, proprietário ausente, paga sem negociar) tem que outros não têm?',
-    placeholder: 'Ex: Proprietários de casas de veraneio na Riviera que moram em São Paulo. Pagam sem questionar porque entendem o valor de ter alguém de confiança cuidando do jardim na ausência deles...',
+    dica: 'O melhor cliente atual é a âncora. O que esse perfil (paga sem negociar, valoriza qualidade, quer recorrência) tem que outros não têm?',
+    placeholder: 'Ex: Residências bem cuidadas no centro de Gaspar. Donos que trabalham fora, não têm tempo de cuidar do jardim. Pagam sem questionar porque entendem o valor de ter alguém de confiança cuidando da área...',
   },
   {
     id: 'segmento_ideal',
     num: 2,
     titulo: 'O segmento que faz mais sentido',
-    pergunta: 'Qual tipo de cliente combina com o que você entrega de melhor: casas de veraneio, condomínios fechados, pousadas/resorts, gestores de propriedades, misto? Por que esse e não os outros?',
-    dica: 'Considere sua experiência no Villagio, seu raio de deslocamento em Bertioga e onde você consegue cobrar R$3k–6k/mês sem negociação.',
-    placeholder: 'Ex: Casas de veraneio premium da Riviera de São Lourenço. Proprietários ausentes não têm tempo de negociar — ou confiam em você ou não contratam. Esse perfil não pede desconto...',
+    pergunta: 'Qual tipo de cliente combina com o que você entrega de melhor: residências premium, empresas/condomínios, imobiliárias como canal, misto? Por que esse e não os outros?',
+    dica: 'Considere seu raio em Gaspar, a expansão natural para Blumenau e onde você consegue cobrar acima da tabela atual sem negociação.',
+    placeholder: 'Ex: Residências premium de Gaspar e empresas de Blumenau. Proprietário não tem tempo de negociar — ou confia ou não contrata. Esse perfil não pede desconto...',
   },
   {
     id: 'dor_principal',
     num: 3,
     titulo: 'A dor que você resolve',
     pergunta: 'O que o seu cliente ideal tinha de problema antes de te contratar? Que situação ele não suportava mais ou que risco ele queria eliminar?',
-    dica: 'Vá além do "jardim feio". Pense em chegar na casa de veraneio no verão e encontrar mato, vizinho reclamando, imóvel desvalorizado, sem ter ninguém de confiança na cidade...',
-    placeholder: 'Ex: Chegava no verão com o jardim abandonado. Não tinha ninguém de confiança em Bertioga. Já tentou com autônomos que desapareciam. Queria saber que estava sendo cuidado sem precisar ir ver...',
+    dica: 'Vá além do "jardim feio". Pense em jardim que envergonha na entrada da empresa, síndico sem referência de empresa séria, dono de casa que perdia tempo tentando contratar autônomo que sumia...',
+    placeholder: 'Ex: Entrada da empresa com jardim descuidado. Não tinha ninguém de confiança em Gaspar. Já tentou com autônomos que desapareciam. Queria frequência garantida sem precisar cobrar...',
   },
   {
     id: 'diferencial',
     num: 4,
     titulo: 'Por que te escolhem',
-    pergunta: 'Por que o cliente ideal escolhe a Lobo Jardinagem e não alguém mais barato? O que você entrega que é difícil de copiar?',
-    dica: 'Relatório fotográfico mensal, presença local em Bertioga, Villagio como referência de alto padrão, responsabilidade e pontualidade. O que você ouviu de clientes satisfeitos?',
-    placeholder: 'Ex: Sou de Bertioga. Estou aqui quando o proprietário não está. Mando foto mensal pelo WhatsApp. Tenho o Villagio na carteira — qualquer pessoa em Bertioga sabe o que é...',
+    pergunta: 'Por que o cliente ideal escolhe a Real Jardinagem e não alguém mais barato? O que você entrega que é difícil de copiar?',
+    dica: 'Proposta por escrito com contrato, recorrência garantida, equipe que não some, CNPJ e NF disponível, responsabilidade. O que você ouviu de clientes satisfeitos?',
+    placeholder: 'Ex: Sou de Gaspar, estou aqui quando precisa. Tenho contrato e proposta por escrito. CNPJ ativo, NF disponível para empresa. Equipe que aparece na data combinada...',
   },
   {
     id: 'ticket_minimo',
     num: 5,
     titulo: 'Ticket e modelo de contrato',
-    pergunta: 'Qual é o valor mensal mínimo que faz sentido para sua operação hoje, considerando mão de obra (Daniel), deslocamento, equipamentos e margem? E qual modelo você prefere — mensal recorrente ou por visita?',
-    dica: 'Não coloque o que o mercado aceita. Coloque o que paga Daniel + amortiza seus equipamentos + cobre combustível + gera lucro real. Pense no Villagio como referência de ticket alto.',
-    placeholder: 'Ex: Mínimo R$ 3.000/mês para contrato recorrente em Bertioga. Prefiro recorrente mensal — previsibilidade de caixa e planejamento de agenda da equipe...',
+    pergunta: 'Qual é o valor mínimo por contrato/visita que faz sentido para sua operação hoje, considerando combustível, amortização da Fiorino, equipamentos e margem real?',
+    dica: 'Não coloque o que o mercado aceita. Coloque o que cobre o custo real da operação e gera lucro. Seus clientes atuais nunca reclamaram de preço — o mercado paga mais do que você cobra.',
+    placeholder: 'Ex: Mínimo R$1.200/mês para residência recorrente. Para empresa R$2.000. Hoje cobro menos mas o mercado aceita mais — preciso reajustar os contratos antigos...',
   },
   {
     id: 'localizacao',
     num: 6,
     titulo: 'Onde ele está',
-    pergunta: 'Qual é o raio de deslocamento viável para a Lobo Jardinagem? Que áreas de Bertioga e entorno fazem parte da rota ideal da sua operação?',
-    dica: 'Bertioga centro e Riviera de São Lourenço são o núcleo. Maresias? Boiçucanga? Acima de quanto quilômetros o contrato deixa de valer a pena?',
-    placeholder: 'Ex: Bertioga e Riviera são o foco. Aceito São Sebastião para contratos acima de R$4.000. Fora do raio de 30km só com proposta especial...',
+    pergunta: 'Qual é o raio de deslocamento viável para a Real Jardinagem? Que áreas de Gaspar e entorno fazem parte da rota ideal da sua operação?',
+    dica: 'Gaspar é a base. Blumenau é a expansão natural. Brusque? Indaial? A partir de quanto km o contrato deixa de valer a pena?',
+    placeholder: 'Ex: Gaspar e Blumenau são o foco. Aceito Brusque para contratos acima de R$2.000. Fora de 40km só com proposta especial que cubra o deslocamento...',
   },
   {
     id: 'anti_icp',
@@ -82,29 +82,29 @@ const builderQuestions: BuilderQ[] = [
     titulo: 'Quem você NÃO quer mais',
     pergunta: 'Descreva o perfil de cliente que te dá mais dor de cabeça, não valoriza o trabalho ou simplesmente não vale a energia. Quais características te fazem querer recusar?',
     dica: 'Seja honesto. Anti-ICP bem definido te protege de aceitar contratos ruins por medo de não ter demanda.',
-    placeholder: 'Ex: Residencial pequeno sem recorrência. Cliente que negocia cada visita. Distância fora do raio de Bertioga sem rota. Quem só quer serviço pontual de roçada...',
+    placeholder: 'Ex: Serviço pontual de roçada sem recorrência. Cliente que negocia cada real. Distância fora do raio de Gaspar/Blumenau. Quem quer o mais barato possível...',
   },
   {
     id: 'canal',
     num: 8,
     titulo: 'Como ele te encontra',
     pergunta: 'Como o seu cliente ideal chega até você hoje — indicação, Google, prospecção ativa? E onde você deveria estar mais presente para que ele te encontre?',
-    dica: 'Com GMB zerado em Bertioga, o Google Maps tem potencial imediato enorme. Indicação de clientes da Riviera é o segundo canal mais valioso. Temporada de verão é o gatilho natural.',
-    placeholder: 'Ex: Hoje vem por indicação. Com GMB otimizado, Google Maps vai ser o principal — ninguém domina "jardinagem Bertioga". Prospecção ativa em condomínios da Riviera é o próximo passo...',
+    dica: 'Com GMB zerado em Gaspar, o Google Maps tem potencial imediato enorme. Indicação dos clientes atuais é o segundo canal. Prospecção ativa em empresas de Blumenau é o próximo passo.',
+    placeholder: 'Ex: Hoje vem por indicação. Com GMB otimizado e @realjardinag ativo, Google e Instagram vão ser os principais. Ninguém domina "jardinagem Gaspar" no digital ainda...',
   },
 ]
 
 // ─── Qualifier questions ───────────────────────────────────────────────────────
 
 const perguntas: Pergunta[] = [
-  { id: 'tipo',        texto: 'É casa de veraneio, condomínio fechado, pousada ou resort?',          dica: 'Propriedade premium de alto padrão — não residencial pequeno', peso: 2 },
-  { id: 'ausente',     texto: 'O proprietário/responsável está ausente a maior parte do ano?',       dica: 'Ausência é o gatilho — ele precisa de alguém de confiança local', peso: 2 },
-  { id: 'localizacao', texto: 'Fica dentro do raio de atuação (Bertioga e Riviera)?',               dica: 'Deslocamento fora da rota corrói a margem rapidamente', peso: 2 },
-  { id: 'ticket',      texto: 'Ticket estimado acima do mínimo de R$ 3.000/mês?',                   dica: 'Contrato abaixo do mínimo não cobre Daniel + combustível + margem', peso: 2 },
-  { id: 'decisor',     texto: 'Você fala direto com quem aprova o contrato?',                       dica: 'Proprietário, síndico ou administradora — intermediário some com a proposta', peso: 1 },
-  { id: 'historico',   texto: 'Eles já tiveram serviço de jardinagem antes?',                       dica: 'Já educados para pagar — negociação mais fácil', peso: 1 },
-  { id: 'interesse',   texto: 'Demonstraram interesse real (não só curiosidade)?',                   dica: 'Pediu proposta, fez pergunta específica, comparou com outro serviço', peso: 1 },
-  { id: 'recorrencia', texto: 'Precisam de manutenção recorrente, não serviço pontual?',            dica: 'Contrato mensal é o modelo ideal para estabilidade de caixa', peso: 1 },
+  { id: 'tipo',           texto: 'É residência premium, empresa, condomínio ou canal de indicação (imobiliária)?',  dica: 'Qualquer um desses perfis é ICP — avulso residencial pequeno não é', peso: 2 },
+  { id: 'recorrencia',    texto: 'Busca manutenção recorrente — não serviço pontual de uma vez?',                   dica: 'Contrato mensal é o modelo que garante previsibilidade de caixa', peso: 2 },
+  { id: 'localizacao',    texto: 'Fica dentro do raio de atuação (Gaspar e Blumenau)?',                             dica: 'Deslocamento fora da rota corrói a margem rapidamente', peso: 2 },
+  { id: 'ticket',         texto: 'Ticket estimado acima de R$1.200/mês (residência) ou R$2.000/mês (empresa)?',    dica: 'Abaixo do mínimo não cobre combustível + Fiorino amortizada + margem real', peso: 2 },
+  { id: 'decisor',        texto: 'Você fala direto com quem aprova o contrato?',                                    dica: 'Dono, síndico ou gerente — intermediário some com a proposta', peso: 1 },
+  { id: 'historico',      texto: 'Eles já tiveram serviço de jardinagem profissional antes?',                       dica: 'Já educados para pagar — negociação muito mais fácil', peso: 1 },
+  { id: 'interesse',      texto: 'Demonstraram interesse real (pediu proposta, fez pergunta específica)?',          dica: 'Pediu orçamento, comparou, perguntou sobre frequência = interesse real', peso: 1 },
+  { id: 'sem_negociacao', texto: 'Perfil de quem paga sem negociar (como 9 de 10 dos seus clientes atuais)?',      dica: '9/10 clientes nunca reclamaram de preço — esse é o perfil que você quer replicar', peso: 1 },
 ]
 
 const MAX_SCORE = perguntas.reduce((s, p) => s + p.peso, 0)
@@ -199,7 +199,7 @@ function IcpBuilder({ respostas, setRespostas }: {
         <div className="mt-6 bg-forest-800 text-white rounded-2xl p-5">
           <p className="text-gold-500 text-xs font-bold uppercase tracking-widest mb-1">Seu ICP — construído por você</p>
           <p className="text-white/70 text-sm">Você respondeu as 8 perguntas. Use as suas respostas como filtro em toda prospecção: se o prospect não encaixar no que você descreveu, qualifique pelo score antes de avançar.</p>
-          <p className="text-white/50 text-xs mt-3">Respostas salvas. No próximo check-in, traga este ICP revisado com os primeiros resultados da prospecção ativa na Riviera.</p>
+          <p className="text-white/50 text-xs mt-3">Respostas salvas. No próximo check-in, traga este ICP revisado com os primeiros resultados da prospecção ativa em Gaspar e Blumenau.</p>
         </div>
       )}
     </div>
@@ -244,13 +244,13 @@ function IcpQualifier({ onLeadSaved }: { onLeadSaved: (lead: Lead) => void }) {
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
       <p className="font-bold text-forest-900 mb-1">Qualificador de Prospect</p>
-      <p className="text-gray-500 text-sm mb-5">Avalie um prospect específico contra o seu ICP da Riviera.</p>
+      <p className="text-gray-500 text-sm mb-5">Avalie um prospect específico contra o seu ICP de Gaspar e Blumenau.</p>
 
       <input type="text" value={nome} onChange={e => setNome(e.target.value)}
         placeholder="Nome do prospect / propriedade"
         className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm mb-2 focus:outline-none focus:border-forest-400 transition-colors" />
       <input type="text" value={tipo} onChange={e => setTipo(e.target.value)}
-        placeholder="Tipo (ex: Casa de veraneio, Condomínio Riviera, Pousada)"
+        placeholder="Tipo (ex: Residência Premium, Condomínio Gaspar, Empresa Blumenau)"
         className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm mb-5 focus:outline-none focus:border-forest-400 transition-colors" />
 
       <div className="space-y-2.5 mb-5">
@@ -362,7 +362,7 @@ export default function IcpBraun() {
           <span className="text-forest-700 text-xs font-bold uppercase tracking-widest">Clareza de mercado</span>
           <h2 className="text-3xl font-bold text-forest-900 mt-1">ICP — Perfil do Cliente Ideal</h2>
           <p className="text-gray-500 mt-2 max-w-2xl">
-            Construa o seu ICP pelas suas próprias respostas — ninguém conhece melhor os proprietários da Riviera do que você.
+            Construa o seu ICP pelas suas próprias respostas — ninguém conhece melhor os clientes de Gaspar e Blumenau do que você.
             Depois use o qualificador para avaliar cada novo prospect antes de montar proposta.
           </p>
         </div>
@@ -372,8 +372,8 @@ export default function IcpBraun() {
           <div className="mb-6">
             <p className="font-bold text-forest-900 text-lg">Construtor de ICP</p>
             <p className="text-gray-500 text-sm mt-0.5">
-              8 perguntas para você sair com clareza total sobre quem é o seu cliente ideal na Riviera.
-              Reserve 15 minutos, responda com honestidade — o Villagio é o modelo, mas não o limite.
+              8 perguntas para você sair com clareza total sobre quem é o seu cliente ideal em Gaspar e Blumenau.
+              Reserve 15 minutos, responda com honestidade — o melhor cliente atual é o modelo, mas não o limite.
             </p>
           </div>
           <IcpBuilder respostas={builderRespostas} setRespostas={setBuilderRespostas} />
@@ -387,7 +387,7 @@ export default function IcpBraun() {
             <p className="text-amber-700 text-sm mt-1">
               Liste todos os orçamentos enviados nos últimos 12 meses que não fecharam.{' '}
               <strong>Esses leads já demonstraram interesse</strong> — são os mais fáceis de converter.{' '}
-              Script de reativação: <em>"Aleandro aqui, da Lobo Jardinagem. Ainda tenho aquela proposta disponível e a agenda aberta. Podemos retomar antes da temporada?" </em>— direto, sem pressão.
+              Script de reativação: <em>"Guilherme aqui, da Real Jardinagem. Ainda tenho aquela proposta disponível e a agenda aberta. Posso enviar novamente para você avaliar?"</em> — direto, sem pressão.
             </p>
           </div>
         </div>
@@ -395,7 +395,7 @@ export default function IcpBraun() {
         {/* ── Bloco 2: Qualificador + Lista ── */}
         <div className="mb-4">
           <p className="font-bold text-forest-900 text-lg">Qualificador de Prospect</p>
-          <p className="text-gray-500 text-sm mt-0.5">Com o ICP definido acima, use este score para avaliar cada novo prospect da Riviera antes de montar a proposta.</p>
+          <p className="text-gray-500 text-sm mt-0.5">Com o ICP definido acima, use este score para avaliar cada novo prospect antes de montar a proposta.</p>
         </div>
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           <IcpQualifier onLeadSaved={(lead) => setLeads(prev => [lead, ...prev])} />
